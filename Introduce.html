@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project DIVA</title>
+    <link rel="stylesheet" href="FullWeb.css">
+    <link rel="icon" type="image/png" href="https://image.api.playstation.com/cdn/UP0177/CUSA06093_00/IiZR9thQcF4Ia2ZuXV4cullEGaiLdIx7.png">
+</head>
+<body id="introduce">
+    <a href="#main" class="skip">Skip to Main Content</a>
+<header>
+    <h1>Project DIVA</h1>
+    <!-- ở đây có class menu nên bên css có đoạn code là .menu -->
+    <nav class="menu">
+        <a href="Introduce.html">Introduce</a>
+        <a href="SkinAndSong.html">Skin & Song</a>
+        <a href="VersionAndGameplay.html">Version & Gameplay</a>
+    </nav>
+    <!-- Thông báo hướng dẫn skip link cho người dùng bàn phím -->
+    <p class="skip-hint">Press <kbd>Tab</kbd> to skip to main content</p>
+    <h2>* Information about Project DIVA *</h2>
+    <h3>Project DIVA is a series of rhythm games developed by Sega and Crypton Future Media, featuring the virtual singer Hatsune Miku and other Vocaloid characters. The games typically involve players pressing buttons in time with music to score points, and they often include a variety of songs and character customization options.</h3>
+    <!-- Thêm class="links" để CSS nav img chỉ nhắm vào nav này, không ảnh hưởng .menu -->
+    <nav class="links">
+        <!-- preview-wrapper bọc khung ảnh và caption lại với nhau -->
+        <div class="preview-wrapper">
+            <!-- Khung preview ảnh lớn - id="image" để JS nhận diện, không có chữ vì chữ xuống caption -->
+            <div id="image" class="preview-box"></div>
+            <!-- Caption hiện tên ảnh bên dưới khung thay vì đè lên ảnh -->
+            <p id="image-caption" class="preview-caption">Hover over an image below to display here.</p>
+        </div>
+        <!-- Nút undo để reset khung preview -->
+        <button onclick="undo()" class="undo-btn">&#8617; Reset Preview</button>
+        <!-- ol là hiện dsach số còn ul là hiện dsach có kí tự chấm tròn ở đầu -->
+        <ul>
+            <li>
+                <figcaption>Project DIVA Wiki (SEGA)</figcaption>
+                <!-- Sửa target="_blank_" → target="_blank" (bỏ dấu gạch dưới cuối) -->
+                <!-- trước href có thể ghi target="_blank" là khi bấm vào link nó sẽ ra tab khác chứ không mở trên chính tab đó -->
+                <a target="_blank" href="https://project-diva.fandom.com/wiki/Project_DIVA_Wiki">
+                <img src="https://projectdiva.wiki/w/images/thumb/7/74/PjDWikiHome.png/1200px-PjDWikiHome.png" alt="Project DIVA Wiki"></a>
+            </li>
+            <li>
+                <figcaption>Project DIVA: Mega Mix+ (SEGA)</figcaption>
+                <a target="_blank" href="https://miku.sega.com/megamixplus/index.html">
+                <img src="https://miku.sega.com/megamixplus/img/og_img.jpg" alt="Hatsune Miku: Project DIVA Mega Mix+"></a>
+            </li>
+        </ul>
+    </nav>
+</header>
+    <h2>* Vocaloid Characters In Project DIVA *</h2>
+<main id="main">
+    <div class="grid">
+        <div>
+            <h2 id="Vocaloid1"></h2>
+            1. Hatsune Miku, officially code-named CV01, is a Vocaloid software voicebank developed by Crypton Future Media.
+            <figure>
+                <a target="_blank" href="https://vocaloid.fandom.com/wiki/Hatsune_Miku">
+                <img src="https://miku.sega.com/megamixplus/img/characters/miku-full.jpg" alt="Hatsune Miku"></a>
+                <figcaption>Hatsune Miku</figcaption>
+            </figure>
+        </div>
+        <div>
+            <h2 id="Vocaloid2"></h2>
+            2. Kagamine Rin, officially code-named CV02, is a Vocaloid software voicebank developed by Crypton Future Media.
+            <figure>
+                <a target="_blank" href="https://vocaloid.fandom.com/wiki/Kagamine_Rin_%26_Len">
+                <img src="https://miku.sega.com/megamixplus/img/characters/rin-full.jpg" alt="Kagamine Rin"></a>
+                <figcaption>Kagamine Rin</figcaption>
+            </figure>
+        </div>
+        <div>
+            <h2 id="Vocaloid3"></h2>
+            3. Kagamine Len, officially code-named CV02, is a Vocaloid software voicebank developed by Crypton Future Media.
+            <figure>
+                <a target="_blank" href="https://vocaloid.fandom.com/wiki/Kagamine_Rin_%26_Len">
+                <img src="https://miku.sega.com/megamixplus/img/characters/len-full.jpg" alt="Kagamine Len"></a>
+                <figcaption>Kagamine Len</figcaption>
+            </figure>
+        </div>
+        <div>
+            <h2 id="Vocaloid4"></h2>
+            4. Megurine Luka, officially code-named CV03, is a Vocaloid software voicebank developed by Crypton Future Media.
+            <figure>
+                <a target="_blank" href="https://vocaloid.fandom.com/wiki/Megurine_Luka">
+                <img src="https://miku.sega.com/megamixplus/img/characters/luka-full.jpg" alt="Megurine Luka"></a>
+                <figcaption>Megurine Luka</figcaption>
+            </figure>
+        </div>
+        <div>
+            <h2 id="Vocaloid5"></h2>
+            5. Kaito is a Vocaloid software voicebank developed by Crypton Future Media, officially recognized as the first Japanese male voicebank released for the Vocaloid 1 engine.
+            <figure>
+                <a target="_blank" href="https://vocaloid.fandom.com/wiki/KAITO">
+                <img src="https://miku.sega.com/megamixplus/img/characters/kaito-full.jpg" alt="Kaito"></a>
+                <figcaption>Kaito</figcaption>
+            </figure>
+        </div>
+        <div>
+            <h2 id="Vocaloid6"></h2>
+            6. Meiko is a Vocaloid software voicebank developed by Crypton Future Media, officially recognized as the first Japanese female voicebank released for the Vocaloid 1 engine.
+            <figure>
+                <a target="_blank" href="https://vocaloid.fandom.com/wiki/MEIKO">
+                <img src="https://miku.sega.com/megamixplus/img/characters/meiko-full.jpg" alt="Meiko"></a>
+                <figcaption>Meiko</figcaption>
+            </figure>
+        </div>
+    </div>
+</main>
+<footer>&copy; May 26, 2022 by SEGA <br></footer>
+<footer>
+    <!-- Thêm <summary> vào <details> để hoạt động đúng -->
+    <details>
+        <summary>Vocaloid Characters</summary>
+        <p><a href="#Vocaloid1"><b>Hatsune Miku</b></a></p>
+        <p><a href="#Vocaloid2"><b>Kagamine Rin</b></a></p>
+        <p><a href="#Vocaloid3"><b>Kagamine Len</b></a></p>
+        <p><a href="#Vocaloid4"><b>Megurine Luka</b></a></p>
+        <p><a href="#Vocaloid5"><b>Kaito</b></a></p>
+        <p><a href="#Vocaloid6"><b>Meiko</b></a></p>
+    </details>
+</footer>
+<iframe src="https://miku.sega.com/megamixplus/index.html" width="1440px" height="810px"></iframe>
+<script src="FullWeb.js"></script>
+</body>
+</html>

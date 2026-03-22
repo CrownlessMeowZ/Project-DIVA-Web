@@ -1,0 +1,342 @@
+/* ============================================================
+   INTRODUCE
+   ============================================================ */
+#introduce h1 {
+    color: #0000FF;
+    background-color: grey;
+    font-size: 39px;
+    font-family: 'Times New Roman', Times, serif;
+    font-style: normal;
+    font-variant: normal;
+    text-align: center;
+    line-height: 200%;
+    text-decoration: underline;
+}
+
+#introduce figure {
+    text-align: center;
+    display: grid;
+}
+
+#introduce figcaption {
+    font-weight: bold;
+    margin-top: 12px; /* tạo khoảng cách với ảnh, tránh bị che khi ảnh phóng to */
+}
+
+#introduce main {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+
+/* ============================================================
+   SKIN & SONG
+   ============================================================ */
+#skinandsong h1 {
+    color: #0000FF;
+    background-color: grey;
+    font-size: 39px;
+    font-family: 'Times New Roman', Times, serif;
+    font-style: normal;
+    font-variant: normal;
+    text-align: center;
+    line-height: 200%;
+    text-decoration: underline;
+}
+
+#skinandsong figcaption {
+    font-weight: bold;
+}
+
+#skinandsong figure {
+    text-align: center;
+}
+
+#skinandsong main {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+
+/* ============================================================
+   VERSION & GAMEPLAY
+   ============================================================ */
+#versionandgameplay h1 {
+    color: #0000FF;
+    background-color: grey;
+    font-size: 39px;
+    font-family: 'Times New Roman', Times, serif;
+    font-style: normal;
+    font-variant: normal;
+    text-align: center;
+    line-height: 200%;
+    text-decoration: underline;
+}
+
+#versionandgameplay figure {
+    text-align: center;
+}
+
+#versionandgameplay main {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+
+/* ============================================================
+   NAVIGATION MENU (.menu)
+   ============================================================ */
+.menu {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    text-align: center;
+    background: #111;
+    padding: 20px;
+}
+
+.menu a {
+    color: white;
+    padding: 12px 32px;
+    text-decoration: none;
+    justify-self: center;
+    transition: background 0.3s ease, letter-spacing 0.3s ease; /* hiệu ứng mượt khi hover */
+}
+
+/* a:link    → chưa được click
+   a:visited → đã được click
+   a:hover   → khi di chuột vào
+   a:focus   → khi dùng bàn phím Tab
+   a:active  → đang được click
+   Thứ tự: link → visited → hover → active */
+/* Yêu cầu 8: hover thú vị với transition */
+.menu a:hover {
+    background: #00aaff;
+    letter-spacing: 2px;        /* chữ giãn ra khi hover */
+}
+
+
+/* ============================================================
+   SKIP TO MAIN CONTENT
+   Ẩn link, chỉ hiện khi người dùng nhấn Tab (accessibility)
+   ============================================================ */
+/* Yêu cầu 3: ẩn mặc định, chỉ hiện khi nhấn Tab (focus) */
+.skip {
+    position: absolute;
+    top: -60px;
+    left: 0;
+    width: fit-content;
+    background: #000;
+    color: white;
+    padding: 8px 16px;
+    z-index: 999;
+    transition: top 0.3s ease;
+}
+
+.skip:focus {
+    top: 0;
+}
+
+
+/* ============================================================
+   NAV (thẻ nav thứ 2 chứa ul/li + ảnh liên kết)
+   Dùng inline-block + width 80% theo yêu cầu bài
+   ============================================================ */
+/* nav.links = nav thứ 2 chứa ul/li + ảnh liên kết, tách biệt với nav.menu */
+nav.links {
+    display: inline-block;
+    width: 80%;
+}
+
+/* Descendent selector: chỉ nhắm ảnh nằm trong nav.links */
+nav.links img {
+    width: 40%;
+    height: auto;
+}
+
+/* Comment out li style cũ nếu có — bài yêu cầu comment out
+li {
+    list-style-type: disc;
+} */
+
+
+/* ============================================================
+   GRID CLASS
+   2 cột ~40%, căn giữa, khoảng cách hàng đẹp
+   ============================================================ */
+.grid {
+    display: grid;
+    grid-template-columns: 40% 40%;
+    justify-content: center;      /* căn cả grid ra giữa trang */
+    align-items: start;           /* nội dung mỗi ô bắt đầu từ trên xuống */
+    row-gap: 30px;                /* khoảng cách giữa các hàng */
+    column-gap: 20px;             /* khoảng cách giữa 2 cột */
+}
+
+/* Descendent selector: chỉ ảnh trong .grid mới width 100%
+   Không ảnh hưởng ảnh trong .flex */
+.grid img {
+    width: 100%;
+    height: auto;
+}
+
+/* Căn giữa text và figure bên trong mỗi ô grid */
+.grid > div {
+    text-align: center;
+    width: 100%; /* ghi đè lại rule nav/div chung bên dưới nếu có */
+}
+
+
+/* ============================================================
+   FLEX CLASS
+   Hiển thị các bài nhạc / gameplay theo dạng flex wrap
+   ============================================================ */
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.flex > div {
+    width: 45%;       /* mỗi item chiếm ~45%, 2 item/hàng trên màn hình lớn */
+    min-width: 280px; /* xuống dòng khi màn hình nhỏ */
+    text-align: center;
+}
+
+.flex video {
+    width: 100%;
+    height: auto;
+}
+
+
+/* ============================================================
+   Yêu cầu 5: BOX MODEL cho tất cả ảnh
+   border, padding, border-radius bắt buộc
+   ============================================================ */
+img {
+    border: 3px solid #00aaff;
+    padding: 4px;
+    border-radius: 12px;
+    display: block;
+    margin: 0 auto;
+    /* hover effect cho ảnh - yêu cầu 8 */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+img:hover {
+    transform: scale(1.03);         /* phóng to nhẹ khi hover */
+    box-shadow: 0 6px 20px rgba(0, 170, 255, 0.5);
+}
+
+
+/* ============================================================
+   Yêu cầu 9: NTH-CHILD SELECTOR
+   Chỉ đổi màu viền xen kẽ, border-radius đồng đều 50px
+   ============================================================ */
+
+/* Ảnh trong .grid: tất cả bo góc như nhau (50px), chỉ khác màu viền */
+/* nth-child(odd) = các ô thứ 1, 3, 5 (lẻ) */
+.grid > div:nth-child(odd) img {
+    border-radius: 50px;           /* bo góc đều nhau với ô chẵn */
+    border-color: #ff66aa;         /* đổi màu viền thành hồng */
+}
+
+/* nth-child(even) = các ô thứ 2, 4, 6 (chẵn) */
+.grid > div:nth-child(even) img {
+    border-radius: 50px;           /* bo góc đều nhau với ô lẻ */
+    border-color: #00aaff;         /* giữ màu viền xanh */
+}
+
+/* Ảnh trong nav.links: xen kẽ màu border */
+/* li lẻ: thứ 1, 3, 5 */
+nav.links li:nth-child(odd) img {
+    border-color: #ffaa00;         /* viền màu vàng cam */
+    border-radius: 8px;            /* bo góc vừa phải */
+}
+
+/* li chẵn: thứ 2, 4 */
+nav.links li:nth-child(even) img {
+    border-color: #00cc88;         /* viền màu xanh lá */
+    border-radius: 20px;           /* bo góc nhiều hơn */
+}
+
+/* ============================================================
+   IMAGE PREVIEW BOX
+   Khung hiển thị ảnh lớn khi hover/focus vào ảnh nhỏ (JS upDate)
+   ============================================================ */
+
+/* Bọc cả khung preview và caption trong 1 div để căn giữa cùng nhau */
+.preview-wrapper {
+    width: 70%;                              /* chiếm 70% chiều ngang */
+    margin: 16px auto;                       /* căn giữa */
+    text-align: center;
+}
+
+.preview-box {
+    width: 100%;                             /* chiếm full chiều ngang của wrapper */
+    /* Dùng padding-top 56.25% để tạo tỉ lệ 16:9 (9/16 = 0.5625) thay vì height cố định */
+    /* Khi ảnh hiện lên sẽ vừa khít với tỉ lệ gốc của ảnh */
+    padding-top: 56.25%;
+    height: 0;                               /* bỏ height, để padding-top quyết định chiều cao */
+    border: 3px dashed #00aaff;              /* viền nét đứt màu xanh */
+    border-radius: 16px;                     /* bo góc */
+    background-color: #f0f8ff;               /* nền xanh nhạt */
+    background-size: contain;               /* hiện đủ ảnh không bị crop */
+    background-position: center;             /* căn giữa ảnh nền */
+    background-repeat: no-repeat;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* mượt khi đổi trạng thái */
+    box-shadow: 0 2px 12px rgba(0, 170, 255, 0.15); /* đổ bóng nhẹ mặc định */
+}
+
+/* Khi ảnh đang được hover/focus → viền sáng lên */
+.preview-box.active {
+    border-style: solid;                     /* đổi từ nét đứt sang nét liền */
+    border-color: #ff66aa;                   /* viền hồng khi có ảnh */
+    box-shadow: 0 4px 20px rgba(255, 102, 170, 0.4); /* đổ bóng hồng */
+}
+
+/* Caption hiện bên dưới khung preview thay vì đè lên ảnh */
+.preview-caption {
+    margin-top: 10px;                        /* khoảng cách với khung trên */
+    font-style: italic;
+    font-weight: bold;
+    color: #444;
+    font-size: 15px;
+    min-height: 22px;                        /* giữ chỗ khi chưa có chữ, tránh layout nhảy */
+    transition: color 0.3s ease;
+}
+
+/* Ảnh trong nav.links khi được focus bằng bàn phím → viền nổi bật */
+nav.links img:focus {
+    outline: 3px solid #ff66aa;              /* viền hồng khi focus bằng Tab */
+    outline-offset: 4px;
+    transform: scale(1.05);                  /* phóng to nhẹ khi focus */
+}
+
+/* Nút Reset Preview */
+.undo-btn {
+    display: block;
+    margin: 8px auto 12px auto;              /* căn giữa, cách trên 8px cách dưới 12px */
+    padding: 8px 20px;
+    background: #111;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.undo-btn:hover {
+    background: #00aaff;                     /* đổi màu khi hover */
+    transform: scale(1.05);                  /* phóng to nhẹ */
+}
+
+/* Nút cũng cần focus style cho keyboard */
+.undo-btn:focus {
+    outline: 3px solid #00aaff;
+    outline-offset: 3px;
+}

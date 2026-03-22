@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project DIVA</title>
+    <link rel="stylesheet" href="FullWeb.css">
+    <link rel="icon" type="image/png" href="https://image.api.playstation.com/cdn/UP0177/CUSA06093_00/IiZR9thQcF4Ia2ZuXV4cullEGaiLdIx7.png">
+</head>
+<body id="skinandsong">
+    <a href="#main" class="skip">Skip to Main Content</a>
+<header>
+    <h1>Project DIVA</h1>
+    <!-- ở đây có class menu nên bên css có đoạn code là .menu -->
+    <nav class="menu">
+        <a href="Introduce.html">Introduce</a>
+        <a href="SkinAndSong.html">Skin & Song</a>
+        <a href="VersionAndGameplay.html">Version & Gameplay</a>
+    </nav>
+    <!-- Thông báo hướng dẫn skip link cho người dùng bàn phím -->
+    <p class="skip-hint">Press <kbd>Tab</kbd> to skip to main content</p>
+    <h2>* Skins in the game Project DIVA *</h2>
+    <h3>Skin in Project DIVA refers to the various costumes and outfits that players can unlock and use for their characters. These skins often feature different designs, colors, and themes, allowing players to customize the appearance of their favorite Vocaloid characters while playing the rhythm game.</h3>
+    <!-- Thêm class="links" để tách biệt với .menu -->
+    <nav class="links">
+        <!-- preview-wrapper bọc khung ảnh và caption lại với nhau -->
+        <div class="preview-wrapper">
+            <!-- Khung preview ảnh lớn - id="image" để JS nhận diện, không có chữ vì chữ xuống caption -->
+            <div id="image" class="preview-box"></div>
+            <!-- Caption hiện tên ảnh bên dưới khung thay vì đè lên ảnh -->
+            <p id="image-caption" class="preview-caption">Hover over an image below to display here.</p>
+        </div>
+        <!-- Nút undo để reset khung preview -->
+        <button onclick="undo()" class="undo-btn">&#8617; Reset Preview</button>
+        <ul>
+            <li>
+                <figcaption>Hatsune Miku: Project DIVA Arcade Future Tone/Modules</figcaption>
+                <!-- Sửa target="_blank_" → target="_blank" (bỏ dấu gạch dưới cuối) -->
+                <a target="_blank" href="https://project-diva.fandom.com/wiki/Hatsune_Miku:_Project_DIVA_Arcade_Future_Tone/Modules">
+                <img src="https://miku.sega.com/futuretone/img/ogimage.png" alt="Project DIVA Arcade Future Tone"></a>
+            </li>
+            <li>
+                <figcaption>Hatsune Miku: Project DIVA X/Modules</figcaption>
+                <a target="_blank" href="https://project-diva.fandom.com/wiki/Hatsune_Miku:_Project_DIVA_X/Modules">
+                <img src="https://i0.wp.com/www.seganerds.com/wp-content/uploads/2016/08/project-diva-x-title.jpg?fit=1280%2C720&ssl=1" alt="Project DIVA X"></a>
+            </li>
+            <li>
+                <figcaption>Hatsune Miku: Project DIVA F/Modules</figcaption>
+                <a target="_blank" href="https://project-diva.fandom.com/wiki/Hatsune_Miku:_Project_DIVA_F/Modules">
+                <img src="https://gamesline.net/wp-content/uploads/2014/03/hatsune_miku_project_diva_f_by_evoxiii-d52lcj2-1024x632.jpg" alt="Project DIVA F"></a>
+            </li>
+            <li>
+                <figcaption>Hatsune Miku: Project DIVA 2nd/Modules</figcaption>
+                <a target="_blank" href="https://project-diva.fandom.com/wiki/Hatsune_Miku:_Project_DIVA_2nd/Modules">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9BW1QDP9qNQrJ-8baurfsSr6xxTxqnF1JOQ&s" alt="Project DIVA 2nd"></a>
+            </li>
+            <li>
+                <figcaption>Hatsune Miku: Project DIVA MegaMix/Modules</figcaption>
+                <a target="_blank" href="https://project-diva.fandom.com/wiki/Category:Project_DIVA_MegaMix_Modules">
+                <img src="https://i.ytimg.com/vi/T74gVhg58Tg/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLDlBQk8RHIfiVeX4IcKS7qSboyFIw" alt="Project DIVA MegaMix"></a>
+            </li>
+        </ul>
+    </nav>
+</header>
+    <h2>* Songs in the game Project DIVA *</h2>
+    <h3>And here are some very famous songs from Project DIVA:</h3>
+<main id="main">
+    <div class="flex">
+        <div>
+            1. "ワールドイズマイン" (World is Mine) by ryo (supercell) - This song is one of the most iconic tracks in the Project DIVA series, featuring Hatsune Miku as the main vocalist. It has a catchy melody and playful lyrics that have made it a fan favorite.
+            <figure>
+                <video width="960px" height="540px" controls><source src="World-is-Mine.mp4" type="video/mp4"></video>
+                <figcaption>World is Mine</figcaption>
+            </figure>
+        </div>
+        <div>
+            2. "Tell Your World" by livetune - This song is another popular track in the Project DIVA series, known for its uplifting and energetic vibe. It features Hatsune Miku's vocals and has been widely praised for its catchy tune and positive message.
+            <figure>
+                <video width="960px" height="540px" controls><source src="Tell-Your-World.mp4" type="video/mp4"></video>
+                <figcaption>Tell Your World</figcaption>
+            </figure>
+        </div>
+        <div>
+            3. "千本桜" (Senbonzakura) by Kurousa-P - This song is a fast-paced and energetic track that has become a staple in the Project DIVA series. It features Hatsune Miku's vocals and has a unique blend of traditional Japanese instruments with modern electronic music.
+            <figure>
+                <video width="960px" height="540px" controls><source src="Senbonzakura.mp4" type="video/mp4"></video>
+                <figcaption>Senbonzakura</figcaption>
+            </figure>
+        </div>
+        <div>
+            4. "初音ミクの消失" (The Disappearance of Hatsune Miku) by cosMo@Bousou-P - This song is known for its fast tempo and complex rhythm, making it a challenging track in the Project DIVA series. It features Hatsune Miku's vocals and has a dramatic and intense atmosphere.
+            <figure>
+                <video width="960px" height="540px" controls><source src="The-disappearance-of-Hatsune-Miku.mp4" type="video/mp4"></video>
+                <figcaption>The Disappearance of Hatsune Miku</figcaption>
+            </figure>
+        </div>
+        <div>
+            5. "メルト" (Melt) by ryo (supercell) - This song is a slower, more emotional track that has become a fan favorite in the Project DIVA series. It features Hatsune Miku's vocals and has heartfelt lyrics about love and longing.
+            <figure>
+                <video width="960px" height="540px" controls><source src="melt.mp4" type="video/mp4"></video>
+                <figcaption>Melt</figcaption>
+            </figure>
+        </div>
+    </div>
+</main>
+<script src="FullWeb.js"></script>
+</body>
+</html>
