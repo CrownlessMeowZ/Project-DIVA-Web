@@ -1,342 +1,598 @@
 /* ============================================================
-   INTRODUCE
+   CSS CUSTOM PROPERTIES
    ============================================================ */
-#introduce h1 {
-    color: #0000FF;
-    background-color: grey;
-    font-size: 39px;
-    font-family: 'Times New Roman', Times, serif;
-    font-style: normal;
-    font-variant: normal;
-    text-align: center;
-    line-height: 200%;
-    text-decoration: underline;
+:root {
+    --clr-bg:        #04040f;
+    --clr-surface:   #080819;
+    --clr-card:      rgba(12, 12, 38, 0.9);
+    --clr-border:    rgba(80, 80, 180, 0.25);
+    --clr-border-h:  rgba(0, 212, 255, 0.6);
+    --clr-accent:    #00d4ff;
+    --clr-accent2:   #ff66cc;
+    --clr-accent3:   #ffe566;
+    --clr-text:      #dde0ff;
+    --clr-muted:     #7070aa;
+    --ff-display:    'Cinzel Decorative', serif;
+    --ff-body:       'Rajdhani', sans-serif;
+    --r-sm:          8px;
+    --r-md:          14px;
+    --r-lg:          22px;
+    --t:             0.35s cubic-bezier(0.4, 0, 0.2, 1);
 }
-
-#introduce figure {
-    text-align: center;
-    display: grid;
-}
-
-#introduce figcaption {
-    font-weight: bold;
-    margin-top: 12px; /* tạo khoảng cách với ảnh, tránh bị che khi ảnh phóng to */
-}
-
-#introduce main {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
 
 /* ============================================================
-   SKIN & SONG
+   BASE RESET
    ============================================================ */
-#skinandsong h1 {
-    color: #0000FF;
-    background-color: grey;
-    font-size: 39px;
-    font-family: 'Times New Roman', Times, serif;
-    font-style: normal;
-    font-variant: normal;
-    text-align: center;
-    line-height: 200%;
-    text-decoration: underline;
-}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
 
-#skinandsong figcaption {
-    font-weight: bold;
+body {
+    background-color: var(--clr-bg);
+    background-image:
+        radial-gradient(ellipse 80% 40% at 15% 5%,  rgba(0,212,255,0.07)  0%, transparent 70%),
+        radial-gradient(ellipse 60% 40% at 85% 90%, rgba(255,102,204,0.07) 0%, transparent 70%);
+    color: var(--clr-text);
+    font-family: var(--ff-body);
+    font-size: 16px;
+    line-height: 1.75;
+    min-height: 100vh;
+    overflow-x: hidden;
 }
-
-#skinandsong figure {
-    text-align: center;
-}
-
-#skinandsong main {
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-}
-
 
 /* ============================================================
-   VERSION & GAMEPLAY
+   KEYFRAMES
    ============================================================ */
-#versionandgameplay h1 {
-    color: #0000FF;
-    background-color: grey;
-    font-size: 39px;
-    font-family: 'Times New Roman', Times, serif;
-    font-style: normal;
-    font-variant: normal;
-    text-align: center;
-    line-height: 200%;
-    text-decoration: underline;
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(22px); }
+    to   { opacity: 1; transform: translateY(0); }
 }
-
-#versionandgameplay figure {
-    text-align: center;
+@keyframes shimmer {
+    0%   { background-position: -200% center; }
+    100% { background-position:  200% center; }
 }
-
-#versionandgameplay main {
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
+@keyframes pulseGlow {
+    0%, 100% { box-shadow: 0 0 12px rgba(0,212,255,0.1); }
+    50%       { box-shadow: 0 0 28px rgba(0,212,255,0.35); }
 }
-
+@keyframes scanline {
+    from { transform: translateX(-100%); }
+    to   { transform: translateX(100vw); }
+}
 
 /* ============================================================
-   NAVIGATION MENU (.menu)
+   SKIP LINK
+   ============================================================ */
+.skip {
+    position: absolute; top: -70px; left: 0;
+    background: var(--clr-accent); color: #000;
+    font-weight: 700; padding: 12px 20px;
+    border-radius: 0 0 var(--r-sm) 0;
+    z-index: 2000; text-decoration: none;
+    transition: top var(--t);
+}
+.skip:focus { top: 0; }
+
+.skip-hint {
+    text-align: center; font-size: 11px;
+    color: var(--clr-muted); padding: 3px 0; letter-spacing: 0.5px;
+}
+.skip-hint kbd {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid var(--clr-border);
+    border-radius: 4px; padding: 1px 6px;
+    font-size: 10px; color: var(--clr-accent);
+}
+
+/* ============================================================
+   HEADER
+   ============================================================ */
+header {
+    position: relative;
+    background: linear-gradient(180deg, #020208 0%, var(--clr-surface) 100%);
+    border-bottom: 1px solid var(--clr-border);
+    overflow: hidden;
+    padding-bottom: 20px;
+}
+
+header::after {
+    content: '';
+    position: absolute; top: 50%; left: 0;
+    width: 200px; height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(0,212,255,0.5), transparent);
+    animation: scanline 5s linear infinite;
+    pointer-events: none;
+}
+
+/* ============================================================
+   H1 — Animated shimmer gradient
+   ============================================================ */
+h1 {
+    font-family: var(--ff-display);
+    font-size: clamp(24px, 5vw, 54px);
+    text-align: center;
+    padding: 30px 16px 12px;
+    letter-spacing: 5px;
+    background: linear-gradient(
+        90deg,
+        var(--clr-accent) 0%,
+        var(--clr-accent2) 35%,
+        var(--clr-accent3) 65%,
+        var(--clr-accent) 100%
+    );
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: shimmer 4s linear infinite, fadeUp 0.8s ease both;
+    filter: drop-shadow(0 0 18px rgba(0,212,255,0.3));
+}
+
+/* ============================================================
+   HAMBURGER BUTTON — hidden by default, shown on MQ-1 mobile
+   ============================================================ */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    background: none;
+    border: 1px solid var(--clr-border);
+    border-radius: var(--r-sm);
+    padding: 10px 13px;
+    margin: 10px auto;
+    transition: border-color var(--t);
+}
+.hamburger:hover { border-color: var(--clr-accent); }
+.hamburger span {
+    display: block; width: 22px; height: 2px;
+    background: var(--clr-text);
+    border-radius: 2px;
+    transition: transform var(--t), opacity var(--t);
+}
+.hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity: 0; }
+.hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* ============================================================
+   NAV MENU — desktop horizontal tabs
    ============================================================ */
 .menu {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    text-align: center;
-    background: #111;
-    padding: 20px;
+    display: flex;
+    justify-content: center;
+    background: rgba(0,0,0,0.45);
+    border-top: 1px solid var(--clr-border);
+    border-bottom: 1px solid var(--clr-border);
+    backdrop-filter: blur(10px);
+    position: relative;
+    z-index: 100;
+    overflow: hidden;
 }
 
 .menu a {
-    color: white;
-    padding: 12px 32px;
-    text-decoration: none;
-    justify-self: center;
-    transition: background 0.3s ease, letter-spacing 0.3s ease; /* hiệu ứng mượt khi hover */
+    flex: 1; max-width: 260px;
+    text-align: center; color: var(--clr-muted);
+    padding: 15px 8px; text-decoration: none;
+    font-family: var(--ff-body); font-weight: 600;
+    font-size: 13px; letter-spacing: 2px;
+    text-transform: uppercase;
+    position: relative;
+    transition: color var(--t), background var(--t);
 }
 
-/* a:link    → chưa được click
-   a:visited → đã được click
-   a:hover   → khi di chuột vào
-   a:focus   → khi dùng bàn phím Tab
-   a:active  → đang được click
-   Thứ tự: link → visited → hover → active */
-/* Yêu cầu 8: hover thú vị với transition */
-.menu a:hover {
-    background: #00aaff;
-    letter-spacing: 2px;        /* chữ giãn ra khi hover */
+.menu a::after {
+    content: '';
+    position: absolute; bottom: 0; left: 50%; right: 50%;
+    height: 3px;
+    background: var(--clr-accent);
+    transition: left var(--t), right var(--t);
 }
 
+.menu a:hover { color: var(--clr-accent); background: rgba(0,212,255,0.04); }
+.menu a:hover::after,
+.menu a.active::after { left: 0; right: 0; }
+.menu a.active { color: var(--clr-accent); }
 
 /* ============================================================
-   SKIP TO MAIN CONTENT
-   Ẩn link, chỉ hiện khi người dùng nhấn Tab (accessibility)
+   HERO INTRO
    ============================================================ */
-/* Yêu cầu 3: ẩn mặc định, chỉ hiện khi nhấn Tab (focus) */
-.skip {
-    position: absolute;
-    top: -60px;
-    left: 0;
-    width: fit-content;
-    background: #000;
-    color: white;
-    padding: 8px 16px;
-    z-index: 999;
-    transition: top 0.3s ease;
+.hero-intro {
+    max-width: 840px; margin: 26px auto 10px;
+    padding: 0 24px; text-align: center;
+    animation: fadeUp 0.9s 0.1s ease both;
 }
-
-.skip:focus {
-    top: 0;
-}
-
+.hero-text { color: var(--clr-muted); font-size: 16px; line-height: 1.85; margin-top: 10px; }
+.hero-text strong { color: var(--clr-accent); }
 
 /* ============================================================
-   NAV (thẻ nav thứ 2 chứa ul/li + ảnh liên kết)
-   Dùng inline-block + width 80% theo yêu cầu bài
+   SECTION TITLES
    ============================================================ */
-/* nav.links = nav thứ 2 chứa ul/li + ảnh liên kết, tách biệt với nav.menu */
-nav.links {
-    display: inline-block;
-    width: 80%;
+.section-title {
+    font-family: var(--ff-display);
+    font-size: clamp(15px, 2.6vw, 25px);
+    color: var(--clr-accent);
+    letter-spacing: 2px; margin: 36px 0 14px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--clr-border);
+    animation: fadeUp 0.8s 0.15s ease both;
 }
+.center-title { text-align: center; border-bottom: none; }
 
-/* Descendent selector: chỉ nhắm ảnh nằm trong nav.links */
-nav.links img {
-    width: 40%;
-    height: auto;
+.sub-text {
+    color: var(--clr-muted); font-size: 15px;
+    margin-bottom: 24px; text-align: center;
 }
-
-/* Comment out li style cũ nếu có — bài yêu cầu comment out
-li {
-    list-style-type: disc;
-} */
-
 
 /* ============================================================
-   GRID CLASS
-   2 cột ~40%, căn giữa, khoảng cách hàng đẹp
+   CARDS — 3D tilt + glow on hover
    ============================================================ */
-.grid {
-    display: grid;
-    grid-template-columns: 40% 40%;
-    justify-content: center;      /* căn cả grid ra giữa trang */
-    align-items: start;           /* nội dung mỗi ô bắt đầu từ trên xuống */
-    row-gap: 30px;                /* khoảng cách giữa các hàng */
-    column-gap: 20px;             /* khoảng cách giữa 2 cột */
+.card {
+    background: var(--clr-card);
+    border: 1px solid var(--clr-border);
+    border-radius: var(--r-md);
+    padding: 22px 20px;
+    backdrop-filter: blur(8px);
+    transition: transform var(--t), box-shadow var(--t), border-color var(--t);
+    animation: fadeUp 0.7s ease both;
+    position: relative; overflow: hidden;
 }
 
-/* Descendent selector: chỉ ảnh trong .grid mới width 100%
-   Không ảnh hưởng ảnh trong .flex */
-.grid img {
-    width: 100%;
-    height: auto;
+.card::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0; height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(0,212,255,0.5), transparent);
+    opacity: 0; transition: opacity var(--t);
 }
+.card:hover { transform: translateY(-6px); border-color: var(--clr-border-h); }
+.card:hover::before { opacity: 1; }
+.card:hover { box-shadow: 0 16px 40px rgba(0,0,0,0.5), 0 0 22px rgba(0,212,255,0.14); }
 
-/* Căn giữa text và figure bên trong mỗi ô grid */
-.grid > div {
-    text-align: center;
-    width: 100%; /* ghi đè lại rule nav/div chung bên dưới nếu có */
+/* Stagger animations */
+.grid .card:nth-child(1), .flex .card:nth-child(1) { animation-delay: 0.05s; }
+.grid .card:nth-child(2), .flex .card:nth-child(2) { animation-delay: 0.10s; }
+.grid .card:nth-child(3), .flex .card:nth-child(3) { animation-delay: 0.15s; }
+.grid .card:nth-child(4), .flex .card:nth-child(4) { animation-delay: 0.20s; }
+.grid .card:nth-child(5), .flex .card:nth-child(5) { animation-delay: 0.25s; }
+.grid .card:nth-child(6) { animation-delay: 0.30s; }
+
+.char-name {
+    font-family: var(--ff-display); font-size: 14px;
+    color: var(--clr-accent2); letter-spacing: 1px;
+    margin-bottom: 10px; text-align: center;
 }
-
+.song-title {
+    font-family: var(--ff-body); font-weight: 600;
+    font-size: 17px; color: var(--clr-accent3);
+    margin-bottom: 10px; letter-spacing: 0.5px;
+}
 
 /* ============================================================
-   FLEX CLASS
-   Hiển thị các bài nhạc / gameplay theo dạng flex wrap
-   ============================================================ */
-.flex {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    gap: 20px;
-}
-
-.flex > div {
-    width: 45%;       /* mỗi item chiếm ~45%, 2 item/hàng trên màn hình lớn */
-    min-width: 280px; /* xuống dòng khi màn hình nhỏ */
-    text-align: center;
-}
-
-.flex video {
-    width: 100%;
-    height: auto;
-}
-
-
-/* ============================================================
-   Yêu cầu 5: BOX MODEL cho tất cả ảnh
-   border, padding, border-radius bắt buộc
+   IMAGES
    ============================================================ */
 img {
-    border: 3px solid #00aaff;
-    padding: 4px;
-    border-radius: 12px;
-    display: block;
-    margin: 0 auto;
-    /* hover effect cho ảnh - yêu cầu 8 */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: block; width: 100%; height: auto;
+    border-radius: var(--r-sm);
+    border: 1.5px solid var(--clr-accent);
+    padding: 3px; margin: 0 auto;
+    background: var(--clr-surface);
+    transition: transform var(--t), box-shadow var(--t), filter var(--t);
 }
-
 img:hover {
-    transform: scale(1.03);         /* phóng to nhẹ khi hover */
-    box-shadow: 0 6px 20px rgba(0, 170, 255, 0.5);
+    transform: scale(1.04);
+    box-shadow: 0 0 26px rgba(0,212,255,0.28);
+    filter: brightness(1.08);
 }
 
+.grid > .card:nth-child(odd)  img { border-color: var(--clr-accent2); }
+.grid > .card:nth-child(even) img { border-color: var(--clr-accent);  }
+nav.links li:nth-child(odd)  img { border-color: var(--clr-accent3); }
+nav.links li:nth-child(even) img { border-color: var(--clr-accent2); }
 
 /* ============================================================
-   Yêu cầu 9: NTH-CHILD SELECTOR
-   Chỉ đổi màu viền xen kẽ, border-radius đồng đều 50px
+   FIGURES & FIGCAPTIONS
    ============================================================ */
-
-/* Ảnh trong .grid: tất cả bo góc như nhau (50px), chỉ khác màu viền */
-/* nth-child(odd) = các ô thứ 1, 3, 5 (lẻ) */
-.grid > div:nth-child(odd) img {
-    border-radius: 50px;           /* bo góc đều nhau với ô chẵn */
-    border-color: #ff66aa;         /* đổi màu viền thành hồng */
+figure { text-align: center; margin-top: 16px; }
+figcaption {
+    font-size: 12px; color: var(--clr-muted);
+    margin-top: 8px; font-style: italic; letter-spacing: 0.5px;
 }
 
-/* nth-child(even) = các ô thứ 2, 4, 6 (chẵn) */
-.grid > div:nth-child(even) img {
-    border-radius: 50px;           /* bo góc đều nhau với ô lẻ */
-    border-color: #00aaff;         /* giữ màu viền xanh */
+/* ============================================================
+   VIDEO
+   ============================================================ */
+video {
+    width: 100%; height: auto;
+    border-radius: var(--r-sm);
+    border: 1.5px solid var(--clr-border);
+    display: block; background: #000;
+    transition: box-shadow var(--t);
 }
+video:hover { box-shadow: 0 0 22px rgba(0,212,255,0.18); }
 
-/* Ảnh trong nav.links: xen kẽ màu border */
-/* li lẻ: thứ 1, 3, 5 */
-nav.links li:nth-child(odd) img {
-    border-color: #ffaa00;         /* viền màu vàng cam */
-    border-radius: 8px;            /* bo góc vừa phải */
+/* ============================================================
+   NAV LINKS (preview gallery nav)
+   ============================================================ */
+nav.links {
+    display: block; width: 92%; margin: 16px auto;
 }
-
-/* li chẵn: thứ 2, 4 */
-nav.links li:nth-child(even) img {
-    border-color: #00cc88;         /* viền màu xanh lá */
-    border-radius: 20px;           /* bo góc nhiều hơn */
+nav.links ul {
+    list-style: none;
+    display: flex; flex-wrap: wrap;
+    gap: 14px; justify-content: center;
+    padding: 0; margin-top: 12px;
+}
+nav.links li { text-align: center; flex: 0 0 auto; }
+nav.links li figcaption {
+    font-size: 11px; color: var(--clr-muted); margin-bottom: 6px;
+    font-style: normal; font-weight: 600; letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+nav.links img {
+    width: 175px; height: 98px; object-fit: cover;
+    animation: pulseGlow 3s ease-in-out infinite;
+}
+nav.links img:focus {
+    outline: 3px solid var(--clr-accent2); outline-offset: 4px;
 }
 
 /* ============================================================
    IMAGE PREVIEW BOX
-   Khung hiển thị ảnh lớn khi hover/focus vào ảnh nhỏ (JS upDate)
    ============================================================ */
-
-/* Bọc cả khung preview và caption trong 1 div để căn giữa cùng nhau */
-.preview-wrapper {
-    width: 70%;                              /* chiếm 70% chiều ngang */
-    margin: 16px auto;                       /* căn giữa */
-    text-align: center;
-}
-
+.preview-wrapper { width: 68%; margin: 0 auto 14px; text-align: center; }
 .preview-box {
-    width: 100%;                             /* chiếm full chiều ngang của wrapper */
-    /* Dùng padding-top 56.25% để tạo tỉ lệ 16:9 (9/16 = 0.5625) thay vì height cố định */
-    /* Khi ảnh hiện lên sẽ vừa khít với tỉ lệ gốc của ảnh */
-    padding-top: 56.25%;
-    height: 0;                               /* bỏ height, để padding-top quyết định chiều cao */
-    border: 3px dashed #00aaff;              /* viền nét đứt màu xanh */
-    border-radius: 16px;                     /* bo góc */
-    background-color: #f0f8ff;               /* nền xanh nhạt */
-    background-size: contain;               /* hiện đủ ảnh không bị crop */
-    background-position: center;             /* căn giữa ảnh nền */
-    background-repeat: no-repeat;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* mượt khi đổi trạng thái */
-    box-shadow: 0 2px 12px rgba(0, 170, 255, 0.15); /* đổ bóng nhẹ mặc định */
+    width: 100%; padding-top: 56.25%; height: 0;
+    border: 2px dashed rgba(0,212,255,0.4);
+    border-radius: var(--r-md);
+    background-color: rgba(0,212,255,0.03);
+    background-size: contain; background-position: center; background-repeat: no-repeat;
+    transition: border-color var(--t), box-shadow var(--t);
 }
-
-/* Khi ảnh đang được hover/focus → viền sáng lên */
 .preview-box.active {
-    border-style: solid;                     /* đổi từ nét đứt sang nét liền */
-    border-color: #ff66aa;                   /* viền hồng khi có ảnh */
-    box-shadow: 0 4px 20px rgba(255, 102, 170, 0.4); /* đổ bóng hồng */
+    border-style: solid; border-color: var(--clr-accent2);
+    box-shadow: 0 0 30px rgba(255,102,204,0.22);
+    background-color: transparent;
 }
-
-/* Caption hiện bên dưới khung preview thay vì đè lên ảnh */
 .preview-caption {
-    margin-top: 10px;                        /* khoảng cách với khung trên */
-    font-style: italic;
-    font-weight: bold;
-    color: #444;
-    font-size: 15px;
-    min-height: 22px;                        /* giữ chỗ khi chưa có chữ, tránh layout nhảy */
-    transition: color 0.3s ease;
+    margin-top: 8px; font-style: italic; font-weight: 600;
+    color: var(--clr-muted); font-size: 13px; min-height: 20px;
+    transition: color var(--t);
 }
 
-/* Ảnh trong nav.links khi được focus bằng bàn phím → viền nổi bật */
-nav.links img:focus {
-    outline: 3px solid #ff66aa;              /* viền hồng khi focus bằng Tab */
-    outline-offset: 4px;
-    transform: scale(1.05);                  /* phóng to nhẹ khi focus */
-}
-
-/* Nút Reset Preview */
+/* ============================================================
+   UNDO BUTTON
+   ============================================================ */
 .undo-btn {
-    display: block;
-    margin: 8px auto 12px auto;              /* căn giữa, cách trên 8px cách dưới 12px */
-    padding: 8px 20px;
-    background: #111;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 14px;
-    transition: background 0.3s ease, transform 0.2s ease;
+    display: block; margin: 0 auto 16px;
+    padding: 9px 26px;
+    background: transparent; color: var(--clr-accent);
+    border: 1px solid var(--clr-accent);
+    border-radius: 999px; cursor: pointer;
+    font-family: var(--ff-body); font-size: 12px;
+    font-weight: 600; letter-spacing: 2px; text-transform: uppercase;
+    transition: background var(--t), color var(--t), transform var(--t), box-shadow var(--t);
 }
-
 .undo-btn:hover {
-    background: #00aaff;                     /* đổi màu khi hover */
-    transform: scale(1.05);                  /* phóng to nhẹ */
+    background: var(--clr-accent); color: #000;
+    transform: scale(1.06);
+    box-shadow: 0 0 18px rgba(0,212,255,0.35);
+}
+.undo-btn:focus { outline: 3px solid var(--clr-accent); outline-offset: 3px; }
+
+/* ============================================================
+   GRID — mobile default: 1 column
+   ============================================================ */
+.grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 18px; padding: 20px 16px;
+    max-width: 1400px; margin: 0 auto;
 }
 
-/* Nút cũng cần focus style cho keyboard */
-.undo-btn:focus {
-    outline: 3px solid #00aaff;
-    outline-offset: 3px;
+/* ============================================================
+   FLEX — mobile default: full-width cards
+   ============================================================ */
+.flex {
+    display: flex; flex-wrap: wrap;
+    gap: 18px; padding: 20px 16px;
+    justify-content: center;
+    max-width: 1400px; margin: 0 auto;
+}
+.flex > .card { width: 100%; min-width: 280px; }
+
+/* ============================================================
+   VERSION TIMELINE
+   ============================================================ */
+.version-hero { padding: 32px 24px 0; }
+.version-timeline { max-width: 820px; margin: 0 auto; padding: 20px 24px; width: 100%; }
+.timeline-list { list-style: none; padding: 0; position: relative; }
+.timeline-list::before {
+    content: '';
+    position: absolute; left: 52px; top: 0; bottom: 0; width: 2px;
+    background: linear-gradient(180deg, var(--clr-accent), var(--clr-accent2));
+    opacity: 0.3;
+}
+.timeline-item {
+    display: flex; gap: 22px; align-items: flex-start;
+    margin-bottom: 26px; animation: fadeUp 0.7s ease both;
+}
+.timeline-item:nth-child(1) { animation-delay: 0.05s; }
+.timeline-item:nth-child(2) { animation-delay: 0.10s; }
+.timeline-item:nth-child(3) { animation-delay: 0.15s; }
+.timeline-item:nth-child(4) { animation-delay: 0.20s; }
+.timeline-item:nth-child(5) { animation-delay: 0.25s; }
+.timeline-year {
+    flex: 0 0 44px; font-family: var(--ff-display);
+    font-size: 11px; color: var(--clr-accent3);
+    text-align: right; padding-top: 5px; letter-spacing: 1px;
+}
+.timeline-body {
+    flex: 1;
+    background: var(--clr-card); border: 1px solid var(--clr-border);
+    border-left: 3px solid var(--clr-accent);
+    border-radius: var(--r-md); padding: 14px 18px;
+    transition: border-left-color var(--t), box-shadow var(--t);
+}
+.timeline-body:hover {
+    border-left-color: var(--clr-accent2);
+    box-shadow: 0 0 20px rgba(255,102,204,0.14);
+}
+.timeline-body h3 {
+    font-family: var(--ff-display); font-size: 12px;
+    color: var(--clr-accent); margin-bottom: 6px; letter-spacing: 1px;
+}
+.timeline-body p { color: var(--clr-muted); font-size: 14px; line-height: 1.7; }
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.site-footer {
+    margin-top: 52px; border-top: 1px solid var(--clr-border);
+    padding: 22px 24px; background: var(--clr-surface);
+}
+.footer-inner {
+    max-width: 1200px; margin: 0 auto;
+    display: flex; flex-wrap: wrap; align-items: center;
+    justify-content: space-between; gap: 12px;
+    font-size: 13px; color: var(--clr-muted);
+}
+.char-list summary {
+    cursor: pointer; color: var(--clr-accent);
+    font-weight: 600; letter-spacing: 0.5px;
+    list-style: none; font-size: 13px; transition: color var(--t);
+}
+.char-list[open] summary { color: var(--clr-accent2); }
+.char-list nav { display: flex; flex-wrap: wrap; gap: 8px 16px; margin-top: 10px; }
+.char-list nav a { color: var(--clr-muted); text-decoration: none; font-size: 13px; transition: color var(--t); }
+.char-list nav a:hover { color: var(--clr-accent); }
+
+
+/* ============================================================
+   max-width: 479px (small phones)
+   Mobile view: hamburger nav, single-column, compact spacing
+   ============================================================ */
+@media screen and (max-width: 479px) {
+
+    h1 { font-size: 22px; letter-spacing: 2px; padding: 18px 10px 10px; }
+
+    /* Show hamburger, collapse horizontal menu */
+    .hamburger { display: flex; }
+
+    .menu {
+        flex-direction: column;
+        max-height: 0; overflow: hidden;
+        transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .menu.open { max-height: 300px; }
+
+    .menu a {
+        max-width: 100%;
+        padding: 13px 20px; text-align: left; font-size: 12px;
+        border-bottom: 1px solid var(--clr-border);
+    }
+    .menu a::after { display: none; }
+    .menu a.active,
+    .menu a:hover {
+        border-left: 3px solid var(--clr-accent);
+        padding-left: 17px;
+    }
+
+    /* Single column grid */
+    .grid { grid-template-columns: 1fr; padding: 12px 10px; gap: 14px; }
+
+    /* Full-width flex cards */
+    .flex > .card { width: 100%; }
+
+    /* Compact preview box */
+    .preview-wrapper { width: 96%; }
+    nav.links img { width: 118px; height: 66px; }
+
+    .section-title { font-size: 14px; margin: 24px 0 10px; }
+
+    /* Tighter timeline */
+    .timeline-list::before { left: 40px; }
+    .timeline-year { flex: 0 0 34px; font-size: 9px; }
+    .timeline-body { padding: 10px 14px; }
+    .timeline-body h3 { font-size: 10px; }
+    .timeline-body p { font-size: 13px; }
+
+    .footer-inner { flex-direction: column; align-items: flex-start; }
+}
+
+
+/* ============================================================
+   480px to 771px (large phones / landscape)
+   2-column character grid, flex cards 45%, wider preview
+   ============================================================ */
+@media screen and (min-width: 480px) and (max-width: 771px) {
+
+    /* 2-column grid */
+    .grid { grid-template-columns: 1fr 1fr; padding: 16px 14px; gap: 16px; }
+
+    /* Cards at ~45% of viewport width */
+    .flex > .card { width: calc(50% - 10px); min-width: 220px; }
+
+    .preview-wrapper { width: 85%; }
+    nav.links img { width: 146px; height: 82px; }
+    nav.links { width: 96%; }
+}
+
+
+/* ============================================================
+772px to 997px (tablet)
+   2×45vw grid, image max-height 30vh, expanded preview
+   ============================================================ */
+@media screen and (min-width: 772px) and (max-width: 997px) {
+
+    /* 2-column at 45vw each */
+    .grid {
+        grid-template-columns: 45vw 45vw;
+        justify-content: center;
+        gap: 22px; padding: 20px 14px;
+    }
+
+    /* Requirement: limit image height to 30vh on tablet */
+    .grid img {
+        width: auto; max-width: 100%; max-height: 30vh; margin: 0 auto;
+    }
+
+    /* Flex cards at 45vw */
+    .flex > .card { width: 45vw; min-width: 0; }
+
+    /* Video height limited too */
+    .flex video { max-height: 30vh; }
+
+    .preview-wrapper { width: 62%; }
+    nav.links { width: 95%; }
+    nav.links img { width: 162px; height: 91px; }
+
+    .menu a { font-size: 12px; padding: 15px 10px; }
+}
+
+
+/* ============================================================
+   min-width: 998px (desktop)
+   3×30vw grid for characters, wider cards, enhanced 3D hover
+   ============================================================ */
+@media screen and (min-width: 998px) {
+
+    /* 3-column character grid at 30vw each */
+    .grid {
+        grid-template-columns: repeat(3, 30vw);
+        justify-content: center;
+        gap: 28px; padding: 28px 20px;
+    }
+
+    /* Flex cards at 30vw — 3 per row */
+    .flex > .card { width: 30vw; min-width: 0; }
+
+    .preview-wrapper { width: 52%; }
+    nav.links img { width: 192px; height: 108px; }
+
+    .hero-text { font-size: 17px; }
+
+    .menu a { font-size: 14px; padding: 16px 24px; letter-spacing: 2.5px; }
+
+    /* Enhanced 3D tilt on desktop */
+    .card:hover { transform: translateY(-8px) rotateX(3deg); }
+
+    h1 { filter: drop-shadow(0 0 28px rgba(0,212,255,0.42)); }
 }
