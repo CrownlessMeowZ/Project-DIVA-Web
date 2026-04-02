@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project DIVA – Characters</title>
+    <link rel="stylesheet" href="FullWeb.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Rajdhani:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="https://image.api.playstation.com/cdn/UP0177/CUSA06093_00/IiZR9thQcF4Ia2ZuXV4cullEGaiLdIx7.png">
+    <style>
+        /* Per-character accent colors via CSS custom property */
+        .miku-card  { --accent-c: #00d4ff; } .miku-card  .char-back-name { color: #00d4ff; }
+        .rin-card   { --accent-c: #ffe566; } .rin-card   .char-back-name { color: #ffe566; }
+        .len-card   { --accent-c: #ffd060; } .len-card   .char-back-name { color: #ffd060; }
+        .luka-card  { --accent-c: #ff66cc; } .luka-card  .char-back-name { color: #ff66cc; }
+        .kaito-card { --accent-c: #55aaff; } .kaito-card .char-back-name { color: #55aaff; }
+        .meiko-card { --accent-c: #ff5555; } .meiko-card .char-back-name { color: #ff5555; }
+
+        .char-flip-front { border-color: var(--accent-c, rgba(0,212,255,.25)); }
+        .char-flip-back  { border-color: rgba(var(--accent-c, 0,212,255), .2); }
+    </style>
+</head>
+<body id="characters">
+    <a href="#main" class="skip">Skip to Main Content</a>
+
+    <div class="topbar">
+        <a href="Introduce.html" class="topbar-logo">Project DIVA</a>
+        <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
+        <nav class="topbar-nav">
+            <a href="Introduce.html">Home</a>
+            <a href="Characters.html" class="active">Characters</a>
+            <a href="SkinAndSong.html">Skin &amp; Song</a>
+            <a href="VersionAndGameplay.html">Versions</a>
+            <a href="PatchNotes.html">Patch Notes</a>
+        </nav>
+    </div>
+
+    <section class="page-hero">
+        <h1 class="page-hero-title">Vocaloid Characters</h1>
+        <p class="page-hero-sub">Six voices. Infinite songs. Hover a card to reveal each character's full profile — or tap to flip on mobile.</p>
+    </section>
+
+    <p class="flip-hint">↕ Hover to flip &nbsp;·&nbsp; Tap to toggle on mobile</p>
+
+    <main id="main">
+        <div class="char-grid">
+
+            <!-- HATSUNE MIKU -->
+            <div class="char-flip miku-card" role="button" aria-label="Hatsune Miku profile card">
+                <div class="char-flip-inner">
+                    <div class="char-flip-front">
+                        <img src="https://miku.sega.com/megamixplus/img/characters/miku-full.jpg"
+                             alt="Hatsune Miku – teal twin-tails, default CV01 outfit">
+                        <div class="char-name-overlay">Hatsune Miku</div>
+                    </div>
+                    <div class="char-flip-back">
+                        <p class="char-back-name">Hatsune Miku</p>
+                        <p class="char-code">CV01 &nbsp;·&nbsp; Soprano</p>
+                        <div class="char-stat-row"><span class="char-stat-label">Voice by</span><span class="char-stat-val">Saki Fujita</span></div>
+                        <div class="char-stat-row"><span class="char-stat-label">Released</span><span class="char-stat-val">August 31, 2007</span></div>
+                        <div class="char-stat-row"><span class="char-stat-label">Height</span><span class="char-stat-val">158 cm</span></div>
+                        <div class="char-stat-row"><span class="char-stat-label">Signature</span><span class="char-stat-val">Teal twin-tails</span></div>
+                        <p class="char-songs-title">Iconic Songs</p>
+                        <ul class="char-songs-list">
+                            <li>World is Mine</li>
+                            <li>Melt</li>
+                            <li>Tell Your World</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- KAGAMINE RIN -->
+            <div class="char-flip rin-card" role="button" aria-label="Kagamine Rin profile card">
+                <div class="char-flip-inner">
+                    <div class="char-flip-front">
+                        <img src="https://miku.sega.com/megamixplus/img/characters/rin-full.jpg"
+                             alt="Kagamine Rin – short blonde hair, yellow sailor uniform">
+                        <div class="char-name-overlay">Kagamine Rin</div>
+                    </div>
+                    <div class="char-flip-back">
+                        <p class="char-back-name">Kagamine Rin</p>
+                        <p class="char-code">CV02 &nbsp;·&nbsp; Soprano</p>
+                        <div class="char-stat-row"><span class="char-stat-label">Voice by</span><span class="char-stat-val">Asami Shimoda</span></div>
+                        <div class="char-stat-row"><span class="char-stat-label">Released</span><span class="char-stat-val">December 27, 2007</span></div>
+                        <div class="char-stat-row"><span class="char-stat-label">Height</span><span class="char-stat-val">152 cm</span></div>
+                        <div class="char-stat-row"><span class="char-stat-label">Signature</span><span class="char-stat-val">Yellow + Mirrors</span></div>
+                        <p class="char-songs-title">Iconic Songs</p>
+                        <ul class="char-songs-list">
+                            <li>Meltdown</li>
+                            <li>Kokoro</li>
+                            <li>Remote Control</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- KAGAMINE LEN -->
+            <div class="char-flip len-card" role="button" aria-label="Kagamine Len profile card">
+                <div class="char-flip-inner">
+                    <div class="char-flip-front">
+                        <img src="https://miku.sega.com/megamixplus/img/characters/len-full.jpg"
+                             alt="Kagamine Len – blonde ponytail, matching yellow uniform">
+                        <div class="char-name-overlay">Kagamine Len</div>
+                    </div>
+                    <div class="char-flip-back">
+                        <p class="char-back-name">Kagamine Len</p>
+                        <p class="char-code">CV02 &nbsp;·&nbsp; Tenor</p>
+                        <div class="char-stat-row"><span class="char-stat-label">Voice by</span><span class="char-stat-val">Asami Shimoda</span></div>
+                        <div class="char-stat-row"><span class="char-stat-label">Released</span><span class="char-stat-val">December 27, 2007</span></div>
+                        <div class="char-stat-row"><span class="char-stat-label">Height</span><span class="char-stat-val">156 cm</span></div>
+                        <div class="char-stat-row"><span class="char-stat-label">Signature</span><span class="char-stat-val">Banana motif</span></div>
+                        <p class="char-songs-title">Iconic Songs</p>
+                        <ul class="char-songs-list">
+                            <li>Servant of Evil</li>
+                            <li>Adolescence</li>
+                            <li>Spice!</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- MEGURINE LUKA -->
+            <div class="char-flip luka-card" role="button" aria-label="Megurine Luka profile card">
+                <div class="char-flip-inner">
+                    <div class="char-flip-front">
+                        <img src="https://miku.sega.com/megamixplus/img/characters/luka-full.jpg"
+                             alt="Megurine Luka – long pink hair, elegant stage costume">
+                        <div class="char-name-overlay">Megurine Luka</div>
+                    </div>
+                    <div class="char-flip-back">
+                        <p class="char-back-name">Megurine Luka</p>
+                        <p class="char-code">CV03 &nbsp;·&nbsp; Mezzo-soprano</p>
+                        <div class="char-stat-row"><span class="char-stat-label">Voice by</span><span class="char-stat-val">Yū Asakawa</span></div>
+                        <div class="char-stat-row"><span class="char-stat-label">Released</span><span class="char-stat-val">January 30, 2009</span></div>
+                        <div class="char-stat-row"><span class="char-stat-label">Height</span><span class="char-stat-val">162 cm</span></div>
+                        <div class="char-stat-row"><span class="char-stat-label">Special</span><span class="char-stat-val">Bilingual JP &amp; EN</span></div>
+                        <p class="char-songs-title">Iconic Songs</p>
+                        <ul class="char-songs-list">
+                            <li>Just Be Friends</li>
+                            <li>Double Lariat</li>
+                            <li>Luka Luka★Night Fever</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- KAITO -->
+            <div class="char-flip kaito-card" role="button" aria-label="KAITO profile card">
+                <div class="char-flip-inner">
+                    <div class="char-flip-front">
+                        <img src="https://miku.sega.com/megamixplus/img/characters/kaito-full.jpg"
+                             alt="KAITO – blue scarf, warm expression, navy costume">
+                        <div class="char-name-overlay">KAITO</div>
+                    </div>
+                    <div class="char-flip-back">
+                        <p class="char-back-name">KAITO</p>
+                        <p class="char-code">Vocaloid 1 &nbsp;·&nbsp; Baritone</p>
+                        <div class="char-stat-row"><span class="char-stat-label">Voice by</span><span class="char-stat-val">Naoto Fūga</span></div>
+                        <div class="char-stat-row"><span class="char-stat-label">Released</span><span class="char-stat-val">February 17, 2006</span></div>
+                        <div class="char-stat-row"><span class="char-stat-label">Height</span><span class="char-stat-val">180 cm</span></div>
+                        <div class="char-stat-row"><span class="char-stat-label">First</span><span class="char-stat-val">Japanese Male VB</span></div>
+                        <p class="char-songs-title">Iconic Songs</p>
+                        <ul class="char-songs-list">
+                            <li>Cendrillon</li>
+                            <li>Magnet</li>
+                            <li>Joker</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- MEIKO -->
+            <div class="char-flip meiko-card" role="button" aria-label="MEIKO profile card">
+                <div class="char-flip-inner">
+                    <div class="char-flip-front">
+                        <img src="https://miku.sega.com/megamixplus/img/characters/meiko-full.jpg"
+                             alt="MEIKO – red jacket, short brown hair, confident pose">
+                        <div class="char-name-overlay">MEIKO</div>
+                    </div>
+                    <div class="char-flip-back">
+                        <p class="char-back-name">MEIKO</p>
+                        <p class="char-code">Vocaloid 1 &nbsp;·&nbsp; Alto</p>
+                        <div class="char-stat-row"><span class="char-stat-label">Voice by</span><span class="char-stat-val">Haruhi Kudo</span></div>
+                        <div class="char-stat-row"><span class="char-stat-label">Released</span><span class="char-stat-val">November 5, 2004</span></div>
+                        <div class="char-stat-row"><span class="char-stat-label">Height</span><span class="char-stat-val">162 cm</span></div>
+                        <div class="char-stat-row"><span class="char-stat-label">First</span><span class="char-stat-val">Japanese Female VB</span></div>
+                        <p class="char-songs-title">Iconic Songs</p>
+                        <ul class="char-songs-list">
+                            <li>Nostalogic</li>
+                            <li>Burning Hope</li>
+                            <li>Change Me</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <span>&copy; 2009–2024 SEGA &amp; Crypton Future Media</span>
+            <span style="color:var(--muted);font-size:12px;">Voice data sourced from Vocaloid Wiki</span>
+        </div>
+    </footer>
+
+    <script src="FullWeb.js"></script>
+</body>
+</html>

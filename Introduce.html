@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project DIVA – Introduce</title>
+    <title>Project DIVA – Home</title>
     <link rel="stylesheet" href="FullWeb.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Rajdhani:wght@300;400;600&display=swap" rel="stylesheet">
@@ -12,29 +12,59 @@
 <body id="introduce">
     <a href="#main" class="skip">Skip to Main Content</a>
 
-    <header>
-        <div class="header-glow"></div>
-        <h1>Project DIVA</h1>
-        <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+    <!-- TOPBAR -->
+    <div class="topbar">
+        <a href="Introduce.html" class="topbar-logo">Project DIVA</a>
+        <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false">
             <span></span><span></span><span></span>
         </button>
-        <nav class="menu">
-            <a href="Introduce.html" class="active">Introduce</a>
+        <nav class="topbar-nav">
+            <a href="Introduce.html" class="active">Home</a>
+            <a href="Characters.html">Characters</a>
             <a href="SkinAndSong.html">Skin &amp; Song</a>
-            <a href="VersionAndGameplay.html">Version &amp; Gameplay</a>
+            <a href="VersionAndGameplay.html">Versions</a>
+            <a href="PatchNotes.html">Patch Notes</a>
         </nav>
-        <p class="skip-hint">Press <kbd>Tab</kbd> to skip to main content</p>
+    </div>
 
-        <section class="hero-intro">
-            <h2 class="section-title">About Project DIVA</h2>
-            <p class="hero-text">
-                Project DIVA is a critically acclaimed series of rhythm games co-developed by
-                <strong>SEGA</strong> and <strong>Crypton Future Media</strong>. Players tap and
-                hold notes in sync with iconic Vocaloid tracks, while unlocking hundreds of
-                costumes and exploring richly animated music videos featuring Hatsune Miku and
-                her fellow Vocaloid characters.
-            </p>
-        </section>
+    <!-- HERO -->
+    <section class="hero">
+        <canvas id="hero-canvas"></canvas>
+        <div class="hero-content">
+            <p class="hero-eyebrow">SEGA &times; Crypton Future Media</p>
+            <h1 class="hero-title">Project DIVA</h1>
+            <p class="hero-sub">The definitive Vocaloid rhythm game experience — where music, motion, and Miku collide.</p>
+
+            <nav class="hero-quick-bar" aria-label="Quick navigation">
+                <a href="Introduce.html" class="hql hql-home">Home</a>
+                <span class="hql-sep"></span>
+                <a href="Characters.html" class="hql hql-chars">Characters</a>
+                <span class="hql-sep"></span>
+                <a href="SkinAndSong.html" class="hql hql-skin">Skin &amp; Song</a>
+                <span class="hql-sep"></span>
+                <a href="VersionAndGameplay.html" class="hql hql-ver">Versions</a>
+                <span class="hql-sep"></span>
+                <a href="PatchNotes.html" class="hql hql-patch">Patch Notes</a>
+            </nav>
+
+            <div class="hero-cta">
+                <a href="#main" class="btn-primary">Explore Characters</a>
+                <a href="#about" class="btn-ghost">Latest Update</a>
+            </div>
+        </div>
+        <div class="scroll-hint">Scroll</div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="about-section" id="about">
+        <h2 class="section-title center-title">About Project DIVA</h2>
+        <p class="about-text">
+            <strong>Project DIVA</strong> is a critically acclaimed rhythm game series co-developed by
+            <strong>SEGA</strong> and <strong>Crypton Future Media</strong>. Players tap, hold, and
+            swipe notes in perfect sync with iconic Vocaloid tracks, unlocking hundreds of costumes
+            and experiencing richly animated music videos. From its 2009 PSP debut to the 2022 PC
+            release of <strong>MegaMix+</strong>, Project DIVA has defined a generation of music games.
+        </p>
 
         <nav class="links" aria-label="External resources">
             <div class="preview-wrapper">
@@ -44,100 +74,93 @@
             <button onclick="undo()" class="undo-btn">&#8617; Reset Preview</button>
             <ul>
                 <li>
-                    <figcaption>Project DIVA Official Wiki (SEGA)</figcaption>
-                    <a target="_blank" rel="noopener" href="https://project-diva.fandom.com/wiki/Project_DIVA_Wiki"
-                       onmouseover="upDate(this.querySelector('img'))"
-                       onmouseleave="undo()">
+                    <figcaption>Project DIVA Official Wiki</figcaption>
+                    <a target="_blank" rel="noopener" href="https://project-diva.fandom.com/wiki/Project_DIVA_Wiki">
                         <img src="https://projectdiva.wiki/w/images/thumb/7/74/PjDWikiHome.png/1200px-PjDWikiHome.png"
-                             alt="Project DIVA Official Fandom Wiki homepage">
+                             alt="Project DIVA official Fandom Wiki homepage with game logo and navigation">
                     </a>
                 </li>
                 <li>
-                    <figcaption>Hatsune Miku: Project DIVA Mega Mix+</figcaption>
-                    <a target="_blank" rel="noopener" href="https://miku.sega.com/megamixplus/index.html"
-                       onmouseover="upDate(this.querySelector('img'))"
-                       onmouseleave="undo()">
+                    <figcaption>MegaMix+ Official Site</figcaption>
+                    <a target="_blank" rel="noopener" href="https://miku.sega.com/megamixplus/index.html">
                         <img src="https://miku.sega.com/megamixplus/img/og_img.jpg"
-                             alt="Hatsune Miku Project DIVA Mega Mix+ official key art">
+                             alt="Hatsune Miku Project DIVA Mega Mix Plus official key visual with Miku on stage">
                     </a>
                 </li>
             </ul>
         </nav>
-    </header>
+    </section>
 
+    <!-- CHARACTER GRID -->
     <h2 class="section-title center-title">Vocaloid Characters</h2>
+    <p class="sub-text">Hover over a card to learn more — or visit the <a href="Characters.html" style="color:var(--cyan);text-decoration:none;">Characters page</a> for full profiles.</p>
 
     <main id="main">
         <div class="grid">
             <div class="card">
                 <h3 id="Vocaloid1" class="char-name">Hatsune Miku</h3>
-                <p>CV01 — The world's most recognizable virtual singer. Developed by Crypton Future Media, Miku's 16-year-old persona and signature teal twin-tails have become a global icon of digital pop culture.</p>
+                <p>CV01 — The world's most iconic virtual singer. Miku's teal twin-tails and optimistic soprano voice have defined Vocaloid music since her 2007 debut.</p>
                 <figure>
                     <a target="_blank" rel="noopener" href="https://vocaloid.fandom.com/wiki/Hatsune_Miku">
                         <img src="https://miku.sega.com/megamixplus/img/characters/miku-full.jpg"
-                             alt="Hatsune Miku – teal-haired virtual pop star in her signature outfit">
+                             alt="Hatsune Miku full body illustration in default teal outfit with twin-tails">
                     </a>
-                    <figcaption>Hatsune Miku</figcaption>
+                    <figcaption>Hatsune Miku — CV01</figcaption>
                 </figure>
             </div>
-
             <div class="card">
                 <h3 id="Vocaloid2" class="char-name">Kagamine Rin</h3>
-                <p>CV02 — The energetic and spirited twin sister of Len. Rin's bright yellow theme and rebellious personality shine across a diverse catalog of rock, electronic, and folk-style tracks.</p>
+                <p>CV02 — Energetic and fierce, Rin's bright soprano cuts through any genre. From ballads to metal, her versatility has made her a fan favourite since 2007.</p>
                 <figure>
                     <a target="_blank" rel="noopener" href="https://vocaloid.fandom.com/wiki/Kagamine_Rin_%26_Len">
                         <img src="https://miku.sega.com/megamixplus/img/characters/rin-full.jpg"
-                             alt="Kagamine Rin – energetic blonde Vocaloid in yellow sailor outfit">
+                             alt="Kagamine Rin full body illustration in yellow sailor outfit with short blonde hair">
                     </a>
-                    <figcaption>Kagamine Rin</figcaption>
+                    <figcaption>Kagamine Rin — CV02</figcaption>
                 </figure>
             </div>
-
             <div class="card">
                 <h3 id="Vocaloid3" class="char-name">Kagamine Len</h3>
-                <p>CV02 — Rin's twin brother with a lighter, more youthful vocal tone. Len's songs often explore themes of adventure and emotion, ranging from high-energy electro to poignant ballads.</p>
+                <p>CV02 — Rin's twin brother with a warmer, lighter tenor. Len's songs span dramatic epics and comedic storytelling, always delivered with unmistakable flair.</p>
                 <figure>
                     <a target="_blank" rel="noopener" href="https://vocaloid.fandom.com/wiki/Kagamine_Rin_%26_Len">
                         <img src="https://miku.sega.com/megamixplus/img/characters/len-full.jpg"
-                             alt="Kagamine Len – blonde male Vocaloid in matching yellow sailor uniform">
+                             alt="Kagamine Len full body illustration in matching yellow uniform with blonde ponytail">
                     </a>
-                    <figcaption>Kagamine Len</figcaption>
+                    <figcaption>Kagamine Len — CV02</figcaption>
                 </figure>
             </div>
-
             <div class="card">
                 <h3 id="Vocaloid4" class="char-name">Megurine Luka</h3>
-                <p>CV03 — A bilingual Vocaloid capable of singing in both Japanese and English. Luka's mature, cool-toned voice makes her the go-to choice for sophisticated, atmospheric compositions.</p>
+                <p>CV03 — Bilingual, mature, and effortlessly cool. Luka's deep mezzo-soprano is the voice of sophisticated Vocaloid music, equally at home in jazz and EDM.</p>
                 <figure>
                     <a target="_blank" rel="noopener" href="https://vocaloid.fandom.com/wiki/Megurine_Luka">
                         <img src="https://miku.sega.com/megamixplus/img/characters/luka-full.jpg"
-                             alt="Megurine Luka – pink-haired mature Vocaloid with elegant design">
+                             alt="Megurine Luka full body illustration with long pink hair and elegant stage outfit">
                     </a>
-                    <figcaption>Megurine Luka</figcaption>
+                    <figcaption>Megurine Luka — CV03</figcaption>
                 </figure>
             </div>
-
             <div class="card">
                 <h3 id="Vocaloid5" class="char-name">KAITO</h3>
-                <p>The first Japanese male Vocaloid released for the Vocaloid 1 engine. KAITO's deep, warm baritone voice and blue scarf have made him a beloved figure since his 2006 debut.</p>
+                <p>The first Japanese male Vocaloid — KAITO's warm, resonant baritone and signature blue scarf have made him an enduring symbol of the entire Vocaloid movement since 2006.</p>
                 <figure>
                     <a target="_blank" rel="noopener" href="https://vocaloid.fandom.com/wiki/KAITO">
                         <img src="https://miku.sega.com/megamixplus/img/characters/kaito-full.jpg"
-                             alt="KAITO – blue-scarfed male Vocaloid, the first Japanese male voicebank">
+                             alt="KAITO full body illustration with blue scarf and calm confident expression">
                     </a>
-                    <figcaption>KAITO</figcaption>
+                    <figcaption>KAITO — First Male Vocaloid</figcaption>
                 </figure>
             </div>
-
             <div class="card">
                 <h3 id="Vocaloid6" class="char-name">MEIKO</h3>
-                <p>The first Japanese female Vocaloid released for the Vocaloid 1 engine. MEIKO's powerful, expressive voice and bold red design set the foundation for the entire Crypton Vocaloid lineup.</p>
+                <p>The first Japanese female Vocaloid — MEIKO's bold, expressive alto voice and red design set the foundation for all of Crypton's future creations, debuting in 2004.</p>
                 <figure>
                     <a target="_blank" rel="noopener" href="https://vocaloid.fandom.com/wiki/MEIKO">
                         <img src="https://miku.sega.com/megamixplus/img/characters/meiko-full.jpg"
-                             alt="MEIKO – red-themed female Vocaloid, the first Japanese female voicebank">
+                             alt="MEIKO full body illustration in red outfit with confident stance">
                     </a>
-                    <figcaption>MEIKO</figcaption>
+                    <figcaption>MEIKO — First Female Vocaloid</figcaption>
                 </figure>
             </div>
         </div>
@@ -148,7 +171,7 @@
             <span>&copy; 2009–2024 SEGA &amp; Crypton Future Media</span>
             <details class="char-list">
                 <summary>Jump to Character</summary>
-                <nav aria-label="Character anchor links">
+                <nav>
                     <a href="#Vocaloid1">Hatsune Miku</a>
                     <a href="#Vocaloid2">Kagamine Rin</a>
                     <a href="#Vocaloid3">Kagamine Len</a>

@@ -12,147 +12,131 @@
 <body id="skinandsong">
     <a href="#main" class="skip">Skip to Main Content</a>
 
-    <header>
-        <div class="header-glow"></div>
-        <h1>Project DIVA</h1>
-        <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+    <div class="topbar">
+        <a href="Introduce.html" class="topbar-logo">Project DIVA</a>
+        <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false">
             <span></span><span></span><span></span>
         </button>
-        <nav class="menu">
-            <a href="Introduce.html">Introduce</a>
+        <nav class="topbar-nav">
+            <a href="Introduce.html">Home</a>
+            <a href="Characters.html">Characters</a>
             <a href="SkinAndSong.html" class="active">Skin &amp; Song</a>
-            <a href="VersionAndGameplay.html">Version &amp; Gameplay</a>
+            <a href="VersionAndGameplay.html">Versions</a>
+            <a href="PatchNotes.html">Patch Notes</a>
         </nav>
-        <p class="skip-hint">Press <kbd>Tab</kbd> to skip to main content</p>
+    </div>
 
-        <section class="hero-intro">
-            <h2 class="section-title">Skins &amp; Costumes</h2>
-            <p class="hero-text">
-                Skins in Project DIVA are the hundreds of unlockable costumes that transform your
-                favourite Vocaloid characters. From gothic-lolita gowns and maid uniforms to futuristic
-                cyber suits and traditional kimono, each skin carries its own theme and visual flair —
-                letting players personalise every performance from head to toe.
-            </p>
-        </section>
+    <section class="page-hero">
+        <h1 class="page-hero-title">Skins &amp; Songs</h1>
+        <p class="page-hero-sub">Hundreds of unlockable costumes and five legendary tracks that define the Project DIVA experience.</p>
+    </section>
 
-        <nav class="links" aria-label="Module reference links">
-            <div class="preview-wrapper">
-                <div id="image" class="preview-box" role="img" aria-label="Image preview area"></div>
-                <p id="image-caption" class="preview-caption">Hover over an image below to preview it here.</p>
-            </div>
-            <button onclick="undo()" class="undo-btn">&#8617; Reset Preview</button>
-            <ul>
-                <li>
-                    <figcaption>Arcade Future Tone – Module Gallery</figcaption>
-                    <a target="_blank" rel="noopener"
-                       href="https://project-diva.fandom.com/wiki/Hatsune_Miku:_Project_DIVA_Arcade_Future_Tone/Modules"
-                       onmouseover="upDate(this.querySelector('img'))" onmouseleave="undo()">
-                        <img src="https://miku.sega.com/futuretone/img/ogimage.png"
-                             alt="Project DIVA Arcade Future Tone – module costume gallery overview">
-                    </a>
-                </li>
-                <li>
-                    <figcaption>Project DIVA X – Module Gallery</figcaption>
-                    <a target="_blank" rel="noopener"
-                       href="https://project-diva.fandom.com/wiki/Hatsune_Miku:_Project_DIVA_X/Modules"
-                       onmouseover="upDate(this.querySelector('img'))" onmouseleave="undo()">
-                        <img src="https://i0.wp.com/www.seganerds.com/wp-content/uploads/2016/08/project-diva-x-title.jpg?fit=1280%2C720&ssl=1"
-                             alt="Hatsune Miku Project DIVA X title screen with vibrant Live Quest stage visuals">
-                    </a>
-                </li>
-                <li>
-                    <figcaption>Project DIVA F – Module Gallery</figcaption>
-                    <a target="_blank" rel="noopener"
-                       href="https://project-diva.fandom.com/wiki/Hatsune_Miku:_Project_DIVA_F/Modules"
-                       onmouseover="upDate(this.querySelector('img'))" onmouseleave="undo()">
-                        <img src="https://gamesline.net/wp-content/uploads/2014/03/hatsune_miku_project_diva_f_by_evoxiii-d52lcj2-1024x632.jpg"
-                             alt="Hatsune Miku Project DIVA F – enhanced PS Vita graphics and new costume designs">
-                    </a>
-                </li>
-                <li>
-                    <figcaption>Project DIVA 2nd – Module Gallery</figcaption>
-                    <a target="_blank" rel="noopener"
-                       href="https://project-diva.fandom.com/wiki/Hatsune_Miku:_Project_DIVA_2nd/Modules"
-                       onmouseover="upDate(this.querySelector('img'))" onmouseleave="undo()">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9BW1QDP9qNQrJ-8baurfsSr6xxTxqnF1JOQ&s"
-                             alt="Hatsune Miku Project DIVA 2nd – PSP sequel with expanded module list">
-                    </a>
-                </li>
-                <li>
-                    <figcaption>Project DIVA MegaMix – Module Gallery</figcaption>
-                    <a target="_blank" rel="noopener"
-                       href="https://project-diva.fandom.com/wiki/Category:Project_DIVA_MegaMix_Modules"
-                       onmouseover="upDate(this.querySelector('img'))" onmouseleave="undo()">
-                        <img src="https://i.ytimg.com/vi/T74gVhg58Tg/hq720.jpg"
-                             alt="Hatsune Miku Project DIVA MegaMix – Nintendo Switch version with new MegaMix mode">
-                    </a>
-                </li>
-            </ul>
-        </nav>
-    </header>
+    <h2 class="section-title center-title">Module Galleries</h2>
+    <p class="sub-text">Hover over a cover to preview — click to visit the full module list for that version.</p>
+
+    <nav class="links" aria-label="Module reference links">
+        <div class="preview-wrapper">
+            <div id="image" class="preview-box" role="img" aria-label="Image preview area"></div>
+            <p id="image-caption" class="preview-caption">Hover over an image below to preview it here.</p>
+        </div>
+        <button onclick="undo()" class="undo-btn">&#8617; Reset Preview</button>
+        <ul>
+            <li>
+                <figcaption>Arcade Future Tone Modules</figcaption>
+                <a target="_blank" rel="noopener" href="https://project-diva.fandom.com/wiki/Hatsune_Miku:_Project_DIVA_Arcade_Future_Tone/Modules">
+                    <img src="https://miku.sega.com/futuretone/img/ogimage.png"
+                         alt="Project DIVA Arcade Future Tone key visual – Hatsune Miku in arcade cabinet setting">
+                </a>
+            </li>
+            <li>
+                <figcaption>Project DIVA X Modules</figcaption>
+                <a target="_blank" rel="noopener" href="https://project-diva.fandom.com/wiki/Hatsune_Miku:_Project_DIVA_X/Modules">
+                    <img src="https://i0.wp.com/www.seganerds.com/wp-content/uploads/2016/08/project-diva-x-title.jpg?fit=1280%2C720&ssl=1"
+                         alt="Project DIVA X title screen with vibrant Live Quest stage and all six Vocaloids">
+                </a>
+            </li>
+            <li>
+                <figcaption>Project DIVA F Modules</figcaption>
+                <a target="_blank" rel="noopener" href="https://project-diva.fandom.com/wiki/Hatsune_Miku:_Project_DIVA_F/Modules">
+                    <img src="https://gamesline.net/wp-content/uploads/2014/03/hatsune_miku_project_diva_f_by_evoxiii-d52lcj2-1024x632.jpg"
+                         alt="Hatsune Miku Project DIVA F promotional art for PS Vita and PS3 version">
+                </a>
+            </li>
+            <li>
+                <figcaption>Project DIVA 2nd Modules</figcaption>
+                <a target="_blank" rel="noopener" href="https://project-diva.fandom.com/wiki/Hatsune_Miku:_Project_DIVA_2nd/Modules">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9BW1QDP9qNQrJ-8baurfsSr6xxTxqnF1JOQ&s"
+                         alt="Hatsune Miku Project DIVA 2nd PSP game cover with expanded character roster">
+                </a>
+            </li>
+            <li>
+                <figcaption>MegaMix Modules</figcaption>
+                <a target="_blank" rel="noopener" href="https://project-diva.fandom.com/wiki/Category:Project_DIVA_MegaMix_Modules">
+                    <img src="https://i.ytimg.com/vi/T74gVhg58Tg/hq720.jpg"
+                         alt="Project DIVA MegaMix Nintendo Switch gameplay thumbnail featuring Miku in stage performance">
+                </a>
+            </li>
+        </ul>
+    </nav>
 
     <h2 class="section-title center-title">Iconic Songs</h2>
-    <p class="sub-text center-title">Five legendary tracks that defined the Project DIVA experience:</p>
+    <p class="sub-text">Five legendary tracks that shaped the Project DIVA series — and Vocaloid music as a whole.</p>
 
     <main id="main">
         <div class="flex">
             <div class="card">
                 <h3 class="song-title">1. World is Mine</h3>
-                <p>By <em>ryo (supercell)</em> — One of the most streamed Vocaloid songs of all time. Miku channels a lovable, self-proclaimed queen demanding affection. Its bouncy synth-pop arrangement and relatable lyrics turned it into the anthem of an entire generation of Vocaloid fans.</p>
+                <p>By <em>ryo (supercell)</em> — One of the most streamed Vocaloid songs of all time. Miku channels a lovable, self-proclaimed queen demanding affection. Its bouncy synth-pop arrangement and relatable lyrics define an era.</p>
                 <figure>
-                    <video width="960" height="540" controls aria-label="World is Mine music video">
+                    <video controls aria-label="World is Mine music video">
                         <source src="World-is-Mine.mp4" type="video/mp4">
                         Your browser does not support the video element.
                     </video>
-                    <figcaption>World is Mine – ryo (supercell)</figcaption>
+                    <figcaption>World is Mine — ryo (supercell)</figcaption>
                 </figure>
             </div>
-
             <div class="card">
                 <h3 class="song-title">2. Tell Your World</h3>
-                <p>By <em>livetune</em> — Originally produced for a Google Chrome advertisement, this uplifting anthem grew into one of the most emotionally resonant Miku songs. Its sweeping synth lines and optimistic message about creativity and connection remain timeless.</p>
+                <p>By <em>livetune</em> — Originally a Google Chrome advertisement, this sweeping synth-pop anthem grew into one of Miku's most emotionally resonant songs, celebrating creativity and global connection.</p>
                 <figure>
-                    <video width="960" height="540" controls aria-label="Tell Your World music video">
+                    <video controls aria-label="Tell Your World music video">
                         <source src="Tell-Your-World.mp4" type="video/mp4">
                         Your browser does not support the video element.
                     </video>
-                    <figcaption>Tell Your World – livetune</figcaption>
+                    <figcaption>Tell Your World — livetune</figcaption>
                 </figure>
             </div>
-
             <div class="card">
                 <h3 class="song-title">3. Senbonzakura (千本桜)</h3>
-                <p>By <em>Kurousa-P</em> — A relentless fusion of traditional Japanese shamisen motifs with driving electronic beats. The song's rapid-fire pacing and Meiji-era imagery made it a staple of both the game and live Miku concerts worldwide.</p>
+                <p>By <em>Kurousa-P</em> — A relentless fusion of shamisen motifs and driving EDM that evokes Meiji-era Japan. One of the most technically demanding charts in the series and a staple of Miku's live concerts worldwide.</p>
                 <figure>
-                    <video width="960" height="540" controls aria-label="Senbonzakura music video">
+                    <video controls aria-label="Senbonzakura music video">
                         <source src="Senbonzakura.mp4" type="video/mp4">
                         Your browser does not support the video element.
                     </video>
-                    <figcaption>Senbonzakura – Kurousa-P</figcaption>
+                    <figcaption>Senbonzakura — Kurousa-P</figcaption>
                 </figure>
             </div>
-
             <div class="card">
                 <h3 class="song-title">4. The Disappearance of Hatsune Miku</h3>
-                <p>By <em>cosMo@Bousou-P</em> — A technically brutal track infamous for its extreme BPM and near-impossible-to-follow lyrics. More than a song, it's a narrative poem about Miku's identity and obsolescence — a landmark in Vocaloid storytelling.</p>
+                <p>By <em>cosMo@Bousou-P</em> — A technically brutal track infamous for its extreme BPM and near-impossible-to-follow lyrics. A narrative poem about Miku's identity and obsolescence — a landmark in Vocaloid storytelling.</p>
                 <figure>
-                    <video width="960" height="540" controls aria-label="The Disappearance of Hatsune Miku music video">
+                    <video controls aria-label="The Disappearance of Hatsune Miku music video">
                         <source src="The-disappearance-of-Hatsune-Miku.mp4" type="video/mp4">
                         Your browser does not support the video element.
                     </video>
-                    <figcaption>The Disappearance of Hatsune Miku – cosMo@Bousou-P</figcaption>
+                    <figcaption>The Disappearance of Hatsune Miku — cosMo@Bousou-P</figcaption>
                 </figure>
             </div>
-
             <div class="card">
                 <h3 class="song-title">5. Melt (メルト)</h3>
-                <p>By <em>ryo (supercell)</em> — The tender ballad that launched Vocaloid into the mainstream. Miku narrates the nervous, fluttering feeling of a first crush with warm synth pads and a melody so memorable it remains ryo's most emotionally powerful work.</p>
+                <p>By <em>ryo (supercell)</em> — The tender ballad that launched Vocaloid into the mainstream. Miku narrates the nervous flutter of a first crush with warm synth pads and a melody so memorable it remains ryo's most beloved work.</p>
                 <figure>
-                    <video width="960" height="540" controls aria-label="Melt music video">
+                    <video controls aria-label="Melt music video">
                         <source src="melt.mp4" type="video/mp4">
                         Your browser does not support the video element.
                     </video>
-                    <figcaption>Melt – ryo (supercell)</figcaption>
+                    <figcaption>Melt — ryo (supercell)</figcaption>
                 </figure>
             </div>
         </div>

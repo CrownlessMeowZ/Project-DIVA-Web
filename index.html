@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <title>Đang chuyển hướng...</title>
+
+    <meta http-equiv="refresh" content="0; url=Introduce.html" />
+</head>
+<body>
+    <script>
+        // Đề phòng trường hợp một số trình duyệt quá cũ hoặc bị lỗi không chạy thẻ meta ở trên,
+        // đoạn JS này sẽ đóng vai trò dự phòng để đảm bảo 100% web sẽ được chuyển hướng.
+        
+        // Lưu ý: Dùng window.location.replace() thay vì window.location.href 
+        // là để ghi đè luôn lịch sử web. Giúp người xem khi ấn nút "Back" (Quay lại) 
+        // trên trình duyệt sẽ không bị kẹt trong vòng lặp chuyển hướng vô tận.
+        window.location.replace("Introduce.html");
+    </script>
+</body>
+</html>

@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project DIVA – Patch Notes</title>
+    <link rel="stylesheet" href="FullWeb.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Rajdhani:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="https://image.api.playstation.com/cdn/UP0177/CUSA06093_00/IiZR9thQcF4Ia2ZuXV4cullEGaiLdIx7.png">
+</head>
+<body id="patchnotes">
+    <a href="#main" class="skip">Skip to Main Content</a>
+
+    <div class="topbar">
+        <a href="Introduce.html" class="topbar-logo">Project DIVA</a>
+        <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
+        <nav class="topbar-nav">
+            <a href="Introduce.html">Home</a>
+            <a href="Characters.html">Characters</a>
+            <a href="SkinAndSong.html">Skin &amp; Song</a>
+            <a href="VersionAndGameplay.html">Versions</a>
+            <a href="PatchNotes.html" class="active">Patch Notes</a>
+        </nav>
+    </div>
+
+    <section class="page-hero">
+        <h1 class="page-hero-title">Patch Notes</h1>
+        <p class="page-hero-sub">Full update history for <strong style="color:var(--cyan)">Hatsune Miku: Project DIVA MegaMix+</strong> (PC / Steam). Click any version to expand its changelog.</p>
+    </section>
+
+    <main id="main">
+        <div class="patch-timeline">
+
+            <!-- v1.0.0 -->
+            <div class="patch-entry">
+                <div class="patch-hdr" onclick="togglePatch(this)">
+                    <span class="patch-version">v 1.0.0</span>
+                    <span class="patch-date">May 26, 2022</span>
+                    <div class="patch-tags-g">
+                        <span class="tag tag-initial">Initial Release</span>
+                        <span class="tag tag-content">Full Content</span>
+                    </div>
+                    <span class="patch-arrow">▼</span>
+                </div>
+                <div class="patch-body">
+                    <div class="patch-body-inner">
+                        <div class="patch-section">
+                            <p class="patch-section-title">New Content</p>
+                            <ul class="patch-list">
+                                <li>238 songs from the Arcade Future Tone library — the complete catalog on PC for the first time.</li>
+                                <li>Dual gameplay modes: classic <em>Arcade Mix</em> (button-press) and <em>MegaMix Mode</em> (touch-influenced tap/swipe).</li>
+                                <li>Full module (costume) system with 300+ unlockable outfits per character.</li>
+                                <li>Steam Achievement integration with 62 unique achievements.</li>
+                                <li>Keyboard, controller, and mouse input support at launch.</li>
+                                <li>4K resolution support and uncapped frame rate on PC.</li>
+                            </ul>
+                        </div>
+                        <div class="patch-section">
+                            <p class="patch-section-title">Known Issues at Launch</p>
+                            <ul class="patch-list">
+                                <li>Occasional audio desync reported at sample rates above 48 kHz.</li>
+                                <li>Some AMD GPU configurations experienced shader compilation stalls on first run.</li>
+                            </ul>
+                        </div>
+                        <p class="patch-note">🎮 MegaMix+ marks the first time the full Project DIVA arcade song library has been available on a PC platform.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- v1.1.0 -->
+            <div class="patch-entry">
+                <div class="patch-hdr" onclick="togglePatch(this)">
+                    <span class="patch-version">v 1.1.0</span>
+                    <span class="patch-date">June 15, 2022</span>
+                    <div class="patch-tags-g">
+                        <span class="tag tag-fix">Bug Fix</span>
+                        <span class="tag tag-perf">Performance</span>
+                        <span class="tag tag-qol">QOL</span>
+                    </div>
+                    <span class="patch-arrow">▼</span>
+                </div>
+                <div class="patch-body">
+                    <div class="patch-body-inner">
+                        <div class="patch-section">
+                            <p class="patch-section-title">Bug Fixes</p>
+                            <ul class="patch-list">
+                                <li>Fixed audio desync affecting players with system audio sample rates set to 96 kHz or above.</li>
+                                <li>Resolved a crash that occurred when rapidly switching modules in the customisation menu.</li>
+                                <li>Fixed incorrect note timing display on "The Disappearance of Hatsune Miku" at Extreme difficulty.</li>
+                                <li>Corrected a rendering artefact on character hair in certain lighting stages.</li>
+                            </ul>
+                        </div>
+                        <div class="patch-section">
+                            <p class="patch-section-title">Performance</p>
+                            <ul class="patch-list">
+                                <li>Reduced shader precompilation time on first launch by approximately 35% for AMD GPUs.</li>
+                                <li>Lowered VRAM footprint by ~180 MB in high-density crowd scenes.</li>
+                                <li>Improved frame pacing on variable refresh rate (VRR / G-Sync / FreeSync) monitors.</li>
+                            </ul>
+                        </div>
+                        <div class="patch-section">
+                            <p class="patch-section-title">Quality of Life</p>
+                            <ul class="patch-list">
+                                <li>Added full key rebinding support for all gameplay inputs.</li>
+                                <li>Note speed can now be adjusted in increments of 0.5× instead of 1× for finer control.</li>
+                                <li>Song search now supports searching by artist/producer name in addition to song title.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- v1.2.0 -->
+            <div class="patch-entry">
+                <div class="patch-hdr" onclick="togglePatch(this)">
+                    <span class="patch-version">v 1.2.0</span>
+                    <span class="patch-date">October 4, 2022</span>
+                    <div class="patch-tags-g">
+                        <span class="tag tag-dlc">DLC</span>
+                        <span class="tag tag-content">New Content</span>
+                        <span class="tag tag-fix">Bug Fix</span>
+                    </div>
+                    <span class="patch-arrow">▼</span>
+                </div>
+                <div class="patch-body">
+                    <div class="patch-body-inner">
+                        <div class="patch-section">
+                            <p class="patch-section-title">DLC Content Added</p>
+                            <ul class="patch-list">
+                                <li>Song Pack Vol. 1 available: 10 additional tracks including fan-voted selections.</li>
+                                <li>Seasonal costume set "Autumn Harvest" — 6 new modules across all characters.</li>
+                                <li>New DIVA Room furniture items: "Arcade Cabinet" and "Holographic Stage" sets.</li>
+                            </ul>
+                        </div>
+                        <div class="patch-section">
+                            <p class="patch-section-title">Bug Fixes</p>
+                            <ul class="patch-list">
+                                <li>Fixed a progression blocker preventing some players from unlocking the "Perfect Chain" achievement.</li>
+                                <li>Resolved memory leak causing performance degradation after 3+ hours of continuous play.</li>
+                                <li>Corrected subtitle timing on 7 songs in the English localisation.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- v1.3.0 -->
+            <div class="patch-entry">
+                <div class="patch-hdr" onclick="togglePatch(this)">
+                    <span class="patch-version">v 1.3.0</span>
+                    <span class="patch-date">February 9, 2023</span>
+                    <div class="patch-tags-g">
+                        <span class="tag tag-qol">Accessibility</span>
+                        <span class="tag tag-perf">Performance</span>
+                    </div>
+                    <span class="patch-arrow">▼</span>
+                </div>
+                <div class="patch-body">
+                    <div class="patch-body-inner">
+                        <div class="patch-section">
+                            <p class="patch-section-title">Accessibility</p>
+                            <ul class="patch-list">
+                                <li>Added customisable note and hold colour schemes to assist players with colour vision deficiencies.</li>
+                                <li>New "Safe Zone" setting reduces note density in the centre of the screen to ease target tracking.</li>
+                                <li>UI scale option now ranges from 80% to 140% for high-DPI and accessibility needs.</li>
+                                <li>Added screen reader support for all main menu elements.</li>
+                            </ul>
+                        </div>
+                        <div class="patch-section">
+                            <p class="patch-section-title">Performance</p>
+                            <ul class="patch-list">
+                                <li>Improved Steam Deck compatibility: stable 60 fps at medium settings in balanced power mode.</li>
+                                <li>Added DLSS 2.4 and AMD FSR 2.0 upscaling support for lower-end GPUs.</li>
+                                <li>Background asset streaming optimised to reduce hitches during song transitions.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- v1.4.0 -->
+            <div class="patch-entry">
+                <div class="patch-hdr" onclick="togglePatch(this)">
+                    <span class="patch-version">v 1.4.0</span>
+                    <span class="patch-date">August 31, 2023</span>
+                    <div class="patch-tags-g">
+                        <span class="tag tag-content">Anniversary</span>
+                        <span class="tag tag-dlc">DLC</span>
+                        <span class="tag tag-qol">QOL</span>
+                    </div>
+                    <span class="patch-arrow">▼</span>
+                </div>
+                <div class="patch-body">
+                    <div class="patch-body-inner">
+                        <div class="patch-section">
+                            <p class="patch-section-title">Miku's 16th Anniversary Update</p>
+                            <ul class="patch-list">
+                                <li>Special "16th Anniversary" title screen and menu theme active through September 2023.</li>
+                                <li>Commemorative module set: "Miku Birthday 2023" — limited-time unlock via in-game challenge.</li>
+                                <li>Song Pack Vol. 2: 8 tracks added, including two newly arranged classics exclusive to PC.</li>
+                                <li>New "Replay Mode" — save and replay your best runs frame-by-frame with adjustable speed.</li>
+                            </ul>
+                        </div>
+                        <div class="patch-section">
+                            <p class="patch-section-title">Quality of Life</p>
+                            <ul class="patch-list">
+                                <li>Score leaderboards now display friends' scores separately from the global ranking.</li>
+                                <li>Added a "Practice Mode" for individual chart sections with adjustable loop points.</li>
+                                <li>Song favourites list expanded from 50 to 200 entries.</li>
+                            </ul>
+                        </div>
+                        <p class="patch-note">♪ August 31 marks the anniversary of Hatsune Miku's original software release in 2007.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- v1.5.0 -->
+            <div class="patch-entry">
+                <div class="patch-hdr" onclick="togglePatch(this)">
+                    <span class="patch-version">v 1.5.0</span>
+                    <span class="patch-date">December 22, 2023</span>
+                    <div class="patch-tags-g">
+                        <span class="tag tag-content">Winter Update</span>
+                        <span class="tag tag-fix">Bug Fix</span>
+                        <span class="tag tag-perf">Performance</span>
+                    </div>
+                    <span class="patch-arrow">▼</span>
+                </div>
+                <div class="patch-body">
+                    <div class="patch-body-inner">
+                        <div class="patch-section">
+                            <p class="patch-section-title">Winter Content</p>
+                            <ul class="patch-list">
+                                <li>Seasonal "Snow & Stars" module set — 12 holiday-themed costumes across all characters.</li>
+                                <li>Limited winter main menu theme with snow particle effects (active through January 2024).</li>
+                                <li>Song Pack Vol. 3: 6 tracks added, including 2 winter-themed original songs.</li>
+                            </ul>
+                        </div>
+                        <div class="patch-section">
+                            <p class="patch-section-title">Bug Fixes</p>
+                            <ul class="patch-list">
+                                <li>Fixed rare soft lock in free play mode after completing 100+ consecutive songs.</li>
+                                <li>Resolved incorrect ranking displayed after online score sync.</li>
+                                <li>Corrected note lane visual misalignment at ultrawide resolutions (21:9 and 32:9).</li>
+                            </ul>
+                        </div>
+                        <div class="patch-section">
+                            <p class="patch-section-title">Performance</p>
+                            <ul class="patch-list">
+                                <li>CPU usage reduced by ~12% during intensive crowd-render stages.</li>
+                                <li>Load times improved by 20% on SATA SSDs through better asset batching.</li>
+                                <li>Added support for Windows 11 DirectStorage for faster game start-up on NVMe drives.</li>
+                            </ul>
+                        </div>
+                        <p class="patch-note">✦ The development team wishes all DIVA fans a wonderful holiday season — see you in 2024!</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <span>&copy; 2009–2024 SEGA &amp; Crypton Future Media</span>
+            <span style="color:var(--muted);font-size:12px;">Patch history for MegaMix+ (PC / Steam)</span>
+        </div>
+    </footer>
+
+    <script src="FullWeb.js"></script>
+</body>
+</html>
