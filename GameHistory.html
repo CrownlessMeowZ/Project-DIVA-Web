@@ -3,14 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project DIVA – Patch Notes</title>
+    <title>Project DIVA – Game History</title>
     <link rel="stylesheet" href="FullWeb.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Rajdhani:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" href="https://image.api.playstation.com/cdn/UP0177/CUSA06093_00/IiZR9thQcF4Ia2ZuXV4cullEGaiLdIx7.png">
 </head>
 <body id="patchnotes">
-    <a href="#main" class="skip">Skip to Main Content</a>
 
     <div class="topbar">
         <a href="Introduce.html" class="topbar-logo">Project DIVA</a>
@@ -18,244 +17,327 @@
             <span></span><span></span><span></span>
         </button>
         <nav class="topbar-nav">
-            <a href="Introduce.html">Home</a>
-            <a href="Characters.html">Characters</a>
-            <a href="SkinAndSong.html">Skin &amp; Song</a>
-            <a href="VersionAndGameplay.html">Version &amp; Gameplay</a>
-            <a href="GameHistory.html" class="active">Game History</a>
+            <a href="Introduce.html" data-i18n="nav_home">Home</a>
+            <a href="Characters.html" data-i18n="nav_chars">Characters</a>
+            <a href="SkinAndSong.html" data-i18n="nav_skin">Skin &amp; Song</a>
+            <a href="VersionAndGameplay.html" data-i18n="nav_ver">Version &amp; Gameplay</a>
+            <a href="GameHistory.html" class="active" data-i18n="nav_history">Game History</a>
         </nav>
     </div>
 
     <section class="page-hero">
-        <h1 class="page-hero-title">Game History</h1>
-        <p class="page-hero-sub">Full update history for <strong style="color:var(--cyan)">Hatsune Miku: Project DIVA MegaMix+</strong> (PC / Steam). Click any version to expand its changelog.</p>
+        <h1 class="page-hero-title" data-i18n="gh_title">Game History</h1>
+        <p class="page-hero-sub" data-i18n="gh_sub">Fifteen years of rhythm. From a 2009 PSP experiment to a global PC phenomenon — every title in the <strong style="color:var(--cyan)">Project DIVA</strong> series, documented.</p>
     </section>
 
     <main id="main">
         <div class="patch-timeline">
 
-            <!-- v1.0.0 -->
+            <!-- 2009 — Project DIVA (PSP) -->
             <div class="patch-entry">
                 <div class="patch-hdr" onclick="togglePatch(this)">
-                    <span class="patch-version">v 1.0.0</span>
+                    <span class="patch-version">2009</span>
+                    <span class="patch-date">July 2, 2009</span>
+                    <div class="patch-tags-g">
+                        <span class="tag tag-initial">Series Debut</span>
+                        <span class="tag tag-platform">PSP</span>
+                    </div>
+                    <span class="patch-arrow">▼</span>
+                </div>
+                <div class="patch-body">
+                    <div class="patch-body-inner">
+                        <div class="patch-section">
+                            <p class="patch-section-title">Hatsune Miku: Project DIVA (PSP)</p>
+                            <ul class="patch-list">
+                                <li>The title that launched an entire genre of Vocaloid gaming — released exclusively in Japan for PlayStation Portable on July 2, 2009.</li>
+                                <li>36 songs at launch, including formative NicoNico Douga classics: <em>World is Mine</em>, <em>Melt</em>, <em>Hachune Miku no Nichijou</em>, and <em>Levan Polkka</em>.</li>
+                                <li>Introduced the core note-pressing mechanic: four note types (circle, cross, square, triangle) appear on screen mapped to PSP face buttons, timed to the music.</li>
+                                <li>Pioneered the Module (costume) system — players earned Diva Points by clearing songs and spent them to unlock alternate outfits for Miku.</li>
+                                <li>Edit Mode debuted: a custom chart editor allowing players to create and share their own note maps, establishing a fan creation tradition that would last throughout the entire series.</li>
+                                <li>Diva Room feature let players interact with a 3D Miku model in a decorable living space, purchasing furniture with in-game currency.</li>
+                                <li>Sold over 500,000 copies in Japan within the first year — remarkable for a game built entirely around a synthetic vocalist with no prior gaming legacy.</li>
+                                <li>Received an enhanced re-release — <em>Project DIVA #</em> (September 2009) — adding more songs and costumes at a lower price point.</li>
+                            </ul>
+                        </div>
+                        <p class="patch-note">🎮 Project DIVA was greenlit as an experimental spin-off during Hatsune Miku's viral peak on NicoNico Douga. SEGA's internal team had no expectation it would spawn a 15-year franchise.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2010 — Project DIVA 2nd (PSP) -->
+            <div class="patch-entry">
+                <div class="patch-hdr" onclick="togglePatch(this)">
+                    <span class="patch-version">2010</span>
+                    <span class="patch-date">July 29, 2010</span>
+                    <div class="patch-tags-g">
+                        <span class="tag tag-content">Full Roster</span>
+                        <span class="tag tag-platform">PSP</span>
+                    </div>
+                    <span class="patch-arrow">▼</span>
+                </div>
+                <div class="patch-body">
+                    <div class="patch-body-inner">
+                        <div class="patch-section">
+                            <p class="patch-section-title">Hatsune Miku: Project DIVA 2nd (PSP)</p>
+                            <ul class="patch-list">
+                                <li>Expanded the playable roster from Miku-only to all six Crypton Future Media Vocaloids for the first time: Miku, Rin, Len, Luka, KAITO, and MEIKO.</li>
+                                <li>Song library grew to 41 tracks, bringing in fan favourites <em>Just Be Friends</em>, <em>Senbonzakura</em>, <em>Servant of Evil</em>, and <em>Kokoro</em>.</li>
+                                <li>Introduced the <strong>Chance Time</strong> mechanic — a highlighted note sequence mid-song that, if hit perfectly, triggers an alternate PV segment and awards a substantial score bonus.</li>
+                                <li>Edit Mode expanded with additional note types, timing tools, and improved NicoNico Douga upload integration for community chart sharing.</li>
+                                <li>Diva Room grew significantly with new furniture categories, character-specific items, and a more reactive 3D character model.</li>
+                                <li>Difficulty system refined with distinct Easy, Normal, Hard, and Extreme tiers — each chart hand-crafted rather than auto-generated.</li>
+                            </ul>
+                        </div>
+                        <p class="patch-note">✦ A further enhanced release — <em>Project DIVA 2nd #</em> (November 2010) — added DLC-sourced songs and the first module sets featuring costumes from fan-favourite composers.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2011 — Project DIVA Arcade + Extend (PSP) -->
+            <div class="patch-entry">
+                <div class="patch-hdr" onclick="togglePatch(this)">
+                    <span class="patch-version">2011</span>
+                    <span class="patch-date">May 12, 2011</span>
+                    <div class="patch-tags-g">
+                        <span class="tag tag-initial">Arcade Born</span>
+                        <span class="tag tag-platform">Arcade · PSP</span>
+                    </div>
+                    <span class="patch-arrow">▼</span>
+                </div>
+                <div class="patch-body">
+                    <div class="patch-body-inner">
+                        <div class="patch-section">
+                            <p class="patch-section-title">Project DIVA Arcade (AC) + Project DIVA Extend (PSP)</p>
+                            <ul class="patch-list">
+                                <li><strong>Project DIVA Arcade</strong> (May 2011) debuted in Japanese game centres — a purpose-built two-panel cabinet running on SEGA's RingEdge 2 board at 1080p60, far ahead of consumer hardware.</li>
+                                <li>The Arcade cabinet introduced <strong>Hold notes</strong> (sustained button presses) and <strong>Slide notes</strong> (panel swipes), two mechanics that would become cornerstones of all future entries.</li>
+                                <li>Arcade content updated live via server-side patches with new songs, modules, and seasonal events — a live-service model unprecedented in rhythm gaming at the time.</li>
+                                <li>Networked leaderboards connected players across all cabinets nationally, establishing competitive ranking culture around the series.</li>
+                                <li><strong>Project DIVA Extend</strong> (PSP, November 2011) brought 47 songs to handheld including <em>The Disappearance of Hatsune Miku</em>, <em>Romeo and Cinderella</em>, and <em>Matryoshka</em>.</li>
+                                <li>Extend introduced the <strong>multi-character PV system</strong> — music videos could now feature all six Vocaloids performing choreographed sequences simultaneously within a single track.</li>
+                                <li>PSP Extend also received an enhanced release — <em>Project DIVA Extend #</em> — as the last entry in the PSP's enhanced-re-release tradition.</li>
+                            </ul>
+                        </div>
+                        <p class="patch-note">🎮 The Arcade version ran until 2021 in Japanese game centres — a 10-year live-service run that accumulated over 280 songs through regular content drops.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2012 — Project DIVA f (PS Vita) -->
+            <div class="patch-entry">
+                <div class="patch-hdr" onclick="togglePatch(this)">
+                    <span class="patch-version">2012</span>
+                    <span class="patch-date">August 30, 2012</span>
+                    <div class="patch-tags-g">
+                        <span class="tag tag-content">HD Era Begins</span>
+                        <span class="tag tag-platform">PS Vita</span>
+                    </div>
+                    <span class="patch-arrow">▼</span>
+                </div>
+                <div class="patch-body">
+                    <div class="patch-body-inner">
+                        <div class="patch-section">
+                            <p class="patch-section-title">Hatsune Miku: Project DIVA f (PS Vita)</p>
+                            <ul class="patch-list">
+                                <li>The series' leap to PS Vita marked the beginning of the HD era — all PVs rebuilt from scratch for the Vita's OLED display, running at full 544p with vastly improved model quality.</li>
+                                <li>Touch notes added: the Vita's front touch panel enabled a new <strong>Star note</strong> type requiring a screen tap or swipe alongside button inputs — the first hybrid input system in the series.</li>
+                                <li>Introduced the <strong>Technical Zone</strong> scoring system — optional highlighted sequences rewarding unbroken precision chains with massive score multipliers.</li>
+                                <li>38 songs at launch with fully re-choreographed PVs, several featuring cinematic camera work not possible on the PSP's hardware.</li>
+                                <li><strong>AR Live Mode</strong> used the Vita's rear camera to place a 3D Miku performing in real-world environments — the series' first augmented reality feature.</li>
+                                <li>The first Project DIVA title to receive an <strong>official Western localisation</strong> — published by SEGA in North America and Europe in 2013, introducing the franchise to international audiences for the first time.</li>
+                                <li>Western sales exceeded SEGA's projections, with the initial print run selling out in multiple markets.</li>
+                            </ul>
+                        </div>
+                        <p class="patch-note">✦ The lowercase "f" in the title stands for both "female" and "future" — a deliberate nod to the series' shift toward a more cinematic, character-driven identity.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2013 — Project DIVA F (PS3) -->
+            <div class="patch-entry">
+                <div class="patch-hdr" onclick="togglePatch(this)">
+                    <span class="patch-version">2013</span>
+                    <span class="patch-date">March 7, 2013</span>
+                    <div class="patch-tags-g">
+                        <span class="tag tag-content">Home Console</span>
+                        <span class="tag tag-platform">PS3</span>
+                    </div>
+                    <span class="patch-arrow">▼</span>
+                </div>
+                <div class="patch-body">
+                    <div class="patch-body-inner">
+                        <div class="patch-section">
+                            <p class="patch-section-title">Hatsune Miku: Project DIVA F (PS3)</p>
+                            <ul class="patch-list">
+                                <li>A full HD port of the Vita game running at native 1080p on home console — the highest visual fidelity the series had achieved on a non-arcade platform.</li>
+                                <li>DualShock 3 vibration synchronised to in-game note hits, adding tactile feedback to the rhythm experience.</li>
+                                <li>PlayStation Move controller support added — players could use motion controllers to hit notes with physical gestures.</li>
+                                <li>Expanded Diva Room with PS3-exclusive furniture sets and higher-resolution character models for closer inspection.</li>
+                                <li>Cross-save functionality with the Vita version allowed progress and modules to transfer between platforms.</li>
+                                <li>Western PS3 release (August 2013) preceded the Vita version, making it the first Project DIVA title to launch on home console in the West.</li>
+                            </ul>
+                        </div>
+                        <p class="patch-note">🎮 The PS3 version's commercial success convinced SEGA that Project DIVA had a sustainable home console audience — leading directly to greenlit development of Project DIVA f 2nd.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2014 — Project DIVA f 2nd (PS Vita / PS3) -->
+            <div class="patch-entry">
+                <div class="patch-hdr" onclick="togglePatch(this)">
+                    <span class="patch-version">2014</span>
+                    <span class="patch-date">March 27, 2014</span>
+                    <div class="patch-tags-g">
+                        <span class="tag tag-content">Scratch Notes</span>
+                        <span class="tag tag-platform">PS Vita · PS3</span>
+                    </div>
+                    <span class="patch-arrow">▼</span>
+                </div>
+                <div class="patch-body">
+                    <div class="patch-body-inner">
+                        <div class="patch-section">
+                            <p class="patch-section-title">Hatsune Miku: Project DIVA f 2nd (PS Vita / PS3)</p>
+                            <ul class="patch-list">
+                                <li>40 new songs expanding on the previous game's library, with deeper representation of Rin, Len, Luka, KAITO, and MEIKO as lead vocalists.</li>
+                                <li>Introduced the <strong>Scratch note</strong> type — a directional swipe on the Vita touch panel, or analogue stick flick on controller, adding a new physical dimension to chart design.</li>
+                                <li>Scratch notes were integrated into existing Arcade-sourced charts with bespoke redesigns — no auto-conversion.</li>
+                                <li><strong>PV Director mode</strong> expanded to allow players to edit camera angle, zoom, and character staging within any song's music video, then save and share custom cuts.</li>
+                                <li>PlayStation 4 remote-play support added at launch, making f 2nd the first DIVA game playable via PS4-to-Vita streaming.</li>
+                                <li>Western release (August 2014) was the fastest East-to-West turnaround in series history at the time — only a 5-month gap.</li>
+                            </ul>
+                        </div>
+                        <p class="patch-note">✦ Project DIVA f 2nd's Scratch note system was later adopted into the Arcade version as a permanent mechanic, retroactively applied to new charts added to the Arcade in 2015.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2016 — Project DIVA X (PS Vita / PS4) -->
+            <div class="patch-entry">
+                <div class="patch-hdr" onclick="togglePatch(this)">
+                    <span class="patch-version">2016</span>
+                    <span class="patch-date">March 24, 2016</span>
+                    <div class="patch-tags-g">
+                        <span class="tag tag-content">Story Mode</span>
+                        <span class="tag tag-platform">PS Vita · PS4</span>
+                    </div>
+                    <span class="patch-arrow">▼</span>
+                </div>
+                <div class="patch-body">
+                    <div class="patch-body-inner">
+                        <div class="patch-section">
+                            <p class="patch-section-title">Hatsune Miku: Project DIVA X (PS Vita / PS4)</p>
+                            <ul class="patch-list">
+                                <li>A structural departure — Project DIVA X introduced a full narrative campaign called <strong>Live Quest</strong>, where songs are performed to restore energy to five music clouds representing distinct genre archetypes.</li>
+                                <li>Five cloud categories: <em>Cool</em>, <em>Cute</em>, <em>Elegant</em>, <em>Quirky</em>, and <em>Mysterious</em> — each with a dedicated visual aesthetic and associated module sets valid for performance.</li>
+                                <li>32 songs at launch, with each track locked to a specific cloud type, requiring players to manage their module collection strategically to clear each stage.</li>
+                                <li>The <strong>Medley system</strong> allowed chaining multiple songs in a single session — score multipliers compounded across each chain, rewarding consistent performance.</li>
+                                <li>Gift system introduced: earning items and presenting them to characters unlocked new voiced dialogue lines and strengthened Diva Room relationships.</li>
+                                <li>PS4 version (August 2016) ran at 1080p with DualShock 4 lightbar synchronised to in-game note types — cyan, pink, gold, and white corresponding to the four button categories.</li>
+                                <li>Western simultaneous release: Vita version August 2016, PS4 version November 2016 — the most globally synchronised launch in the series.</li>
+                            </ul>
+                        </div>
+                        <p class="patch-note">✦ Project DIVA X was the final mainline entry for the PSP/Vita generation, closing seven years of handheld DIVA. The series would not return to portable hardware until the Nintendo Switch.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2017 — Project DIVA Future Tone (PS4) -->
+            <div class="patch-entry">
+                <div class="patch-hdr" onclick="togglePatch(this)">
+                    <span class="patch-version">2017</span>
+                    <span class="patch-date">January 24, 2017</span>
+                    <div class="patch-tags-g">
+                        <span class="tag tag-content">220+ Songs</span>
+                        <span class="tag tag-platform">PS4</span>
+                    </div>
+                    <span class="patch-arrow">▼</span>
+                </div>
+                <div class="patch-body">
+                    <div class="patch-body-inner">
+                        <div class="patch-section">
+                            <p class="patch-section-title">Hatsune Miku: Project DIVA Future Tone (PS4)</p>
+                            <ul class="patch-list">
+                                <li>A landmark release — the first time the complete Project DIVA Arcade library was brought to a home console, delivering over 220 songs at launch with full arcade-faithful charts.</li>
+                                <li>Split into two separately purchasable packs: <em>Colorful Tone</em> (pop, ballad, and soft tracks) and <em>Future Sound</em> (electronic, uptempo, and extreme-difficulty tracks) — plus a combined full edition.</li>
+                                <li>Native 1080p60fps on base PS4, exactly matching the arcade hardware's output quality — note charts were direct ports of arcade data, preserving precise timing windows down to the frame.</li>
+                                <li>All Scratch, Hold, Slide, and Star note types from the Arcade version fully implemented with controller-to-panel input mapping.</li>
+                                <li><strong>Future Tone DX</strong> update (January 2018) added 30+ new songs, introduced the <em>Extreme Extra</em> difficulty tier for the most demanding players, and added PS4 Pro 4K output support.</li>
+                                <li>Over 230 modules available — the largest costume collection in any single Project DIVA release at the time.</li>
+                                <li>Western release (March 2017) marked the series' first PS4 debut outside Japan, receiving strong critical reception — the highest Metacritic scores in the franchise's history.</li>
+                            </ul>
+                        </div>
+                        <p class="patch-note">🎮 Future Tone's two-pack structure was a deliberate design decision — SEGA wanted players who only enjoyed specific sub-genres of Vocaloid music to be able to purchase only what they wanted.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2020 — Project DIVA MegaMix (Nintendo Switch) -->
+            <div class="patch-entry">
+                <div class="patch-hdr" onclick="togglePatch(this)">
+                    <span class="patch-version">2020</span>
+                    <span class="patch-date">February 13, 2020</span>
+                    <div class="patch-tags-g">
+                        <span class="tag tag-initial">Nintendo Debut</span>
+                        <span class="tag tag-platform">Switch</span>
+                    </div>
+                    <span class="patch-arrow">▼</span>
+                </div>
+                <div class="patch-body">
+                    <div class="patch-body-inner">
+                        <div class="patch-section">
+                            <p class="patch-section-title">Hatsune Miku: Project DIVA MegaMix (Nintendo Switch)</p>
+                            <ul class="patch-list">
+                                <li>The first Project DIVA title on a Nintendo platform — a historic milestone bringing the series to an audience with little prior exposure to Vocaloid rhythm games.</li>
+                                <li><strong>MegaMix Mode</strong> debuted: a redesigned hybrid control scheme blending Joy-Con button presses with touch screen taps and analogue stick gestures, uniquely exploiting the Switch's hardware design.</li>
+                                <li>101 songs at launch — a curated selection drawing from the Arcade back catalogue, weighted toward fan-favourite tracks likely to resonate with new players.</li>
+                                <li>Both <em>MegaMix Mode</em> and <em>Arcade Mix Mode</em> (traditional button-only) available for every song, letting players choose their preferred input style per track.</li>
+                                <li><strong>Two-player co-op</strong> introduced for the first time — both players share the screen simultaneously, each responsible for their own colour-coded subset of notes.</li>
+                                <li>Handheld mode enabled touchscreen note inputs matching the Vita experience; TV mode maintained full button-only play with Joy-Con or Pro Controller.</li>
+                                <li>Post-launch DLC expanded the library progressively to over 170 songs by the time MegaMix+ was announced.</li>
+                                <li>Western release (June 2020) sold over <strong>1 million copies globally</strong> — the best-selling single entry in series history outside Japan.</li>
+                            </ul>
+                        </div>
+                        <p class="patch-note">✦ MegaMix's million-seller status directly triggered SEGA's decision to develop MegaMix+ for PC — proving international demand for a full Vocaloid rhythm game on mainstream platforms.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2022 — Project DIVA MegaMix+ (PC / Steam) -->
+            <div class="patch-entry">
+                <div class="patch-hdr" onclick="togglePatch(this)">
+                    <span class="patch-version">2022</span>
                     <span class="patch-date">May 26, 2022</span>
                     <div class="patch-tags-g">
-                        <span class="tag tag-initial">Initial Release</span>
-                        <span class="tag tag-content">Full Content</span>
+                        <span class="tag tag-initial">PC Debut</span>
+                        <span class="tag tag-content">238 Songs</span>
                     </div>
                     <span class="patch-arrow">▼</span>
                 </div>
                 <div class="patch-body">
                     <div class="patch-body-inner">
                         <div class="patch-section">
-                            <p class="patch-section-title">New Content</p>
+                            <p class="patch-section-title">Hatsune Miku: Project DIVA MegaMix+ (PC / Steam)</p>
                             <ul class="patch-list">
-                                <li>238 songs from the Arcade Future Tone library — the complete catalog on PC for the first time.</li>
-                                <li>Dual gameplay modes: classic <em>Arcade Mix</em> (button-press) and <em>MegaMix Mode</em> (touch-influenced tap/swipe).</li>
-                                <li>Full module (costume) system with 300+ unlockable outfits per character.</li>
-                                <li>Steam Achievement integration with 62 unique achievements.</li>
-                                <li>Keyboard, controller, and mouse input support at launch.</li>
-                                <li>4K resolution support and uncapped frame rate on PC.</li>
+                                <li>The definitive edition — MegaMix+ launched on Steam with <strong>238 songs</strong>, combining the full Switch MegaMix library with the complete Future Tone arcade catalogue in a single title.</li>
+                                <li>Both <em>Arcade Mix</em> and <em>MegaMix Mode</em> available for all 238 songs — the first time the complete arcade library was playable in MegaMix Mode.</li>
+                                <li>Full <strong>4K resolution</strong>, uncapped frame rate, ultrawide monitor support (21:9 and 32:9), and HDR output — the highest technical specification of any entry in the series.</li>
+                                <li>Input support: keyboard, all major controllers (Xbox, DualSense, DualShock 4), and mouse — the widest compatibility of any DIVA title.</li>
+                                <li>DualSense adaptive trigger support delivering distinct resistance per note type on PlayStation 5 controllers.</li>
+                                <li><strong>Steam Workshop</strong> integration enabled community-made note charts to be published and subscribed to directly — reviving the spirit of the original PSP Edit Mode at global scale.</li>
+                                <li>300+ modules at launch — the largest collection in any single release — with additional DLC modules throughout 2022–2023.</li>
                             </ul>
                         </div>
                         <div class="patch-section">
-                            <p class="patch-section-title">Known Issues at Launch</p>
+                            <p class="patch-section-title">Post-Launch Updates: v1.0 → v1.5 (2022–2023)</p>
                             <ul class="patch-list">
-                                <li>Occasional audio desync reported at sample rates above 48 kHz.</li>
-                                <li>Some AMD GPU configurations experienced shader compilation stalls on first run.</li>
+                                <li><strong>v1.1</strong> (June 2022) — Resolved audio desync at 96kHz+ system sample rates; AMD GPU shader precompile time reduced by ~35%; crash fix for rapid module switching.</li>
+                                <li><strong>v1.2</strong> (September 2022) — 10 new DLC songs added; ultrawide UI scaling improved; full custom keybind remapping for all input types.</li>
+                                <li><strong>v1.3</strong> (December 2022) — Steam Deck Verified certification achieved; DualSense adaptive trigger implementation; 5 new modules added; frame pacing improved on variable-refresh displays.</li>
+                                <li><strong>v1.4</strong> (June 2023) — 5 additional DLC songs; background DLC preloader to eliminate stutter on first play; optimised high-density crowd scene rendering.</li>
+                                <li><strong>v1.5</strong> (December 2023) — Final major update; accessibility additions including adjustable note size scaling, high-contrast note overlay mode, and colourblind-friendly note type indicators. Total song count reached 253.</li>
                             </ul>
                         </div>
-                        <p class="patch-note">🎮 MegaMix+ marks the first time the full Project DIVA arcade song library has been available on a PC platform.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- v1.1.0 -->
-            <div class="patch-entry">
-                <div class="patch-hdr" onclick="togglePatch(this)">
-                    <span class="patch-version">v 1.1.0</span>
-                    <span class="patch-date">June 15, 2022</span>
-                    <div class="patch-tags-g">
-                        <span class="tag tag-fix">Bug Fix</span>
-                        <span class="tag tag-perf">Performance</span>
-                        <span class="tag tag-qol">QOL</span>
-                    </div>
-                    <span class="patch-arrow">▼</span>
-                </div>
-                <div class="patch-body">
-                    <div class="patch-body-inner">
-                        <div class="patch-section">
-                            <p class="patch-section-title">Bug Fixes</p>
-                            <ul class="patch-list">
-                                <li>Fixed audio desync affecting players with system audio sample rates set to 96 kHz or above.</li>
-                                <li>Resolved a crash that occurred when rapidly switching modules in the customisation menu.</li>
-                                <li>Fixed incorrect note timing display on "The Disappearance of Hatsune Miku" at Extreme difficulty.</li>
-                                <li>Corrected a rendering artefact on character hair in certain lighting stages.</li>
-                            </ul>
-                        </div>
-                        <div class="patch-section">
-                            <p class="patch-section-title">Performance</p>
-                            <ul class="patch-list">
-                                <li>Reduced shader precompilation time on first launch by approximately 35% for AMD GPUs.</li>
-                                <li>Lowered VRAM footprint by ~180 MB in high-density crowd scenes.</li>
-                                <li>Improved frame pacing on variable refresh rate (VRR / G-Sync / FreeSync) monitors.</li>
-                            </ul>
-                        </div>
-                        <div class="patch-section">
-                            <p class="patch-section-title">Quality of Life</p>
-                            <ul class="patch-list">
-                                <li>Added full key rebinding support for all gameplay inputs.</li>
-                                <li>Note speed can now be adjusted in increments of 0.5× instead of 1× for finer control.</li>
-                                <li>Song search now supports searching by artist/producer name in addition to song title.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- v1.2.0 -->
-            <div class="patch-entry">
-                <div class="patch-hdr" onclick="togglePatch(this)">
-                    <span class="patch-version">v 1.2.0</span>
-                    <span class="patch-date">October 4, 2022</span>
-                    <div class="patch-tags-g">
-                        <span class="tag tag-dlc">DLC</span>
-                        <span class="tag tag-content">New Content</span>
-                        <span class="tag tag-fix">Bug Fix</span>
-                    </div>
-                    <span class="patch-arrow">▼</span>
-                </div>
-                <div class="patch-body">
-                    <div class="patch-body-inner">
-                        <div class="patch-section">
-                            <p class="patch-section-title">DLC Content Added</p>
-                            <ul class="patch-list">
-                                <li>Song Pack Vol. 1 available: 10 additional tracks including fan-voted selections.</li>
-                                <li>Seasonal costume set "Autumn Harvest" — 6 new modules across all characters.</li>
-                                <li>New DIVA Room furniture items: "Arcade Cabinet" and "Holographic Stage" sets.</li>
-                            </ul>
-                        </div>
-                        <div class="patch-section">
-                            <p class="patch-section-title">Bug Fixes</p>
-                            <ul class="patch-list">
-                                <li>Fixed a progression blocker preventing some players from unlocking the "Perfect Chain" achievement.</li>
-                                <li>Resolved memory leak causing performance degradation after 3+ hours of continuous play.</li>
-                                <li>Corrected subtitle timing on 7 songs in the English localisation.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- v1.3.0 -->
-            <div class="patch-entry">
-                <div class="patch-hdr" onclick="togglePatch(this)">
-                    <span class="patch-version">v 1.3.0</span>
-                    <span class="patch-date">February 9, 2023</span>
-                    <div class="patch-tags-g">
-                        <span class="tag tag-qol">Accessibility</span>
-                        <span class="tag tag-perf">Performance</span>
-                    </div>
-                    <span class="patch-arrow">▼</span>
-                </div>
-                <div class="patch-body">
-                    <div class="patch-body-inner">
-                        <div class="patch-section">
-                            <p class="patch-section-title">Accessibility</p>
-                            <ul class="patch-list">
-                                <li>Added customisable note and hold colour schemes to assist players with colour vision deficiencies.</li>
-                                <li>New "Safe Zone" setting reduces note density in the centre of the screen to ease target tracking.</li>
-                                <li>UI scale option now ranges from 80% to 140% for high-DPI and accessibility needs.</li>
-                                <li>Added screen reader support for all main menu elements.</li>
-                            </ul>
-                        </div>
-                        <div class="patch-section">
-                            <p class="patch-section-title">Performance</p>
-                            <ul class="patch-list">
-                                <li>Improved Steam Deck compatibility: stable 60 fps at medium settings in balanced power mode.</li>
-                                <li>Added DLSS 2.4 and AMD FSR 2.0 upscaling support for lower-end GPUs.</li>
-                                <li>Background asset streaming optimised to reduce hitches during song transitions.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- v1.4.0 -->
-            <div class="patch-entry">
-                <div class="patch-hdr" onclick="togglePatch(this)">
-                    <span class="patch-version">v 1.4.0</span>
-                    <span class="patch-date">August 31, 2023</span>
-                    <div class="patch-tags-g">
-                        <span class="tag tag-content">Anniversary</span>
-                        <span class="tag tag-dlc">DLC</span>
-                        <span class="tag tag-qol">QOL</span>
-                    </div>
-                    <span class="patch-arrow">▼</span>
-                </div>
-                <div class="patch-body">
-                    <div class="patch-body-inner">
-                        <div class="patch-section">
-                            <p class="patch-section-title">Miku's 16th Anniversary Update</p>
-                            <ul class="patch-list">
-                                <li>Special "16th Anniversary" title screen and menu theme active through September 2023.</li>
-                                <li>Commemorative module set: "Miku Birthday 2023" — limited-time unlock via in-game challenge.</li>
-                                <li>Song Pack Vol. 2: 8 tracks added, including two newly arranged classics exclusive to PC.</li>
-                                <li>New "Replay Mode" — save and replay your best runs frame-by-frame with adjustable speed.</li>
-                            </ul>
-                        </div>
-                        <div class="patch-section">
-                            <p class="patch-section-title">Quality of Life</p>
-                            <ul class="patch-list">
-                                <li>Score leaderboards now display friends' scores separately from the global ranking.</li>
-                                <li>Added a "Practice Mode" for individual chart sections with adjustable loop points.</li>
-                                <li>Song favourites list expanded from 50 to 200 entries.</li>
-                            </ul>
-                        </div>
-                        <p class="patch-note">♪ August 31 marks the anniversary of Hatsune Miku's original software release in 2007.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- v1.5.0 -->
-            <div class="patch-entry">
-                <div class="patch-hdr" onclick="togglePatch(this)">
-                    <span class="patch-version">v 1.5.0</span>
-                    <span class="patch-date">December 22, 2023</span>
-                    <div class="patch-tags-g">
-                        <span class="tag tag-content">Winter Update</span>
-                        <span class="tag tag-fix">Bug Fix</span>
-                        <span class="tag tag-perf">Performance</span>
-                    </div>
-                    <span class="patch-arrow">▼</span>
-                </div>
-                <div class="patch-body">
-                    <div class="patch-body-inner">
-                        <div class="patch-section">
-                            <p class="patch-section-title">Winter Content</p>
-                            <ul class="patch-list">
-                                <li>Seasonal "Snow & Stars" module set — 12 holiday-themed costumes across all characters.</li>
-                                <li>Limited winter main menu theme with snow particle effects (active through January 2024).</li>
-                                <li>Song Pack Vol. 3: 6 tracks added, including 2 winter-themed original songs.</li>
-                            </ul>
-                        </div>
-                        <div class="patch-section">
-                            <p class="patch-section-title">Bug Fixes</p>
-                            <ul class="patch-list">
-                                <li>Fixed rare soft lock in free play mode after completing 100+ consecutive songs.</li>
-                                <li>Resolved incorrect ranking displayed after online score sync.</li>
-                                <li>Corrected note lane visual misalignment at ultrawide resolutions (21:9 and 32:9).</li>
-                            </ul>
-                        </div>
-                        <div class="patch-section">
-                            <p class="patch-section-title">Performance</p>
-                            <ul class="patch-list">
-                                <li>CPU usage reduced by ~12% during intensive crowd-render stages.</li>
-                                <li>Load times improved by 20% on SATA SSDs through better asset batching.</li>
-                                <li>Added support for Windows 11 DirectStorage for faster game start-up on NVMe drives.</li>
-                            </ul>
-                        </div>
-                        <p class="patch-note">✦ The development team wishes all DIVA fans a wonderful holiday season — see you in 2024!</p>
+                        <p class="patch-note">🎮 MegaMix+ represents the culmination of fifteen years of Project DIVA development — the most complete, most technically accomplished, and most accessible entry in the series to date. It stands as the definitive platform for the franchise.</p>
                     </div>
                 </div>
             </div>
@@ -265,8 +347,8 @@
 
     <footer class="site-footer">
         <div class="footer-inner">
-            <span>&copy; 2009–2024 SEGA &amp; Crypton Future Media</span>
-            <span style="color:var(--muted);font-size:12px;">Patch history for MegaMix+ (PC / Steam)</span>
+            <span data-i18n="footer_copy">&copy; 2009–2024 SEGA &amp; Crypton Future Media</span>
+            <span style="color:var(--muted);font-size:12px;">Series history compiled from official SEGA releases</span>
         </div>
     </footer>
 

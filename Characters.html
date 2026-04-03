@@ -22,7 +22,6 @@
     </style>
 </head>
 <body id="characters">
-    <a href="#main" class="skip">Skip to Main Content</a>
 
     <div class="topbar">
         <a href="Introduce.html" class="topbar-logo">Project DIVA</a>
@@ -30,20 +29,19 @@
             <span></span><span></span><span></span>
         </button>
         <nav class="topbar-nav">
-            <a href="Introduce.html">Home</a>
-            <a href="Characters.html" class="active">Characters</a>
-            <a href="SkinAndSong.html">Skin &amp; Song</a>
-            <a href="VersionAndGameplay.html">Version &amp; Gameplay</a>
-            <a href="GameHistory.html">Game History</a>
+            <a href="Introduce.html" data-i18n="nav_home">Home</a>
+            <a href="Characters.html" class="active" data-i18n="nav_chars">Characters</a>
+            <a href="SkinAndSong.html" data-i18n="nav_skin">Skin &amp; Song</a>
+            <a href="VersionAndGameplay.html" data-i18n="nav_ver">Version &amp; Gameplay</a>
+            <a href="GameHistory.html" data-i18n="nav_history">Game History</a>
         </nav>
     </div>
 
     <section class="page-hero">
-        <h1 class="page-hero-title">Vocaloid Characters</h1>
-        <p class="page-hero-sub">Six voices. Infinite songs. Hover a card to reveal each character's full profile — or tap to flip on mobile.</p>
+        <h1 class="page-hero-title" data-i18n="chars_title">Vocaloid Characters</h1>
+        <p class="page-hero-sub" data-i18n="chars_page_sub">Six voices. Infinite songs. Hover a card to reveal each character's full profile — or tap to flip on mobile.</p>
     </section>
 
-    <p class="flip-hint">↕ Hover to flip &nbsp;·&nbsp; Tap to toggle on mobile</p>
 
     <main id="main">
         <div class="char-grid">
@@ -203,7 +201,7 @@
 
     <footer class="site-footer">
         <div class="footer-inner">
-            <span>&copy; 2009–2024 SEGA &amp; Crypton Future Media</span>
+            <span data-i18n="footer_copy">&copy; 2009–2024 SEGA &amp; Crypton Future Media</span>
             <span style="color:var(--muted);font-size:12px;">Voice data sourced from Vocaloid Wiki</span>
         </div>
     </footer>
