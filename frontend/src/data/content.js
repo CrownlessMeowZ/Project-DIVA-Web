@@ -368,8 +368,17 @@ export const HISTORY = [
       'DualSense adaptive trigger support delivering distinct resistance per note type on PlayStation 5 controllers.',
       '<strong>Steam Workshop</strong> integration enabled community-made note charts to be published and subscribed to directly — reviving the spirit of the original PSP Edit Mode at global scale.',
       '300+ modules at launch — the largest collection in any single release — with additional DLC modules throughout 2022–2023.',
-      '<strong>v1.5</strong> (December 2023) — Final major update; accessibility additions including adjustable note size scaling, high-contrast note overlay mode, and colourblind-friendly note type indicators. Total song count reached 253.',
     ],
-    note: "🎮 MegaMix+ represents the culmination of fifteen years of Project DIVA development — the most complete, most technically accomplished, and most accessible entry in the series to date.",
+    section2: {
+      title: 'Post-Launch Updates: v1.0 → v1.5 (2022–2023)',
+      items: [
+        '<strong>v1.1</strong> (June 2022) — Resolved audio desync at 96kHz+ system sample rates; AMD GPU shader precompile time reduced by ~35%; crash fix for rapid module switching.',
+        '<strong>v1.2</strong> (September 2022) — 10 new DLC songs added; ultrawide UI scaling improved; full custom keybind remapping for all input types.',
+        '<strong>v1.3</strong> (December 2022) — Steam Deck Verified certification achieved; DualSense adaptive trigger implementation; 5 new modules added; frame pacing improved on variable-refresh displays.',
+        '<strong>v1.4</strong> (June 2023) — 5 additional DLC songs; background DLC preloader to eliminate stutter on first play; optimised high-density crowd scene rendering.',
+        '<strong>v1.5</strong> (December 2023) — Final major update; accessibility additions including adjustable note size scaling, high-contrast note overlay mode, and colourblind-friendly note type indicators. Total song count reached 253.',
+      ],
+    },
+    note: "🎮 MegaMix+ represents the culmination of fifteen years of Project DIVA development — the most complete, most technically accomplished, and most accessible entry in the series to date. It stands as the definitive platform for the franchise.",
   },
 ];
