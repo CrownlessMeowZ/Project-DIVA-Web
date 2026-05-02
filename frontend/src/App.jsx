@@ -1,4 +1,5 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { useEffect } from 'react';
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { AppProvider } from './context/AppContext';
 import Topbar from './components/Topbar';
 import Home from './pages/Home';
@@ -17,16 +18,46 @@ export default function App() {
   );
 }
 
+// Wrapper thêm padding-top cho inner pages, class transition
+function PageWrapper({ children, isHome }) {
+  return (
+    <div
+      className={`page-transition${isHome ? '' : ' inner-page'}`}
+      style={isHome ? {} : { paddingTop: 'var(--topbar-h)' }}
+    >
+      {children}
+    </div>
+  );
+}
+
 function InnerApp() {
+  const location = useLocation();
+  const isHome = location.pathname === '/';
+
+  // Scroll to top on route change
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'instant' });
+  }, [location.pathname]);
+
   return (
     <>
       <Topbar />
-      <Routes>
-        <Route path="/"                  element={<Home />} />
-        <Route path="/characters"        element={<Characters />} />
-        <Route path="/skin-and-song"     element={<SkinAndSong />} />
-        <Route path="/version-gameplay"  element={<VersionAndGameplay />} />
-        <Route path="/game-history"      element={<GameHistory />} />
+      <Routes location={location} key={location.pathname}>
+        <Route path="/" element={
+          <PageWrapper isHome><Home /></PageWrapper>
+        } />
+        <Route path="/characters" element={
+          <PageWrapper><Characters /></PageWrapper>
+        } />
+        <Route path="/skin-and-song" element={
+          <PageWrapper><SkinAndSong /></PageWrapper>
+        } />
+        <Route path="/version-gameplay" element={
+          <PageWrapper><VersionAndGameplay /></PageWrapper>
+        } />
+        <Route path="/game-history" element={
+          <PageWrapper><GameHistory /></PageWrapper>
+        } />
       </Routes>
     </>
   );

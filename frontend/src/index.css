@@ -90,7 +90,7 @@ body#introduce { padding-top: 0; }
     background: rgba(4,4,15,.88);
     backdrop-filter: blur(20px);
     border-bottom: 1px solid var(--border);
-    overflow: hidden;
+    overflow: visible;
 }
 
 /* scan line animation on topbar */
@@ -100,6 +100,7 @@ body#introduce { padding-top: 0; }
     background: linear-gradient(90deg, transparent, rgba(0,212,255,.06), transparent);
     animation: scan 5s linear infinite;
     pointer-events: none;
+    clip-path: inset(0);
 }
 
 .topbar-logo {
@@ -320,6 +321,10 @@ body#introduce { padding-top: 0; }
 .card figure {
     margin-top: auto;
 }
+/* Home card: min-height cho text để figure luôn bắt đầu ở cùng vị trí */
+.grid .card p {
+    min-height: 80px;
+}
 .card::before {
     content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
     background: linear-gradient(90deg, transparent, rgba(0,212,255,.5), transparent);
@@ -354,7 +359,7 @@ body#introduce { padding-top: 0; }
     max-width: 1400px; margin: 0 auto;
 }
 .char-flip {
-    perspective: 1000px; height: 400px; cursor: pointer;
+    perspective: 1000px; height: 480px; cursor: pointer;
 }
 .char-flip-inner {
     position: relative; width: 100%; height: 100%;
@@ -372,7 +377,7 @@ body#introduce { padding-top: 0; }
 }
 .char-flip-front { background: var(--surface); }
 .char-flip-front img {
-    width: 100%; height: 100%; object-fit: cover; object-position: top;
+    width: 100%; height: 100%; object-fit: cover; object-position: center;
     display: block; border: none; padding: 0; border-radius: 0; margin: 0;
     transition: transform .7s ease;
     background: var(--surface);
@@ -790,7 +795,8 @@ nav.links img:focus { outline: 3px solid var(--pink); outline-offset: 4px; }
    Trên mobile:  ẩn, thay bằng items trong menu dropdown
    ================================================================ */
 .topbar-controls {
-    display: flex; align-items: center; gap: 4px; margin-left: auto;
+    display: flex; align-items: center; gap: 4px;
+    flex-shrink: 0; position: relative;
 }
 .topbar-icon-btn {
     background: transparent; border: none;
@@ -895,3 +901,181 @@ nav.links img:focus { outline: 3px solid var(--pink); outline-offset: 4px; }
 }
 .hero-quick-bar::-webkit-scrollbar { display: none; }
 .hql { white-space: nowrap; }
+/* ================================================================
+   FIX 1 — Page padding-top cho tất cả inner pages
+   Home dùng hero full-screen nên không cần
+   ================================================================ */
+body:not(#introduce) {
+    padding-top: var(--topbar-h);
+}
+
+/* ================================================================
+   FIX 2 — Topbar controls: bỏ 2 icon rời, thay bằng
+   một avatar button góc phải mở mini dropdown
+   ================================================================ */
+.topbar-controls {
+    flex-shrink: 0;
+    position: relative;
+}
+
+.topbar-avatar-btn {
+    display: flex; align-items: center; gap: 8px;
+    background: rgba(0,212,255,.07);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 5px 13px 5px 8px;
+    cursor: pointer; color: var(--text);
+    font-family: var(--ff-b); font-size: 11px;
+    letter-spacing: 1.5px; text-transform: uppercase;
+    transition: border-color var(--t), background var(--t);
+    white-space: nowrap;
+}
+.topbar-avatar-btn:hover {
+    border-color: var(--cyan);
+    background: rgba(0,212,255,.12);
+}
+.topbar-avatar-icon {
+    width: 26px; height: 26px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--cyan), var(--pink));
+    display: flex; align-items: center; justify-content: center;
+    font-size: 13px; flex-shrink: 0;
+    transition: transform var(--t);
+}
+.topbar-avatar-btn:hover .topbar-avatar-icon { transform: rotate(20deg); }
+.topbar-avatar-label { line-height: 1; }
+
+/* Mini dropdown */
+.topbar-dropdown {
+    position: absolute; top: calc(100% + 10px); right: 0;
+    min-width: 200px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--r);
+    padding: 12px;
+    box-shadow: 0 12px 40px rgba(0,0,0,.5);
+    opacity: 0; transform: translateY(-6px) scale(0.97);
+    pointer-events: none;
+    transition: opacity 0.18s ease, transform 0.18s ease;
+    z-index: 1100;
+}
+.topbar-dropdown.open {
+    opacity: 1; transform: translateY(0) scale(1);
+    pointer-events: all;
+}
+.topbar-dropdown-group { margin-bottom: 10px; }
+.topbar-dropdown-group:last-child { margin-bottom: 0; }
+.topbar-dropdown-label {
+    font-size: 9px; letter-spacing: 2.5px; text-transform: uppercase;
+    color: var(--muted); margin-bottom: 6px; padding: 0 2px;
+    font-family: var(--ff-b);
+}
+.topbar-dropdown-row { display: flex; gap: 6px; }
+.topbar-dropdown-opt {
+    flex: 1; padding: 7px 0; text-align: center;
+    background: transparent; border: 1px solid var(--border);
+    border-radius: 7px; font-family: var(--ff-b);
+    font-size: 12px; font-weight: 600; letter-spacing: 0.5px;
+    color: var(--muted); cursor: pointer;
+    transition: all 0.15s;
+}
+.topbar-dropdown-opt:hover { border-color: var(--border-h); color: var(--text); }
+.topbar-dropdown-opt.active { border-color: var(--cyan); color: var(--cyan); background: rgba(0,212,255,.08); }
+[data-theme="light"] .topbar-dropdown-opt.active { border-color: #007aaa; color: #007aaa; background: rgba(0,150,200,.1); }
+[data-theme="light"] .topbar-dropdown { background: rgba(235,240,255,.98); }
+
+/* Divider between groups */
+.topbar-dropdown-divider {
+    height: 1px; background: var(--border); margin: 10px 0;
+}
+
+/* ================================================================
+   FIX 3 — Page transition: fade + slide-up
+   ================================================================ */
+@keyframes pageEnter {
+    from { opacity: 0; transform: translateY(14px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.page-transition {
+    animation: pageEnter 0.35s cubic-bezier(.22,1,.36,1) both;
+}
+
+/* ================================================================
+   CHARACTERS — Tab filter bar + Extra badge
+   ================================================================ */
+.char-tab-bar {
+    display: flex; gap: 8px; justify-content: center;
+    padding: 0 24px 28px;
+}
+.char-tab-btn {
+    padding: 10px 32px;
+    background: transparent;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    font-family: var(--ff-b); font-size: 11px;
+    font-weight: 600; letter-spacing: 2px; text-transform: uppercase;
+    color: var(--muted); cursor: pointer;
+    transition: all 0.2s ease;
+}
+.char-tab-btn:hover {
+    border-color: var(--cyan);
+    color: var(--text);
+}
+.char-tab-btn.active {
+    background: rgba(0,212,255,.1);
+    border-color: var(--cyan);
+    color: var(--cyan);
+}
+
+/* Extra badge trên góc trên card */
+.char-extra-badge {
+    position: absolute; top: 12px; right: 12px;
+    background: rgba(0,0,0,.65);
+    border: 1px solid var(--accent-c, var(--cyan));
+    color: var(--accent-c, var(--cyan));
+    font-family: var(--ff-b); font-size: 9px;
+    letter-spacing: 1.5px; text-transform: uppercase;
+    padding: 3px 9px; border-radius: 999px;
+    backdrop-filter: blur(6px);
+    z-index: 2;
+}
+
+/* Description text mặt sau card */
+.char-desc-back {
+    font-size: 11px; color: var(--muted);
+    line-height: 1.6; margin-top: 4px;
+    border-top: 1px solid rgba(255,255,255,.06);
+    padding-top: 8px;
+}
+
+/* object-position handled in base rule */
+
+/* ================================================================
+   CHARACTERS — Section labels (Crypton 6 / Extra)
+   ================================================================ */
+.chars-section-label {
+    display: flex; align-items: center; gap: 16px;
+    padding: 48px 32px 20px;
+    max-width: 1400px; margin: 0 auto;
+}
+.chars-section-label span {
+    font-family: var(--ff-b); font-size: 11px;
+    letter-spacing: 3px; text-transform: uppercase;
+    color: var(--cyan); white-space: nowrap;
+}
+.chars-section-label::after {
+    content: ''; flex: 1; height: 1px;
+    background: linear-gradient(90deg, var(--border), transparent);
+}
+.chars-section-label--extra {
+    margin-top: 48px;
+}
+.chars-section-label--extra span { color: var(--pink); }
+.chars-section-label--extra::after {
+    background: linear-gradient(90deg, rgba(255,102,204,.3), transparent);
+}
+
+/* Extra grid — same size as Crypton 6 */
+.char-grid--extra {
+    max-width: 1400px;
+}
