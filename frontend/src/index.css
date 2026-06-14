@@ -320,6 +320,20 @@ body#introduce { padding-top: 0; }
 }
 .card figure {
     margin-top: auto;
+    padding-top: 12px;
+    overflow: hidden;
+    border-radius: var(--r);
+}
+.card figure img { padding: 0; border-radius: var(--r); }
+.card figure img:hover { transform: scale(1.04); box-shadow: none; filter: brightness(1.08); }
+
+/* Portrait full-body images on home page */
+.grid .card figure img {
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    object-position: center top;
+    background: transparent;
+    border: none;
 }
 /* Home card: min-height cho text để figure luôn bắt đầu ở cùng vị trí */
 .grid .card p {
@@ -342,7 +356,7 @@ body#introduce { padding-top: 0; }
 .grid .card:nth-child(5),.flex .card:nth-child(5){animation-delay:.25s}
 .grid .card:nth-child(6){animation-delay:.30s}
 
-.char-name { font-family: var(--ff-d); font-size: 13px; color: var(--pink); letter-spacing: 1px; margin-bottom: 10px; text-align: center; }
+.char-name { font-family: var(--ff-d); font-size: 13px; color: var(--accent-c, var(--pink)); letter-spacing: 1px; margin-bottom: 10px; text-align: center; }
 .song-title { font-weight: 600; font-size: 17px; color: var(--gold); margin-bottom: 10px; }
 
 /* ================================================================
@@ -354,7 +368,7 @@ body#introduce { padding-top: 0; }
 }
 .char-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 22px; padding: 28px 24px;
     max-width: 1400px; margin: 0 auto;
 }
@@ -737,6 +751,7 @@ nav.links img:focus { outline: 3px solid var(--pink); outline-offset: 4px; }
     .grid { grid-template-columns: repeat(3, 30vw); justify-content: center; gap: 28px; padding: 28px 20px; }
     .flex > .card { width: 30vw; min-width: 0; }
     .char-grid { grid-template-columns: repeat(3, 1fr); max-width: 1200px; }
+    .char-grid--extra { max-width: 1200px; margin: 0 auto; }
     .char-flip { height: 420px; }
     .preview-wrapper { width: 50%; }
     nav.links img { width: 192px; height: 108px; }
@@ -1077,5 +1092,151 @@ body:not(#introduce) {
 
 /* Extra grid — same size as Crypton 6 */
 .char-grid--extra {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 28px 24px;
+}
+
+/* ================================================================
+   SKIN SPOTLIGHT — Flip cards cho SkinAndSong page
+   ================================================================ */
+.skin-spotlight {
     max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 24px 48px;
+}
+.skin-group {
+    margin-bottom: 48px;
+}
+.skin-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+    padding: 0 0 8px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.skin-flip {
+    perspective: 1000px;
+    height: 480px;
+    cursor: pointer;
+}
+.skin-flip-inner {
+    position: relative; width: 100%; height: 100%;
+    transform-style: preserve-3d;
+    transition: transform .7s cubic-bezier(.4,0,.2,1);
+}
+.skin-flip:hover .skin-flip-inner,
+.skin-flip.flipped .skin-flip-inner { transform: rotateY(180deg); }
+
+.skin-flip-front, .skin-flip-back {
+    position: absolute; inset: 0;
+    backface-visibility: hidden; -webkit-backface-visibility: hidden;
+    border-radius: var(--r); overflow: hidden;
+    border: 1px solid rgba(255,255,255,.08);
+}
+.skin-flip-front { background: var(--surface); }
+.skin-flip-front img {
+    width: 100%; height: 100%;
+    object-fit: cover; object-position: center top;
+    display: block; border: none; padding: 0;
+    border-radius: 0; margin: 0;
+    transition: transform .7s ease;
+    background: var(--surface);
+}
+.skin-flip:hover .skin-flip-front img { transform: scale(1.05); }
+
+.skin-name-overlay {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    padding: 40px 16px 14px;
+    background: linear-gradient(0deg, rgba(4,4,15,.95), transparent);
+    font-family: var(--ff-d); font-size: 12px; letter-spacing: 2px;
+    text-align: center; color: var(--text);
+}
+
+.skin-flip-back {
+    transform: rotateY(180deg);
+    background: linear-gradient(135deg, #090920 0%, #0e0e2e 100%);
+    padding: 24px 20px;
+    display: flex; flex-direction: column; gap: 10px;
+    border-color: var(--accent-c, var(--cyan));
+}
+.skin-back-name {
+    font-family: var(--ff-d); font-size: 13px;
+    letter-spacing: 2px; margin-bottom: 4px;
+}
+.skin-stat-row {
+    display: flex; justify-content: space-between; align-items: flex-start;
+    padding: 6px 0; border-bottom: 1px solid rgba(255,255,255,.06);
+    font-size: 13px;
+}
+.skin-stat-label {
+    color: var(--muted); font-size: 10px;
+    text-transform: uppercase; letter-spacing: 1px;
+    flex-shrink: 0;
+}
+.skin-stat-val {
+    color: var(--text); font-size: 13px;
+    text-align: right; margin-left: 12px;
+}
+.skin-desc {
+    font-size: 13px; color: var(--muted);
+    line-height: 1.7; margin-top: 6px;
+    border-top: 1px solid rgba(255,255,255,.06);
+    padding-top: 10px;
+    flex: 1;
+    overflow-y: auto;
+}
+
+/* Responsive */
+@media screen and (max-width: 479px) {
+    .skin-grid { grid-template-columns: 1fr; }
+    .skin-flip { height: 360px; }
+}
+@media screen and (min-width: 480px) and (max-width: 771px) {
+    .skin-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
+    .skin-flip { height: 380px; }
+}
+@media screen and (min-width: 772px) and (max-width: 997px) {
+    .skin-grid { grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .skin-flip { height: 400px; }
+}
+
+/* Light mode */
+[data-theme="light"] .skin-flip-back {
+    background: linear-gradient(135deg, #e8eeff 0%, #f0f4ff 100%);
+}
+[data-theme="light"] .skin-flip-front,
+[data-theme="light"] .skin-flip-back { border-color: rgba(0,150,200,.2); }
+
+/* ── Spotlight → Gallery CTA ── */
+.spotlight-gallery-cta {
+    text-align: center;
+    padding: 32px 0 16px;
+}
+.spotlight-gallery-link {
+    display: inline-block;
+    color: var(--cyan);
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.03em;
+    text-decoration: none;
+    border: 1px solid var(--cyan);
+    border-radius: 999px;
+    padding: 10px 28px;
+    opacity: 0.85;
+    transition: opacity .2s, background .2s, color .2s;
+}
+.spotlight-gallery-link:hover {
+    opacity: 1;
+    background: var(--cyan);
+    color: #000;
+}
+[data-theme="light"] .spotlight-gallery-link {
+    color: var(--cyan);
+    border-color: var(--cyan);
+}
+[data-theme="light"] .spotlight-gallery-link:hover {
+    background: var(--cyan);
+    color: #fff;
 }

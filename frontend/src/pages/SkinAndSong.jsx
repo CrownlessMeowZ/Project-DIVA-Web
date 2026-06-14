@@ -1,7 +1,8 @@
 import { useApp } from '../context/AppContext';
-import { GALLERY_LINKS, SONGS } from '../data/content';
+import { GALLERY_LINKS, SONGS, SKIN_SPOTLIGHTS } from '../data/content';
 import PageHero from '../components/PageHero';
 import GalleryPreview from '../components/GalleryPreview';
+import SkinSpotlight from '../components/SkinSpotlight';
 import Footer from '../components/Footer';
 
 export default function SkinAndSong() {
@@ -10,7 +11,18 @@ export default function SkinAndSong() {
     <>
       <PageHero title={t('skin_title')} sub={t('skin_sub')} />
 
-      <h2 className="section-title center-title">{t('gallery_title')}</h2>
+      {/* ── SPOTLIGHT SKINS ── */}
+      <h2 className="section-title center-title">Spotlight Skins</h2>
+      <p className="sub-text">Iconic modules from Hatsune Miku: Project DIVA MegaMix+</p>
+      <SkinSpotlight data={SKIN_SPOTLIGHTS} />
+
+      <div className="spotlight-gallery-cta">
+        <a href="#gallery" className="spotlight-gallery-link">
+          Want to explore all modules? Browse the full gallery ↓
+        </a>
+      </div>
+
+      <h2 id="gallery" className="section-title center-title">{t('gallery_title')}</h2>
       <p className="sub-text">{t('gallery_sub')}</p>
       <GalleryPreview links={GALLERY_LINKS} />
 

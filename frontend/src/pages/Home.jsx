@@ -102,12 +102,12 @@ export default function Home() {
       <main id="main">
         <div className="grid">
           {CHARACTERS.map((c, i) => (
-            <div className="card" key={c.id}>
+            <div className="card" key={c.id} style={{ '--accent-c': c.accent }}>
               <h3 id={`Vocaloid${i + 1}`} className="char-name">{c.name}</h3>
               <p>{t(c.descKey)}</p>
               <figure>
                 <a target="_blank" rel="noopener noreferrer" href={c.wikiUrl}>
-                  <img src={c.img} alt={c.alt} />
+                  <img src={c.homeImg || c.img} alt={c.alt} />
                 </a>
                 <figcaption>{c.name} — {c.code}</figcaption>
               </figure>
