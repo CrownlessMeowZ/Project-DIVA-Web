@@ -1,0 +1,64 @@
+---
+pid: 21728
+cwd: "D:\VS Code\project-diva-web"
+command: "$dirs = @('characters','gallery')
+foreach ($d in $dirs) { New-Item -ItemType Directory -Force -Path \"D:\\VS Code\\project-diva-web\\frontend\\public\\$d\" | Out-Null }
+$chars = @{
+  'miku-card.png' = 'https://image.api.playstation.com/cdn/UP0177/CUSA06093_00/5eJCYsbalpx7HmtvkoY8Q17GllfjDKpu.png'
+  'rin-card.png' = 'https://image.api.playstation.com/cdn/UP0177/CUSA06093_00/MWf15jH6OdJ5a77PJ01YoLSHY9mAEAhn.png'
+  'len-card.png' = 'https://image.api.playstation.com/cdn/UP0177/CUSA06093_00/C97gtKEyIfnc5ZeJLOnBzOepPb0fAgc8.png'
+  'luka-card.png' = 'https://image.api.playstation.com/cdn/UP0177/CUSA06093_00/TbgEhFCl8WlG73ju6NQ1TjBe79pvMM28.png'
+  'kaito-card.png' = 'https://image.api.playstation.com/cdn/UP0177/CUSA06093_00/OjetTcCdbnALVNXs4g8LqYn8e2WGu5Mw.png'
+  'meiko-card.png' = 'https://image.api.playstation.com/cdn/UP0177/CUSA06093_00/ztpVzdEVhhzenLSwNU6ZQKFMDPGEUbTh.png'
+  'teto-card.png' = 'https://image.api.playstation.com/cdn/UP0177/CUSA06093_00/Q9uJKcFfXzOrpydPZAb6olVCkcOvoUyK.png'
+  'neru-card.png' = 'https://image.api.playstation.com/cdn/UP0177/CUSA06093_00/sdooSQpncrw71pq8Otj9pWpvnIc8OliQ.png'
+  'haku-card.png' = 'https://image.api.playstation.com/cdn/UP0177/CUSA06093_00/IDKX1CWQ8II0Osp1m37WID1v5vXb2WBt.png'
+  'miku-home.jpg' = 'https://miku.sega.com/megamixplus/img/characters/miku-full.jpg'
+  'rin-home.jpg' = 'https://miku.sega.com/megamixplus/img/characters/rin-full.jpg'
+  'len-home.jpg' = 'https://miku.sega.com/megamixplus/img/characters/len-full.jpg'
+  'luka-home.jpg' = 'https://miku.sega.com/megamixplus/img/characters/luka-full.jpg'
+  'kaito-home.jpg' = 'https://miku.sega.com/megamixplus/img/characters/kaito-full.jpg'
+  'meiko-home.jpg' = 'https://miku.sega.com/megamixplus/img/characters/meiko-full.jpg'
+}
+foreach ($e in $chars.GetEnumerator()) {
+  curl.exe -sL -A \"Mozilla/5.0\" -o \"D:\\VS Code\\project-diva-web\\frontend\\public\\characters\\$($e.Key)\" $e.Value
+}
+$gallery = @{
+  'future-tone.png' = 'https://miku.sega.com/futuretone/img/ogimage.png'
+  'diva-x.jpg' = 'https://i0.wp.com/www.seganerds.com/wp-content/uploads/2016/08/project-diva-x-title.jpg?fit=1280%2C720&ssl=1'
+  'diva-f.jpg' = 'https://gamesline.net/wp-content/uploads/2014/03/hatsune_miku_project_diva_f_by_evoxiii-d52lcj2-1024x632.jpg'
+  'diva-2nd.jpg' = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9BW1QDP9qNQrJ-8baurfsSr6xxTxqnF1JOQ&s'
+  'megamix.jpg' = 'https://i.ytimg.com/vi/T74gVhg58Tg/hq720.jpg'
+}
+foreach ($e in $gallery.GetEnumerator()) {
+  curl.exe -sL -A \"Mozilla/5.0\" -o \"D:\\VS Code\\project-diva-web\\frontend\\public\\gallery\\$($e.Key)\" $e.Value
+}
+Get-ChildItem \"D:\\VS Code\\project-diva-web\\frontend\\public\\characters\",\"D:\\VS Code\\project-diva-web\\frontend\\public\\gallery\" | Format-Table Name, Length"
+started_at: 2026-07-02T16:52:57.556Z
+running_for_ms: 3739994  
+---
+
+Name            Length
+----            ------
+haku-card.png   145673
+kaito-card.png  170214
+kaito-home.jpg  464368
+len-card.png    152435
+len-home.jpg    446840
+luka-card.png   172354
+luka-home.jpg   450197
+meiko-card.png  174748
+meiko-home.jpg  444523
+miku-card.png   183898
+miku-home.jpg   474416
+neru-card.png   175174
+rin-card.png    158837
+rin-home.jpg    459593
+teto-card.png   170743
+diva-2nd.jpg      8371
+diva-f.jpg      169116
+diva-x.jpg      311754
+future-tone.png 741143
+megamix.jpg     160313
+
+

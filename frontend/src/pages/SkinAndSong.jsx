@@ -1,4 +1,4 @@
-import { useApp } from '../context/AppContext';
+import { useApp } from '../hooks/useApp';
 import { GALLERY_LINKS, SONGS, SKIN_SPOTLIGHTS } from '../data/content';
 import PageHero from '../components/PageHero';
 import GalleryPreview from '../components/GalleryPreview';
@@ -6,19 +6,19 @@ import SkinSpotlight from '../components/SkinSpotlight';
 import Footer from '../components/Footer';
 
 export default function SkinAndSong() {
-  const { t } = useApp();
+  const { t, lang } = useApp();
   return (
     <>
       <PageHero title={t('skin_title')} sub={t('skin_sub')} />
 
       {/* ── SPOTLIGHT SKINS ── */}
-      <h2 className="section-title center-title">Spotlight Skins</h2>
-      <p className="sub-text">Iconic modules from Hatsune Miku: Project DIVA MegaMix+</p>
+      <h2 className="section-title center-title">{t('skin_spotlight_title')}</h2>
+      <p className="sub-text">{t('skin_spotlight_sub')}</p>
       <SkinSpotlight data={SKIN_SPOTLIGHTS} />
 
       <div className="spotlight-gallery-cta">
         <a href="#gallery" className="spotlight-gallery-link">
-          Want to explore all modules? Browse the full gallery ↓
+          {t('skin_gallery_cta')}
         </a>
       </div>
 
@@ -34,13 +34,14 @@ export default function SkinAndSong() {
           {SONGS.map(s => (
             <div className="card" key={s.title}>
               <h3 className="song-title">{s.title}</h3>
-              <p>By <em>{s.artist}</em> — {s.desc}</p>
+              <p>{t('song_by')} <em>{t(s.artistKey)}</em> — {t(s.descKey)}</p>
               <figure>
-                <video controls aria-label={`${s.title} music video`}>
+                <video controls aria-label={t('aria_song_video', { title: s.title })}>
                   <source src={s.video} type="video/mp4" />
-                  Your browser does not support the video element.
+                  <track kind="captions" label={t('video_captions_label')} srcLang={lang} />
+                  {t('video_no_support')}
                 </video>
-                <figcaption>{s.title} — {s.artist}</figcaption>
+                <figcaption>{s.title} — {t(s.artistKey)}</figcaption>
               </figure>
             </div>
           ))}

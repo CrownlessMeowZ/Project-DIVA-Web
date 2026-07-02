@@ -7,6 +7,8 @@ import Characters from './pages/Characters';
 import SkinAndSong from './pages/SkinAndSong';
 import VersionAndGameplay from './pages/VersionAndGameplay';
 import GameHistory from './pages/GameHistory';
+import Producers from './pages/Producers';
+import Concerts from './pages/Concerts';
 
 export default function App() {
   return (
@@ -32,7 +34,6 @@ function PageWrapper({ children, isHome }) {
 
 function InnerApp() {
   const location = useLocation();
-  const isHome = location.pathname === '/';
 
   // Scroll to top on route change
   useEffect(() => {
@@ -57,6 +58,12 @@ function InnerApp() {
         } />
         <Route path="/game-history" element={
           <PageWrapper><GameHistory /></PageWrapper>
+        } />
+        <Route path="/producers" element={
+          <PageWrapper><Producers /></PageWrapper>
+        } />
+        <Route path="/concerts" element={
+          <PageWrapper><Concerts /></PageWrapper>
         } />
       </Routes>
     </>

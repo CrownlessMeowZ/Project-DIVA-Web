@@ -1,10 +1,10 @@
-import { useApp } from '../context/AppContext';
+import { useApp } from '../hooks/useApp';
 import { VERSIONS, GAMEPLAY_VIDEOS } from '../data/content';
 import PageHero from '../components/PageHero';
 import Footer from '../components/Footer';
 
 export default function VersionAndGameplay() {
-  const { t } = useApp();
+  const { t, lang } = useApp();
   return (
     <>
       <PageHero title={t('ver_title')} sub={t('ver_sub')} />
@@ -17,8 +17,8 @@ export default function VersionAndGameplay() {
             <li className="timeline-item" key={v.year}>
               <span className="timeline-year">{v.year}</span>
               <div className="timeline-body">
-                <h3>{v.title}</h3>
-                <p>{v.body}</p>
+                <h3>{t(v.titleKey)}</h3>
+                <p>{t(v.bodyKey)}</p>
               </div>
             </li>
           ))}
@@ -31,15 +31,16 @@ export default function VersionAndGameplay() {
       <main id="main">
         <div className="flex">
           {GAMEPLAY_VIDEOS.map(v => (
-            <div className="card" key={v.title}>
-              <h3 className="song-title">{v.title}</h3>
-              <p>{v.desc}</p>
+            <div className="card" key={v.titleKey}>
+              <h3 className="song-title">{t(v.titleKey)}</h3>
+              <p>{t(v.descKey)}</p>
               <figure>
-                <video controls aria-label={`${v.title} gameplay footage`}>
+                <video controls aria-label={t('aria_gameplay_video', { title: t(v.titleKey) })}>
                   <source src={v.video} type="video/mp4" />
-                  Your browser does not support the video element.
+                  <track kind="captions" label={t('video_captions_label')} srcLang={lang} />
+                  {t('video_no_support')}
                 </video>
-                <figcaption>{v.caption}</figcaption>
+                <figcaption>{t(v.captionKey)}</figcaption>
               </figure>
             </div>
           ))}

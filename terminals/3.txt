@@ -1,0 +1,39 @@
+---
+pid: 24920
+cwd: "D:\VS Code\project-diva-web"
+command: "$imagePages = @(
+  @{game='diva-psp'; slug=''},
+  @{game='diva-2nd'; slug='165492-hatsune-miku-project-diva-2nd'},
+  @{game='diva-extend'; slug='42375-hatsune-miku-project-diva-extend'},
+  @{game='diva-arcade'; slug='82005-hatsune-miku-project-diva-arcade'},
+  @{game='diva-f-vita'; slug='15154-hatsune-miku-project-diva-f'},
+  @{game='diva-f-ps3'; slug='15154-hatsune-miku-project-diva-f'},
+  @{game='diva-f2nd'; slug='33880-hatsune-miku-project-diva-f-2nd'},
+  @{game='diva-x'; slug='81996-hatsune-miku-project-diva-x'},
+  @{game='future-tone'; slug='102645-hatsune-miku-project-diva-future-tone-dx'},
+  @{game='megamix'; slug='130266-hatsune-miku-project-diva-mega-mix'}
+)
+$dir = 'D:\\VS Code\\project-diva-web\\frontend\\public\\history'
+foreach ($p in $imagePages) {
+  if (-not $p.slug) { continue }
+  $html = curl.exe -sL -A \"Mozilla/5.0\" \"https://gamesdb.launchbox-app.com/games/images/$($p.slug)\"
+  $img = ([regex]::Matches($html, 'https://images\\.launchbox-app\\.com/[a-f0-9-]+\\.(?:jpg|png)') | ForEach-Object { $_.Value } | Select-Object -Unique | Select-Object -First 1)
+  if ($img) {
+    $out = Join-Path $dir \"$($p.game).jpg\"
+    curl.exe -sL -A \"Mozilla/5.0\" -o $out $img
+    $size = (Get-Item $out).Length
+    Write-Host \"$($p.game): $size bytes from $img\"
+  } else { Write-Host \"$($p.game): NO IMAGE\" }
+}"
+started_at: 2026-07-02T16:32:39.546Z
+running_for_ms: 4955013  
+---
+diva-2nd: 64669 bytes from https://images.launchbox-app.com/e3d48a2e-0f3a-46ae-bf82-ac17cdbdf586.jpg
+diva-extend: 50241 bytes from https://images.launchbox-app.com/c87e65e7-c6b0-48b6-a290-960bf4574e24.jpg
+diva-arcade: 189033 bytes from https://images.launchbox-app.com/f8fe8419-114a-46da-8ab2-b03e9c134f17.jpg
+diva-f-vita: 3355400 bytes from https://images.launchbox-app.com/701aa303-4b48-43b8-89a3-0696f2c550cf.jpg
+diva-f-ps3: 3355400 bytes from https://images.launchbox-app.com/701aa303-4b48-43b8-89a3-0696f2c550cf.jpg
+diva-f2nd: 304737 bytes from https://images.launchbox-app.com/cadfa081-d7af-4647-a2b5-a8715387fb9b.jpg
+diva-x: 603227 bytes from https://images.launchbox-app.com/ded28c84-964e-4595-82b0-99889581c570.jpg
+future-tone: 1231004 bytes from https://images.launchbox-app.com/9b38defa-3ff6-4b6e-bae2-58fc5a4740bb.jpg
+megamix: 135981 bytes from https://images.launchbox-app.com/8b31e438-4665-4c61-ab3d-d73cae1ce946.jpg

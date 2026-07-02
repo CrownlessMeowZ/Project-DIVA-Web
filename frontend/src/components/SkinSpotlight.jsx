@@ -1,6 +1,8 @@
 import { useState } from 'react';
+import { useApp } from '../hooks/useApp';
 
 function SkinFlipCard({ skin, accent }) {
+  const { t } = useApp();
   const [flipped, setFlipped] = useState(false);
   return (
     <div
@@ -22,15 +24,15 @@ function SkinFlipCard({ skin, accent }) {
           <p className="skin-back-name" style={{ color: accent }}>{skin.name}</p>
 
           <div className="skin-stat-row">
-            <span className="skin-stat-label">Producer</span>
+            <span className="skin-stat-label">{t('lbl_producer')}</span>
             <span className="skin-stat-val">{skin.producer}</span>
           </div>
           <div className="skin-stat-row">
-            <span className="skin-stat-label">Origin Song</span>
+            <span className="skin-stat-label">{t('lbl_origin_song')}</span>
             <span className="skin-stat-val">{skin.song}</span>
           </div>
 
-          <p className="skin-desc">{skin.desc}</p>
+          <p className="skin-desc">{t(skin.descKey)}</p>
         </div>
       </div>
     </div>

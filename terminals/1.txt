@@ -1,0 +1,36 @@
+---
+pid: 2528
+cwd: "D:\VS Code\project-diva-web"
+command: "$urls = @{
+  'diva1' = 'https://image.api.playstation.com/vulcan/img/rnd/202010/2618/8aJ5s5w5w5w5w5w5w5w5w5w5w5w5w5w5w5w5w5w5.png'
+  'diva_psp' = 'https://projectdiva.wiki/w/images/thumb/8/8a/Project_DIVA_Box_Art.jpg/300px-Project_DIVA_Box_Art.jpg'
+  'diva2' = 'https://projectdiva.wiki/w/images/thumb/4/4e/Project_DIVA_2nd_Box_Art.jpg/300px-Project_DIVA_2nd_Box_Art.jpg'
+  'arcade' = 'https://miku.sega.com/futuretone/img/ogimage.png'
+  'extend' = 'https://projectdiva.wiki/w/images/thumb/9/9e/Project_DIVA_Extend_Box_Art.jpg/300px-Project_DIVA_Extend_Box_Art.jpg'
+  'diva_f_vita' = 'https://image.api.playstation.com/vulcan/ap/rnd/202008/2618/0aJ5s5w5w5w5w5w5w5w5w5w5w5w5w5w5w5w5w5w5.png'
+  'megamix' = 'https://miku.sega.com/megamix/img/og_img.jpg'
+  'megamixplus' = 'https://miku.sega.com/megamixplus/img/og_img.jpg'
+  'futuretone' = 'https://miku.sega.com/futuretone/img/ogimage.png'
+  'diva_x' = 'https://i0.wp.com/www.seganerds.com/wp-content/uploads/2016/08/project-diva-x-title.jpg?fit=1280%2C720&ssl=1'
+  'magical_mirai' = 'https://magicalmirai.com/2013/assets/img/mainvisual.jpg'
+  'miku_expo' = 'https://mikuexpo.com/assets/img/common/ogp.jpg'
+}
+foreach ($k in $urls.Keys) {
+  $code = curl.exe -sI -o NUL -w \"%{http_code}\" $urls[$k]
+  Write-Host \"$k : $code\"
+}"
+started_at: 2026-07-02T16:20:41.324Z
+running_for_ms: 5674997  
+---
+diva_x : 200
+diva_psp : 301
+arcade : 200
+extend : 301
+diva2 : 301
+diva1 : 404
+megamixplus : 200
+miku_expo : 404
+magical_mirai : 404
+diva_f_vita : 404
+megamix : 403
+futuretone : 200

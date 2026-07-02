@@ -1,4 +1,4 @@
-import { useApp } from '../context/AppContext';
+import { useApp } from '../hooks/useApp';
 
 export default function SettingsPanel({ open, onClose }) {
   const { theme, setTheme, lang, setLang, t } = useApp();
@@ -29,16 +29,19 @@ export default function SettingsPanel({ open, onClose }) {
           <div className="settings-group">
             <p className="settings-label">{t('settings_lang')}</p>
             <div className="settings-row">
-              {['en','vi'].map(l => (
-                <button key={l}
-                  className={`lang-opt${lang === l ? ' active' : ''}`}
-                  data-lang={l}
-                  onClick={() => setLang(l)}
-                >
-                  {l === 'en' ? 'English' : 'Tiếng Việt'}
-                </button>
-              ))}
-            </div>
+            <button 
+              className={`lang-opt${lang === 'en' ? ' active' : ''}`}
+              onClick={() => setLang('en')}
+            >
+              {t('settings_lang_en')}
+            </button>
+            <button 
+              className={`lang-opt${lang === 'vi' ? ' active' : ''}`}
+              onClick={() => setLang('vi')}
+            >
+              {t('settings_lang_vi')}
+            </button>
+          </div>
           </div>
         </div>
       </div>

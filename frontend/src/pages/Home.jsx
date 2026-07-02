@@ -1,8 +1,8 @@
 import { useRef, useEffect } from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import { useApp } from '../context/AppContext';
+import { useApp } from '../hooks/useApp';
 import { useParticles } from '../hooks/useParticles';
-import { CHARACTERS, GALLERY_LINKS } from '../data/content';
+import { CHARACTERS, HOME_GALLERY_LINKS } from '../data/content';
 import GalleryPreview from '../components/GalleryPreview';
 import Footer from '../components/Footer';
 
@@ -36,11 +36,13 @@ export default function Home() {
   }, []);
 
   const quickLinks = [
-    { to: '/',                 label: t('nav_home'),    cls: 'hql-home'  },
-    { to: '/characters',       label: t('nav_chars'),   cls: 'hql-chars' },
-    { to: '/skin-and-song',    label: t('nav_skin'),    cls: 'hql-skin'  },
-    { to: '/version-gameplay', label: t('nav_ver'),     cls: 'hql-ver'   },
-    { to: '/game-history',     label: t('nav_history'), cls: 'hql-patch' },
+    { to: '/',                 label: t('nav_home'),      cls: 'hql-home'      },
+    { to: '/characters',       label: t('nav_chars'),     cls: 'hql-chars'     },
+    { to: '/skin-and-song',    label: t('nav_skin'),      cls: 'hql-skin'      },
+    { to: '/version-gameplay', label: t('nav_ver'),       cls: 'hql-ver'       },
+    { to: '/game-history',     label: t('nav_history'),   cls: 'hql-patch'     },
+    { to: '/producers',        label: t('nav_producers'), cls: 'hql-producers' },
+    { to: '/concerts',         label: t('nav_concerts'),  cls: 'hql-concerts'  },
   ];
 
   return (
@@ -63,13 +65,8 @@ export default function Home() {
               </span>
             ))}
           </nav>
-
-          <div className="hero-cta">
-            <Link to="/characters" className="btn-primary">{t('btn_explore')}</Link>
-            <Link to="/game-history" className="btn-ghost">{t('btn_history')}</Link>
-          </div>
         </div>
-        <div className="scroll-hint">Scroll</div>
+        <div className="scroll-hint">{t('hero_scroll_hint')}</div>
       </section>
 
       {/* ABOUT */}
@@ -77,26 +74,14 @@ export default function Home() {
         <h2 className="section-title center-title">{t('about_title')}</h2>
         <p className="about-text">{t('about_text')}</p>
 
-        <GalleryPreview links={[
-          {
-            caption: 'Project DIVA Official Wiki',
-            href: 'https://project-diva.fandom.com/wiki/Project_DIVA_Wiki',
-            img: 'https://projectdiva.wiki/w/images/thumb/7/74/PjDWikiHome.png/1200px-PjDWikiHome.png',
-            alt: 'Project DIVA official Fandom Wiki homepage',
-          },
-          {
-            caption: 'MegaMix+ Official Site',
-            href: 'https://miku.sega.com/megamixplus/index.html',
-            img: 'https://miku.sega.com/megamixplus/img/og_img.jpg',
-            alt: 'Hatsune Miku Project DIVA Mega Mix Plus official key visual',
-          },
-        ]} />
+        <GalleryPreview links={HOME_GALLERY_LINKS} />
       </section>
 
       {/* CHARACTERS GRID */}
       <h2 className="section-title center-title">{t('chars_title')}</h2>
       <p className="sub-text">
-        {t('chars_sub').replace(/<[^>]*>/g, '')} <Link to="/characters" style={{ color: 'var(--cyan)', textDecoration: 'none' }}>Characters page</Link>
+        {t('chars_sub').replace(/<[^>]*>/g, '')}{' '}
+        <Link to="/characters" style={{ color: 'var(--cyan)', textDecoration: 'none' }}>{t('chars_link_text')}</Link>
       </p>
 
       <main id="main">

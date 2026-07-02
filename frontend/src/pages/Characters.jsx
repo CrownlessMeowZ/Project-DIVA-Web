@@ -1,10 +1,11 @@
 import { useState } from 'react';
-import { useApp } from '../context/AppContext';
+import { useApp } from '../hooks/useApp';
 import { CHARACTERS, EXTRA_CHARACTERS } from '../data/content';
 import PageHero from '../components/PageHero';
 import Footer from '../components/Footer';
 
 function CharFlipCard({ char }) {
+  const { t } = useApp();
   const [flipped, setFlipped] = useState(false);
   return (
     <div
@@ -24,22 +25,22 @@ function CharFlipCard({ char }) {
           <p className="char-code">{char.code} &nbsp;·&nbsp; {char.voice}</p>
 
           <div className="char-stat-row">
-            <span className="char-stat-label">Voice by</span>
-            <span className="char-stat-val">{char.voiceBy}</span>
+            <span className="char-stat-label">{t('lbl_voice_by')}</span>
+            <span className="char-stat-val">{t(char.voiceByKey)}</span>
           </div>
           <div className="char-stat-row">
-            <span className="char-stat-label">Released</span>
-            <span className="char-stat-val">{char.released}</span>
+            <span className="char-stat-label">{t('lbl_released')}</span>
+            <span className="char-stat-val">{t(char.releasedKey)}</span>
           </div>
           <div className="char-stat-row">
-            <span className="char-stat-label">Height</span>
-            <span className="char-stat-val">{char.height}</span>
+            <span className="char-stat-label">{t('lbl_height')}</span>
+            <span className="char-stat-val">{t(char.heightKey)}</span>
           </div>
           <div className="char-stat-row">
-            <span className="char-stat-label">Signature</span>
-            <span className="char-stat-val">{char.signature}</span>
+            <span className="char-stat-label">{t('lbl_signature')}</span>
+            <span className="char-stat-val">{t(char.signatureKey)}</span>
           </div>
-          <p className="char-songs-title">Iconic Songs</p>
+          <p className="char-songs-title">{t('lbl_iconic_songs')}</p>
           <ul className="char-songs-list">
             {char.songs.map(s => <li key={s}>{s}</li>)}
           </ul>
@@ -75,7 +76,7 @@ export default function Characters() {
 
       <Footer extra={
         <span style={{ color: 'var(--muted)', fontSize: '12px' }}>
-          Voice data sourced from Vocaloid Wiki
+          {t('footer_chars_src')}
         </span>
       } />
     </>

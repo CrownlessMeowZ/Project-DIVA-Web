@@ -1,78 +1,166 @@
-import { useState } from 'react';
-import { useApp } from '../context/AppContext';
-import { HISTORY } from '../data/content';
-import PageHero from '../components/PageHero';
-import Footer from '../components/Footer';
+import { useEffect, useMemo, useState } from "react";
+import { useTranslation } from "react-i18next";
+import {
+  GAMES,
+  FILTER_TABS,
+  VALID_FILTER_IDS,
+  filterGames,
+} from "../data/gameHistory";
+import PageHero from "../components/PageHero";
+import Footer from "../components/Footer";
 
-const TAG_CLASS = { initial: 'tag-initial', content: 'tag-content', platform: 'tag-platform', fix: 'tag-fix' };
+const STORAGE_KEY = "gameHistory_activeFilter";
 
-function PatchEntry({ entry, open, onToggle }) {
+function readStoredFilter() {
+  try {
+    const stored = localStorage.getItem(STORAGE_KEY);
+    if (stored && VALID_FILTER_IDS.includes(stored)) return stored;
+  } catch {
+    // localStorage unavailable
+  }
+  return "all";
+}
+
+function tabLabelKey(tab) {
+  if (tab.group === "all") return "gameHistory.tabs.all";
+  return `gameHistory.tabs.${tab.key}`;
+}
+
+function GameCard({ game, placeholderLabel }) {
+  const cover = game.coverImage ? (
+    <img src={game.coverImage} alt={game.title} loading="lazy" />
+  ) : (
+    <span className="gh-card-cover-placeholder">{placeholderLabel}</span>
+  );
+
   return (
-    <div className={`patch-entry${open ? ' open' : ''}`}>
-      <div className="patch-hdr" onClick={onToggle}>
-        <span className="patch-version">{entry.year}</span>
-        <span className="patch-date">{entry.date}</span>
-        <div className="patch-tags-g">
-          {entry.tags.map(tag => (
-            <span key={tag.label} className={`tag ${TAG_CLASS[tag.type] || 'tag-content'}`}>
-              {tag.label}
-            </span>
-          ))}
-        </div>
-        <span className="patch-arrow">▼</span>
+    <article className="gh-card">
+      <div className="gh-card-cover">
+        {game.coverImage && game.coverHref ? (
+          <a
+            href={game.coverHref}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`${game.title} — official reference`}
+          >
+            {cover}
+          </a>
+        ) : (
+          cover
+        )}
       </div>
-      <div className="patch-body" style={{ maxHeight: open ? '3000px' : '0' }}>
-        <div className="patch-body-inner">
-          <div className="patch-section">
-            <p className="patch-section-title">{entry.title}</p>
-            <ul className="patch-list">
-              {entry.items.map((item, i) => (
-                <li key={i} dangerouslySetInnerHTML={{ __html: item }} />
-              ))}
-            </ul>
-          </div>
-          {entry.section2 && (
-            <div className="patch-section">
-              <p className="patch-section-title">{entry.section2.title}</p>
-              <ul className="patch-list">
-                {entry.section2.items.map((item, i) => (
-                  <li key={i} dangerouslySetInnerHTML={{ __html: item }} />
-                ))}
-              </ul>
-            </div>
-          )}
-          <p className="patch-note">{entry.note}</p>
-        </div>
+      <div className="gh-card-body">
+        <h3 className="gh-card-title">{game.title}</h3>
+        <p className="gh-card-meta">
+          {game.year} · {game.platform}
+        </p>
+        <span className="gh-card-series">{game.series}</span>
       </div>
-    </div>
+    </article>
   );
 }
 
 export default function GameHistory() {
-  const { t } = useApp();
-  const [openIdx, setOpenIdx] = useState(0);
-  const toggle = (i) => setOpenIdx(prev => prev === i ? null : i);
+  const { t } = useTranslation();
+  const [activeFilter, setActiveFilter] = useState(readStoredFilter);
+
+  useEffect(() => {
+    localStorage.setItem(STORAGE_KEY, activeFilter);
+  }, [activeFilter]);
+
+  const filtered = useMemo(
+    () => filterGames(GAMES, activeFilter),
+    [activeFilter],
+  );
+
+  const platformTabs = FILTER_TABS.filter(
+    (tab) => tab.group === "all" || tab.group === "platform",
+  );
+  const seriesTabs = FILTER_TABS.filter((tab) => tab.group === "series");
+
+  function selectFilter(id) {
+    setActiveFilter(id);
+  }
 
   return (
-    <>
-      <PageHero title={t('gh_title')} sub={t('gh_sub')} />
+    <div className="gh-page">
+      <PageHero
+        title={t("gameHistory.title")}
+        sub={t("gameHistory.subtitle")}
+      />
+
+      <section
+        className="gh-filter-section"
+        aria-label={t("gameHistory.filterAria")}
+      >
+        <div className="gh-filter-group">
+          <span className="gh-filter-group-label">
+            {t("gameHistory.filterPlatform")}
+          </span>
+          <div className="gh-filter-tabs" role="tablist">
+            {platformTabs.map((tab) => (
+              <button
+                key={tab.id}
+                type="button"
+                role="tab"
+                aria-selected={activeFilter === tab.id}
+                className={`gh-filter-tab${activeFilter === tab.id ? " active" : ""}`}
+                onClick={() => selectFilter(tab.id)}
+              >
+                {t(tabLabelKey(tab))}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <div className="gh-filter-group">
+          <span className="gh-filter-group-label">
+            {t("gameHistory.filterSeries")}
+          </span>
+          <div className="gh-filter-tabs" role="tablist">
+            {seriesTabs.map((tab) => (
+              <button
+                key={tab.id}
+                type="button"
+                role="tab"
+                aria-selected={activeFilter === tab.id}
+                className={`gh-filter-tab${activeFilter === tab.id ? " active" : ""}`}
+                onClick={() => selectFilter(tab.id)}
+              >
+                {t(tabLabelKey(tab))}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <p className="gh-filter-meta">
+          {t("gameHistory.resultCount", { count: filtered.length })}
+        </p>
+      </section>
+
       <main id="main">
-        <div className="patch-timeline">
-          {HISTORY.map((entry, i) => (
-            <PatchEntry
-              key={entry.year}
-              entry={entry}
-              open={openIdx === i}
-              onToggle={() => toggle(i)}
-            />
-          ))}
+        <div className="gh-card-grid">
+          {filtered.length === 0 ? (
+            <p className="gh-empty">{t("gameHistory.empty")}</p>
+          ) : (
+            filtered.map((game) => (
+              <GameCard
+                key={game.id}
+                game={game}
+                placeholderLabel={t("gameHistory.coverPlaceholder")}
+              />
+            ))
+          )}
         </div>
       </main>
-      <Footer extra={
-        <span style={{ color: 'var(--muted)', fontSize: '12px' }}>
-          Series history compiled from official SEGA releases
-        </span>
-      } />
-    </>
+
+      <Footer
+        extra={
+          <span style={{ color: "var(--muted)", fontSize: "12px" }}>
+            {t("gameHistory.footerCredit")}
+          </span>
+        }
+      />
+    </div>
   );
 }

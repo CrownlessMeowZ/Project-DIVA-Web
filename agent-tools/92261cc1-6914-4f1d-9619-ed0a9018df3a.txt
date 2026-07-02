@@ -1,0 +1,192 @@
+
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, 
+initial-scale=1"><title>Hatsune Miku: Project Diva 2nd# - LaunchBox Games 
+Database</title><style>.banner{background:#04181f;border-bottom:0;height:70px;position:relative;width:100%}@media 
+screen and (min-width:768px){.banner{height:68px}}.banner img{height:100%;-o-object-fit:contain;object-fit:contain;-o-o
+bject-position:center;object-position:center;width:100%}.banner-link{display:flex;height:100%;justify-content:center;po
+sition:relative;width:100%;z-index:1}</style><style>.DropdownMenuContent{max-height:var(--radix-dropdown-menu-content-a
+vailable-height);width:var(--radix-dropdown-menu-trigger-width)}</style><style>.description[data-v-168f81ad]{bottom:2.5
+rem;left:50%;position:absolute;--tw-translate-x:-50%;text-wrap:nowrap;transform:translate(var(--tw-translate-x),var(--t
+w-translate-y)) rotate(var(--tw-rotate)) skew(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) 
+scaleY(var(--tw-scale-y));--tw-text-opacity:1;color:rgb(255 255 255/var(--tw-text-opacity,1))}</style><link 
+rel="stylesheet" href="/_nuxt/entry.DIHuhL9n.css" crossorigin><link rel="stylesheet" 
+href="/_nuxt/lb-icon-button.YQUsdUX9.css" crossorigin><link 
+href="https://www.googletagmanager.com/gtm.js?id=G-VXPEGZZ91W" rel="preload" crossorigin="anonymous" 
+referrerpolicy="no-referrer" fetchpriority="low" as="script"><link 
+href="https://connect.facebook.net/en_US/fbevents.js" rel="preload" referrerpolicy="no-referrer" fetchpriority="low" 
+as="script"><link rel="modulepreload" as="script" crossorigin href="/_nuxt/DIxRlaC_.js"><link rel="modulepreload" 
+as="script" crossorigin href="/_nuxt/BaxH0g2P.js"><link rel="modulepreload" as="script" crossorigin 
+href="/_nuxt/B-tIl6uu.js"><link rel="modulepreload" as="script" crossorigin href="/_nuxt/CuaA6Ve0.js"><link 
+rel="modulepreload" as="script" crossorigin href="/_nuxt/DlAUqK2U.js"><link rel="modulepreload" as="script" 
+crossorigin href="/_nuxt/BMVMsqyG.js"><link rel="modulepreload" as="script" crossorigin 
+href="/_nuxt/CliybopX.js"><link rel="preload" as="fetch" fetchpriority="low" crossorigin="anonymous" 
+href="/_nuxt/builds/meta/9485d017-25a2-48dc-96ae-4b0f013d8614.json"><link rel="icon" sizes="32x32" 
+href="/favicon.ico"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="manifest" 
+href="/manifest.webmanifest"><meta name="description" content="This updated version of Project Diva 2nd released 
+alongside Project Diva Extend, and came as a download code with the physical release, or was added to your account 
+with a digital purchase of extend. This version includes the updated features from Extend, alongside other additions 
+and improvements, such as new costumes. This version also has performance improvements compared to the original 
+version."><script type="module" src="/_nuxt/DIxRlaC_.js" crossorigin></script></head><body><div 
+id="__nuxt"><!--[--><div></div><div class="grid min-h-screen grid-rows-[auto_1fr_auto] font-display"><!----><header 
+class="sticky left-0 top-0 z-10 flex h-16 w-screen bg-gradient-to-b from-gray-900/5 to-gray-900/0 pr-4 
+backdrop-blur-md"><div class="container my-auto flex items-center gap-14"><a href="https://gamesdb.launchbox-app.com" 
+rel="noopener noreferrer" class="shrink-0"><img src="/img/logo.svg" alt="LaunchBox Logo" class="w-40"><span 
+class="sr-only"> Back to Home Page </span></a><nav class="lg:block hidden xl:block"><ul class="flex 
+gap-1"><!--[--><li><a href="https://gamesdb.launchbox-app.com" rel="noopener noreferrer" class="block text-nowrap px-3 
+py-2.5 text-body-sm font-medium leading-tight text-white outline-none hover:text-white/85 xl:px-5">Home</a></li><li><a 
+href="https://www.launchbox-app.com/" rel="noopener noreferrer" class="block text-nowrap px-3 py-2.5 text-body-sm 
+font-medium leading-tight text-white outline-none hover:text-white/85 xl:px-5">Get LaunchBox</a></li><li><a 
+href="https://forums.launchbox-app.com/" rel="noopener noreferrer" class="block text-nowrap px-3 py-2.5 text-body-sm 
+font-medium leading-tight text-white outline-none hover:text-white/85 xl:px-5">Forums</a></li><li><a 
+href="https://www.youtube.com/playlist?list=PL6Hue8Zv6zv6JFZ8zZJfZK3v4dGZ3Zw8E" rel="noopener noreferrer" class="block 
+text-nowrap px-3 py-2.5 text-body-sm font-medium leading-tight text-white outline-none hover:text-white/85 
+xl:px-5">Tutorials</a></li><li><a href="https://www.launchbox-app.com/big-box" rel="noopener noreferrer" class="block 
+text-nowrap px-3 py-2.5 text-body-sm font-medium leading-tight text-white outline-none hover:text-white/85 
+xl:px-5">BigBox</a></li><li><a href="https://gamesdb.launchbox-app.com/collection/manage" rel="noopener noreferrer" 
+class="block text-nowrap px-3 py-2.5 text-body-sm font-medium leading-tight text-white outline-none 
+hover:text-white/85 xl:px-5">My Collections</a></li><!--]--></ul></nav><div class="ml-auto inline-flex items-center 
+gap-4"><!--[--><!--[--><form class="relative h-10 overflow-hidden transition-all w-10" type="button" 
+aria-haspopup="dialog" aria-expanded="false" aria-controls data-state="closed"><div class="flex size-full items-center 
+rounded-3xl border transition-colors focus-within:border-cyan-900 focus-within:bg-white/16 border-transparent"><button 
+type="button" class="inline-flex h-full w-10 items-center justify-center rounded-full text-white outline-none 
+transition-colors enabled:hover:bg-white/20 enabled:focus-visible:bg-white/10 enabled:active:bg-white/25"><span 
+class="inline-flex size-4 items-center justify-center"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 
+0 16 16" class="accent-current" aria-hidden="true"><path fill="currentColor" fill-rule="evenodd" d="M7.333 2a5.333 
+5.333 0 1 0 3.27 9.547l2.259 2.258a.667.667 0 1 0 .943-.943l-2.258-2.258A5.333 5.333 0 0 0 7.334 2Zm-4 5.333a4 4 0 1 1 
+8 0 4 4 0 0 1-8 0Z" clip-rule="evenodd"></path></svg></span><span class="sr-only"> Open Search Box 
+</span></button><input type="text" class="h-full flex-1 border-none bg-transparent font-display text-body-md 
+text-white outline-none hidden" value><!----></div></form><!----><!--]--><!--]--><span 
+class="[&amp;&gt;*]:active:pointer-events-none"><!--[--><!--[--><!--[--><!--[--><div 
+id="radix-vue-dropdown-menu-trigger-v-0-0" aria-haspopup="menu" aria-expanded="false" 
+data-state="closed"><!--[--><!--[--><button target="_blank" external="false" class="focus-visible:focus-offset-outline 
+inline-flex items-center justify-center gap-2 text-nowrap disabled:cursor-no-drop border border-white/08 bg-white/08 
+text-white enabled:hover:border-white/16 enabled:hover:bg-white/16 enabled:active:border-white/24 
+enabled:active:bg-white/24 disabled:border-white/08 disabled:bg-white/08 disabled:text-white/24 h-10 rounded-full px-6 
+text-button-sm hidden xl:inline lg:inline"><!--[--><!--[--><!--[--><!--[--><span class="inline-flex size-4 
+items-center justify-center" data-state="closed" data-grace-area-trigger><svg xmlns="http://www.w3.org/2000/svg" 
+fill="none" viewBox="0 0 16 16" class="accent-current" aria-hidden="true"><path fill="currentColor" 
+fill-rule="evenodd" d="M8 2a3.362 3.362 0 0 0-3.366 3.358A3.362 3.362 0 0 0 8 8.715a3.362 3.362 0 0 0 
+3.366-3.357A3.362 3.362 0 0 0 8 2ZM6.034 5.358c0-1.084.88-1.962 1.966-1.962 1.086 0 1.966.878 1.966 1.962 0 1.083-.88 
+1.961-1.966 1.961a1.964 1.964 0 0 1-1.966-1.961Z" clip-rule="evenodd"></path><path fill="currentColor" d="M8 
+9.647c-1.315 0-2.61.315-3.682.913-1.071.598-1.894 1.464-2.275 2.501a.7.7 0 0 0 1.314.481c.243-.66.8-1.292 
+1.644-1.763.844-.471 1.899-.736 2.999-.736s2.155.265 2.999.736c.845.471 1.401 1.103 1.644 1.763a.7.7 0 0 0 
+1.314-.48c-.381-1.038-1.204-1.904-2.275-2.502-1.073-.598-2.367-.913-3.682-.913Z"></path></svg></span><span 
+class="font-display font-bold"><!--[--> My account 
+<!--]--></span><!----><!--]--><!----><!--]--><!--]--><!--]--></button><button type="button" class="size-10 bg-white/10 
+text-white enabled:hover:bg-white/20 enabled:focus-visible:bg-white/10 enabled:active:bg-white/25 
+focus-visible:focus-outline inline-flex shrink-0 items-center justify-center rounded-xl outline-none 
+disabled:bg-white/5 disabled:text-dark-400 inline xl:hidden lg:hidden"><span class="inline-flex size-4 items-center 
+justify-center"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16" class="accent-current" 
+aria-hidden="true"><path fill="currentColor" fill-rule="evenodd" d="M8 2a3.362 3.362 0 0 0-3.366 3.358A3.362 3.362 0 0 
+0 8 8.715a3.362 3.362 0 0 0 3.366-3.357A3.362 3.362 0 0 0 8 2ZM6.034 5.358c0-1.084.88-1.962 1.966-1.962 1.086 0 
+1.966.878 1.966 1.962 0 1.083-.88 1.961-1.966 1.961a1.964 1.964 0 0 1-1.966-1.961Z" clip-rule="evenodd"></path><path 
+fill="currentColor" d="M8 9.647c-1.315 0-2.61.315-3.682.913-1.071.598-1.894 1.464-2.275 2.501a.7.7 0 0 0 
+1.314.481c.243-.66.8-1.292 1.644-1.763.844-.471 1.899-.736 2.999-.736s2.155.265 2.999.736c.845.471 1.401 1.103 1.644 
+1.763a.7.7 0 0 0 
+1.314-.48c-.381-1.038-1.204-1.904-2.275-2.502-1.073-.598-2.367-.913-3.682-.913Z"></path></svg></span><span 
+class="sr-only">Toggle My Account 
+menu</span></button><!--]--><!--]--></div><!----><!--]--><!--]--><!--]--><!--]--></span><button type="button" 
+class="size-10 bg-white/10 text-white enabled:hover:bg-white/20 enabled:focus-visible:bg-white/10 
+enabled:active:bg-white/25 focus-visible:focus-outline inline-flex shrink-0 items-center justify-center rounded-xl 
+outline-none disabled:bg-white/5 disabled:text-dark-400 xl:hidden lg:hidden"><span class="inline-flex size-4 
+items-center justify-center"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16" 
+class="accent-current" aria-hidden="true"><path fill="currentColor" fill-rule="evenodd" d="M1 
+3.8c0-.442.418-.8.933-.8h12.134c.515 0 .933.358.933.8 0 .442-.418.8-.933.8H1.933C1.418 4.6 1 4.242 1 3.8ZM1 
+8c0-.442.418-.8.933-.8h12.134c.515 0 .933
+
+... (output truncated) ...
+
+fill="currentColor" d="M19.269 5.747a17.821 17.821 0 0 0-4.27-1.247.095.095 0 0 0-.07.028c-.18.31-.39.712-.53 
+1.022a17.156 17.156 0 0 0-4.8 0 9.17 9.17 0 0 0-.54-1.022c-.01-.019-.04-.028-.07-.028-1.5.244-2.93.665-4.27 1.247-.01 
+0-.02.009-.03.018-2.72 3.815-3.47 7.526-3.1 11.2 0 .02.01.038.03.047a17.847 17.847 0 0 0 5.24 2.484c.03.01.06 0 
+.07-.019.4-.515.76-1.059 1.07-1.63.02-.038 
+0-.075-.04-.085-.57-.206-1.11-.45-1.64-.73-.04-.02-.04-.076-.01-.104.11-.075.22-.16.33-.234a.065.065 0 0 1 
+.07-.01c3.44 1.472 7.15 1.472 10.55 0 
+.02-.009.05-.009.07.01.11.084.22.16.33.243.04.028.04.085-.01.104-.52.29-1.07.524-1.64.73-.04.01-.05.057-.04.085a14.2 
+14.2 0 0 0 1.07 1.63c.03.01.06.02.09.01a17.778 17.778 0 0 0 
+5.25-2.484c.02-.009.03-.028.03-.047.44-4.245-.73-7.929-3.1-11.2-.01-.009-.02-.018-.04-.018Zm-10.75 8.979c-1.03 
+0-1.89-.89-1.89-1.988 0-1.096.84-1.986 1.89-1.986 1.06 0 1.9.9 1.89 1.986 0 1.097-.84 1.988-1.89 1.988Zm6.97 0c-1.03 
+0-1.89-.89-1.89-1.988 0-1.096.84-1.986 1.89-1.986 1.06 0 1.9.9 1.89 1.986 0 1.097-.83 1.988-1.89 
+1.988Z"></path></svg></span><span class="sr-only">discord</span></a></li><li><a 
+href="https://forums.launchbox-app.com/" target="_blank" rel="noreferrer" class="flex size-10 rounded-xl 
+bg-white/04"><span class="inline-flex size-4 items-center justify-center m-auto text-white"><svg 
+xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="accent-current" aria-hidden="true"><path 
+fill="currentColor" fill-rule="evenodd" d="M10.05 17.1c4.722 0 8.55-2.82 8.55-6.3s-3.828-6.3-8.55-6.3c-4.722 0-8.55 
+2.82-8.55 6.3 0 1.308.541 2.523 1.468 3.53L2.25 17.4l2.9-1.437c1.387.717 3.077 1.137 4.9 1.137ZM7.5 10.8a1.05 1.05 0 1 
+1-2.1 0 1.05 1.05 0 0 1 2.1 0Zm3.6 0a1.05 1.05 0 1 1-2.1 0 1.05 1.05 0 0 1 2.1 0Zm2.55 1.05a1.05 1.05 0 1 0 0-2.1 1.05 
+1.05 0 0 0 0 2.1Z" clip-rule="evenodd"></path><path fill="#9DADB3" d="M20.1 10.8c0 .504-.06.991-.173 1.46.736.638 
+1.073 1.37 1.073 2.062 0 .592-.24 1.195-.755 1.755 0 
+0-.431.517-1.296.963-1.226.633-2.727.957-4.178.656-.837.344-1.74.596-2.686.746 1.062.52 2.337.823 3.708.823 1.43 0 
+2.755-.33 3.844-.892l2.275 1.127-.563-2.408c.726-.79 1.151-1.743 1.151-2.77 
+0-1.523-.935-2.885-2.406-3.792.004.09.006.18.006.27Z"></path></svg></span><span 
+class="sr-only">forums</span></a></li><li><a href="https://www.facebook.com/launchboxapp" target="_blank" 
+rel="noreferrer" class="flex size-10 rounded-xl bg-white/04"><span class="inline-flex size-4 items-center 
+justify-center m-auto text-white"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16" 
+class="accent-current" aria-hidden="true"><path fill="currentColor" d="M8 1C4.15 1 1 4.156 1 8.042c0 3.514 2.562 6.43 
+5.908 6.958v-4.92H5.13V8.042h1.778V6.49c0-1.764 1.043-2.734 2.646-2.734.763 0 1.561.134 1.561.134v1.736h-.882c-.868 
+0-1.141.54-1.141 1.096v1.321h1.946l-.315 2.038H9.092V15a6.993 6.993 0 0 0 4.235-2.383A7.045 7.045 0 0 0 15 8.043C15 
+4.156 11.85 1 8 1Z"></path></svg></span><span class="sr-only">facebook</span></a></li><li><a 
+href="https://www.twitch.tv/launchboxofficial" target="_blank" rel="noreferrer" class="flex size-10 rounded-xl 
+bg-white/04"><span class="inline-flex size-4 items-center justify-center m-auto text-white"><svg 
+xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="accent-current" aria-hidden="true"><path 
+fill="currentColor" d="M11.653 6.082h1.377v4.173h-1.377m3.784-4.173h1.376v4.173h-1.376M7.187 2.25 3.75 
+5.73v12.54h4.12v3.48l3.446-3.48h2.744L20.25 12V2.25m-1.377 9.058-2.743 2.778h-2.753l-2.407 
+2.438v-2.438h-3.1V3.644h11.003v7.664Z"></path></svg></span><span 
+class="sr-only">twitch</span></a></li><!--]--></ul></div><ul class="flex flex-col gap-4 lg:col-start-4"><!--[--><li><a 
+href="https://www.launchbox-app.com/" target="_blank" class="text-body-md text-dark-100 hover:text-white">Get 
+LaunchBox</a></li><li><a href="https://forums.launchbox-app.com/" target="_blank" class="text-body-md text-dark-100 
+hover:text-white">Forums</a></li><li><a 
+href="https://www.youtube.com/playlist?list=PL6Hue8Zv6zv6JFZ8zZJfZK3v4dGZ3Zw8E" target="_blank" class="text-body-md 
+text-dark-100 hover:text-white">Tutorials</a></li><li><a href="https://www.launchbox-app.com/big-box" target="_blank" 
+class="text-body-md text-dark-100 hover:text-white">BigBox</a></li><!--]--></ul><ul class="flex flex-col 
+gap-4"><!--[--><li><a href="https://www.launchbox-app.com/download" class="text-body-md text-dark-100 
+hover:text-white">Download</a></li><li><a href="https://gamesdb.launchbox-app.com/collection/manage" 
+class="text-body-md text-dark-100 hover:text-white">My Collections</a></li><!--]--></ul></div><div 
+class="container"><div class="space-y-2 border-t border-solid border-dark-700 pb-8 pt-6 text-body-xs tracking-tight 
+text-dark-100 md:pb-12 md:pt-8"><span> © 2026. All rights reserved. </span><ul class="flex flex-wrap 
+gap-2"><!--[--><li><a href="https://www.launchbox-app.com/Resources/Documents/launchbox-privacy-policy.pdf" 
+rel="noreferrer" target="_blank" class="underline hover:text-white hover:no-underline">Privacy Policy</a></li><li><a 
+href="https://www.unbrokensoftware.com/" rel="noreferrer" target="_blank" class="underline hover:text-white 
+hover:no-underline">Unbroken Software, LLC</a></li><!--]--></ul></div></div></footer><div 
+class="vue-notification-group" style="width:300px;bottom:0px;right:0px;"><div></div></div></div><!--]--></div><div 
+id="teleports"></div><script type="application/json" data-nuxt-data="nuxt-app" data-ssr="true" id="__NUXT_DATA__">[["Sh
+allowReactive",1],{"data":2,"state":89,"once":92,"_errors":93,"serverRendered":95,"path":96,"pinia":97},["ShallowReacti
+ve",3],{"game/details/165492-hatsune-miku-project-diva-2nd":4,"game/details/165492-hatsune-miku-project-diva-2nd/lockfi
+elds":9,"collections/personal":-1},["GameDetailsEntity",5],{"collections":6,"gameKey":7,"communityRating":8,"yourRating
+":9,"totalVotes":10,"overview":11,"wikipediaUrl":12,"videoUrl":9,"cooperative":13,"esrbName":9,"platform":14,"gameGenre
+s":17,"gameDevelopers":21,"gamePublishers":31,"gameAlternateNames":37,"gameImages":47,"backgroundImage":9,"releaseDate"
+:83,"releaseYear":9,"released":84,"maxPlayers":87,"steamAppId":9,"name":88,"hasOpenDeletionRequest":13},[],165492,4.5,n
+ull,2,"This updated version of Project Diva 2nd released alongside Project Diva Extend, and came as a download code 
+with the physical release, or was added to your account with a digital purchase of extend. This version includes the 
+updated features from Extend, alongside other additions and improvements, such as new costumes. This version also has 
+performance improvements compared to the original 
+version.","https://en.wikipedia.org/wiki/Hatsune_Miku:_Project_DIVA_2nd",false,{"name":15,"key":16},"Sony 
+PSP",52,[18],{"name":19,"key":20},"Music",9,[22,25,28],{"name":23,"key":24},"Sega",68,{"name":26,"key":27},"SEGA 
+CS3",28846,{"name":29,"key":30},"Dingo Inc.",4328,[32,34],{"name":23,"key":33},15,{"name":35,"key":36},"Crypton Future 
+Media",17734,[38,41,44],{"name":39,"altKey":40,"regionName":9,"regionKey":9},"Hatsune Miku: Project Diva 2nd 
+Okaidoku-ban",50355,{"name":42,"altKey":43,"regionName":9,"regionKey":9},"Hatsune Miku: Project Diva 2nd Arcade Debut 
+Pack",50356,{"name":45,"altKey":46,"regionName":9,"regionKey":9},"初音ミク −Project DIVA− 2nd お買い得版",
+50357,[48,59,67,74],{"imageFileName":49,"imageTypeName":50,"imageTypeKey":51,"width":52,"height":53,"regionName":54,"fu
+llGameImageFileName":55,"fullGameImageKey":56,"fullGameImageWidth":57,"fullGameImageHeight":58},"e9ed588a-fb5d-40e0-87d
+0-583911aebec5.jpg","Box - Front",11,165,281,"Japan","e3d48a2e-0f3a-46ae-bf82-ac17cdbdf586.jpg",1860701,353,599,{"image
+FileName":60,"imageTypeName":61,"imageTypeKey":62,"width":63,"height":53,"regionName":54,"fullGameImageFileName":64,"fu
+llGameImageKey":65,"fullGameImageWidth":66,"fullGameImageHeight":58},"01761513-df1a-417b-bc9d-c6dd005c5587.jpg","Box - 
+Back",12,164,"6e6d9608-540e-4594-9ed6-adca3c8824cb.jpg",1860703,351,{"imageFileName":68,"imageTypeName":69,"imageTypeKe
+y":70,"width":71,"height":53,"regionName":54,"fullGameImageFileName":72,"fullGameImageKey":73,"fullGameImageWidth":16,"
+fullGameImageHeight":58},"367af503-5394-4fe1-9fb8-40ba47a1f1ee.jpg","Banner",16,24,"71945204-3f9c-45fb-8afa-c14a99e0c8e
+3.jpg",1860705,{"imageFileName":75,"imageTypeName":76,"imageTypeKey":77,"width":78,"height":53,"regionName":54,"fullGam
+eImageFileName":79,"fullGameImageKey":80,"fullGameImageWidth":81,"fullGameImageHeight":82},"e48acee2-c6b4-4ab6-b0e8-edc
+160be36f0.jpg","Disc",44,279,"c6d9b8b8-5d92-4a2e-984c-3168152c2fc9.jpg",1860707,596,600,"2011-12-15",{"gameTypeKey":85,
+"name":86},5,"Released",1,"Hatsune Miku: Project Diva 2nd#",["Reactive",90],{"$smoderation_state/moderationState":13,"$
+simage_queue_service/queue":91,"$spopulate_images/initial_values":9,"$sedit_game_details/is_loading":13,"$sedit_game_im
+ages/is_loading":13},["Map"],["Set"],["ShallowReactive",94],{"$IA_QoQrGwH":-1,"game/details/165492-hatsune-miku-project
+-diva-2nd":-1,"game/details/165492-hatsune-miku-project-diva-2nd/lockfields":-1,"collections/personal":-1,"$suVQET_XHc"
+:-1,"$Rk-_e0YgLi":-1},true,"/games/details/165492-hatsune-miku-project-diva-2nd",["Reactive",98],{"session":99,"dialog-
+management":102},{"accountInfo":100},["EmptyRef",101],"null",{"dialogs":103},["Reactive",104],["Map"]]</script><script>
+window.__NUXT__={};window.__NUXT__.config={public:{API_URL:"https://gamesdb-api.launchbox-app.com/api",LEGACY_IMAGE_URL
+:"https://images.launchbox-app.com/",CLOUDFLARE_IMAGE_URL:"https://gamesdb-images.launchbox.gg",HOST_FRONTEND_URL:"http
+s://gamesdb.launchbox-app.com","nuxt-scripts":{version:"",defaultScriptOptions:{trigger:"onNuxtReady"}},scripts:{google
+TagManager:{id:"G-VXPEGZZ91W"},metaPixel:{id:"1590234882154525"}}},app:{baseURL:"/",buildId:"9485d017-25a2-48dc-96ae-4b
+0f013d8614",buildAssetsDir:"/_nuxt/",cdnURL:""}}</script></body></html>
+
+

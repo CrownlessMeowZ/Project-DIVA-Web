@@ -128,8 +128,18 @@ body#introduce { padding-top: 0; }
     transition: left var(--t), right var(--t);
 }
 .topbar-nav a:hover { color: var(--cyan); }
-.topbar-nav a:hover::after, .topbar-nav a.active::after { left: 0; right: 0; }
-.topbar-nav a.active { color: var(--cyan); }
+.topbar-nav a:hover::after, .topbar-nav a.active::after {
+    left: 0;
+    right: 0;
+}
+/* Ensure uniform active indicator for ALL topbar nav links (including Series History) */
+.topbar-nav a.active {
+    color: var(--cyan);
+}
+.topbar-nav a.active::after {
+    left: 0 !important;
+    right: 0 !important;
+}
 
 /* ---- HAMBURGER ---- */
 .hamburger {
@@ -226,6 +236,10 @@ body#introduce { padding-top: 0; }
 .hql-ver::after   { background: #aaffcc; }
 .hql-patch:hover  { color: #b388ff; }
 .hql-patch::after { background: #b388ff; }
+.hql-producers:hover  { color: #ffaa55; }
+.hql-producers::after { background: #ffaa55; }
+.hql-concerts:hover   { color: #00d4ff; }
+.hql-concerts::after  { background: #00d4ff; }
 
 /* Active page highlight — set via JS same as topbar */
 .hql.active { color: #fff; }
@@ -787,6 +801,11 @@ nav.links img:focus { outline: 3px solid var(--pink); outline-offset: 4px; }
 [data-theme="light"] .patch-hdr:hover { background: rgba(220,232,255,.95); }
 [data-theme="light"] .timeline-item { border-left-color: rgba(0,150,200,.3); }
 [data-theme="light"] .timeline-year { color: #007aaa; }
+[data-theme="light"] .filter-tab-btn.active {
+    background: rgba(0,150,200,.12);
+    border-color: #007aaa;
+    color: #007aaa;
+}
 [data-theme="light"] ::-webkit-scrollbar-track { background: var(--bg); }
 [data-theme="light"] ::-webkit-scrollbar-thumb { background: rgba(0,150,200,.4); }
 [data-theme="light"] .hero-quick-bar { background: rgba(255,255,255,0.5); border-color: rgba(0,150,200,.2); }
@@ -1042,6 +1061,165 @@ body:not(#introduce) {
     color: var(--cyan);
 }
 
+/* ================================================================
+   GAME HISTORY — Filter tabs (Bước 3)
+   Reuses visual language of .char-tab-bar for consistency
+   ================================================================ */
+.filter-tab-bar {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    padding: 0 24px 24px;
+    margin-top: 28px;
+    margin-bottom: 8px;
+}
+.filter-tab-btn {
+    padding: 9px 26px;
+    background: transparent;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    font-family: var(--ff-b);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--muted);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+.filter-tab-btn:hover {
+    border-color: var(--cyan);
+    color: var(--text);
+}
+.filter-tab-btn.active {
+    background: rgba(0,212,255,.12);
+    border-color: var(--cyan);
+    color: var(--cyan);
+}
+.filter-tab-btn.active:hover {
+    background: rgba(0,212,255,.18);
+}
+
+.gh-filter-panel {
+    max-width: 960px;
+    margin: 0 auto 20px;
+    padding: 0 24px;
+}
+.gh-filter-group {
+    margin-bottom: 14px;
+}
+.gh-filter-label {
+    display: block;
+    font-family: var(--ff-b);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 8px;
+}
+.filter-chip-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+.filter-chip {
+    padding: 7px 16px;
+    background: transparent;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    font-family: var(--ff-b);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    color: var(--muted);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+.filter-chip:hover {
+    border-color: var(--cyan);
+    color: var(--text);
+}
+.filter-chip.active {
+    background: rgba(0,212,255,.1);
+    border-color: var(--cyan);
+    color: var(--cyan);
+}
+.gh-filter-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px 20px;
+    padding-top: 4px;
+}
+.gh-filter-year {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.gh-filter-year .gh-filter-label {
+    margin-bottom: 0;
+}
+.gh-year-select {
+    padding: 7px 12px;
+    background: transparent;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-family: var(--ff-b);
+    font-size: 12px;
+    color: var(--text);
+    cursor: pointer;
+}
+.gh-year-select:focus {
+    outline: none;
+    border-color: var(--cyan);
+}
+.gh-milestone-toggle {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--ff-b);
+    font-size: 11px;
+    color: var(--muted);
+    cursor: pointer;
+    user-select: none;
+}
+.gh-milestone-toggle input {
+    accent-color: var(--cyan);
+}
+.gh-filter-count {
+    font-family: var(--ff-b);
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.5px;
+}
+.gh-filter-clear {
+    padding: 6px 14px;
+    background: transparent;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    font-family: var(--ff-b);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--muted);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+.gh-filter-clear:hover {
+    border-color: var(--cyan);
+    color: var(--cyan);
+}
+.gh-filter-empty {
+    text-align: center;
+    padding: 40px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
 /* Extra badge trên góc trên card */
 .char-extra-badge {
     position: absolute; top: 12px; right: 12px;
@@ -1064,6 +1242,125 @@ body:not(#introduce) {
 }
 
 /* object-position handled in base rule */
+
+/* ================================================================
+   PRODUCERS page (Bước 4)
+   ================================================================ */
+.producer-card {
+  text-align: left;
+  padding-bottom: 22px;
+}
+.producer-avatar-wrap {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 14px;
+}
+.producer-avatar {
+  width: 108px;
+  height: 108px;
+  object-fit: cover;
+  border-radius: 999px;
+  border: 3px solid var(--accent-c, var(--cyan));
+  padding: 4px;
+  background: var(--surface);
+}
+.producer-avatar-wrap a {
+  display: inline-block;
+  border-radius: 999px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.producer-avatar-wrap a:hover .producer-avatar {
+  transform: scale(1.06);
+  box-shadow: 0 0 0 3px var(--cyan);
+}
+.producer-name {
+  font-family: var(--ff-d);
+  font-size: 15px;
+  color: var(--cyan);
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+  text-align: center;
+}
+.producer-meta {
+  text-align: center;
+  margin-bottom: 10px;
+}
+.producer-genre {
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--muted);
+  background: rgba(0,212,255,.08);
+  padding: 2px 10px;
+  border-radius: 999px;
+}
+.producer-desc {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.55;
+  margin-bottom: 12px;
+}
+.producer-famous {
+  font-size: 12px;
+  margin-bottom: 8px;
+  padding-top: 8px;
+  border-top: 1px dashed var(--border);
+}
+.producer-famous strong {
+  display: block;
+  color: var(--text);
+  font-size: 14px;
+  margin-top: 2px;
+}
+.producer-label {
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 10px;
+}
+.producer-songs {
+  list-style: none;
+  font-size: 12px;
+  color: var(--muted);
+  padding-left: 4px;
+  margin: 0;
+}
+.producer-songs li {
+  padding: 2px 0;
+}
+.producer-songs li::before {
+  content: '♪ ';
+  color: var(--cyan);
+}
+
+/* Concerts timeline — linked images (like Home character cards) */
+.concert-figure {
+  margin-top: 14px;
+}
+
+.concerts-timeline .timeline-body img {
+  width: 100%;
+  max-height: 220px;
+  object-fit: cover;
+  border: 2px solid var(--border);
+  border-radius: var(--r);
+  transition: border-color var(--t), transform var(--t);
+}
+
+.concerts-timeline .timeline-body a {
+  display: block;
+}
+
+.concerts-timeline .timeline-body a:hover img {
+  border-color: var(--pink);
+  transform: translateY(-2px);
+}
+
+.concerts-timeline .timeline-body a:focus-visible img {
+  outline: 3px solid var(--pink);
+  outline-offset: 4px;
+}
 
 /* ================================================================
    CHARACTERS — Section labels (Crypton 6 / Extra)
@@ -1239,4 +1536,217 @@ body:not(#introduce) {
 [data-theme="light"] .spotlight-gallery-link:hover {
     background: var(--cyan);
     color: #fff;
+}
+
+/* ── Concert page extras ── */
+.concert-meta {
+    font-size: 13px;
+    color: var(--muted);
+    margin: 4px 0 10px;
+    letter-spacing: 0.02em;
+}
+.concert-highlight {
+    margin-top: 10px;
+    padding: 8px 14px;
+    border-left: 3px solid var(--cyan);
+    background: rgba(0, 212, 255, 0.06);
+    border-radius: 0 6px 6px 0;
+    font-size: 13px;
+    color: var(--cyan);
+    font-style: italic;
+}
+[data-theme="light"] .concert-highlight {
+    background: rgba(0, 150, 200, 0.08);
+}
+
+/* ================================================================
+   GAME HISTORY — Filter tabs & game cards
+   ================================================================ */
+.gh-page {
+  padding-bottom: 48px;
+}
+
+.gh-filter-section {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px 28px;
+}
+
+.gh-filter-group-label {
+  display: block;
+  font-family: var(--ff-b);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+
+.gh-filter-group + .gh-filter-group {
+  margin-top: 14px;
+}
+
+.gh-filter-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.gh-filter-tab {
+  padding: 9px 20px;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  font-family: var(--ff-b);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--muted);
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.gh-filter-tab:hover {
+  border-color: var(--border-h);
+  color: var(--text);
+}
+
+.gh-filter-tab.active {
+  background: rgba(0, 212, 255, 0.12);
+  border-color: var(--cyan);
+  color: var(--cyan);
+}
+
+.gh-filter-meta {
+  margin-top: 16px;
+  font-family: var(--ff-b);
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: 0.5px;
+}
+
+.gh-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px 40px;
+}
+
+.gh-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  overflow: hidden;
+  transition: border-color var(--t), transform var(--t);
+}
+
+.gh-card:hover {
+  border-color: var(--border-h);
+  transform: translateY(-4px);
+}
+
+.gh-card-cover {
+  aspect-ratio: 16 / 9;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.gh-card-cover a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.gh-card-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.25s ease;
+}
+
+.gh-card-cover a:hover img {
+  transform: scale(1.03);
+}
+
+.gh-card-cover a:focus-visible img {
+  outline: 3px solid var(--pink);
+  outline-offset: -3px;
+}
+
+.gh-card-cover-placeholder {
+  font-family: var(--ff-b);
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding: 16px;
+  text-align: center;
+}
+
+.gh-card-body {
+  padding: 16px 18px 18px;
+}
+
+.gh-card-title {
+  font-family: var(--ff-b);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1.35;
+  margin-bottom: 8px;
+}
+
+.gh-card-meta {
+  font-size: 12px;
+  color: var(--muted);
+  margin-bottom: 10px;
+}
+
+.gh-card-series {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  background: rgba(0, 212, 255, 0.12);
+  color: var(--cyan);
+  border: 1px solid var(--border);
+}
+
+.gh-empty {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 48px 16px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+@media (max-width: 480px) {
+  .gh-filter-tabs {
+    gap: 6px;
+  }
+
+  .gh-filter-tab {
+    padding: 8px 14px;
+    font-size: 10px;
+  }
+
+  .gh-card-grid {
+    grid-template-columns: 1fr;
+    padding: 0 16px 32px;
+  }
+
+  .gh-filter-section {
+    padding: 0 16px 24px;
+  }
 }

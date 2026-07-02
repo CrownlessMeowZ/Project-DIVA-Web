@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useApp } from '../context/AppContext';
+import { useApp } from '../hooks/useApp';
 
 export default function GalleryPreview({ links }) {
   const { t } = useApp();
@@ -23,22 +23,26 @@ export default function GalleryPreview({ links }) {
         {t('btn_reset')}
       </button>
       <ul>
-        {links.map((l, i) => (
-          <li key={i}>
-            <figcaption>{l.caption}</figcaption>
-            <a target="_blank" rel="noopener noreferrer" href={l.href}>
-              <img
-                src={l.img}
-                alt={l.alt}
-                tabIndex={i + 1}
-                onMouseOver={() => setPreview({ src: l.img, alt: l.alt })}
-                onMouseLeave={() => setPreview(null)}
-                onFocus={() => setPreview({ src: l.img, alt: l.alt })}
-                onBlur={() => setPreview(null)}
-              />
-            </a>
-          </li>
-        ))}
+        {links.map((l, i) => {
+          const caption = t(l.captionKey);
+          const alt = t(l.altKey);
+          return (
+            <li key={i}>
+              <figcaption>{caption}</figcaption>
+              <a target="_blank" rel="noopener noreferrer" href={l.href}>
+                <img
+                  src={l.img}
+                  alt={alt}
+                  tabIndex={i + 1}
+                  onMouseOver={() => setPreview({ src: l.img, alt })}
+                  onMouseLeave={() => setPreview(null)}
+                  onFocus={() => setPreview({ src: l.img, alt })}
+                  onBlur={() => setPreview(null)}
+                />
+              </a>
+            </li>
+          );
+        })}
       </ul>
     </nav>
   );
