@@ -484,22 +484,6 @@ export const GAMEPLAY_VIDEOS = [
   },
 ];
 
-export const PLATFORMS = {
-  psp: { label: 'PSP', order: 1 },
-  arcade: { label: 'Arcade', order: 2 },
-  'ps-vita': { label: 'PS Vita', order: 3 },
-  ps3: { label: 'PS3', order: 4 },
-  ps4: { label: 'PS4', order: 5 },
-  switch: { label: 'Switch', order: 6 },
-  pc: { label: 'PC / Steam', order: 7 },
-};
-
-export const REGIONS = {
-  japan: { label: 'Japan', order: 1 },
-  tokyo: { label: 'Tokyo', order: 2 },
-  'north-america': { label: 'North America', order: 3 },
-};
-
 // ============================================
 export const PRODUCERS = [
   {
@@ -577,6 +561,7 @@ export const CONCERTS = [
     img: '/concerts/magical-mirai-2013.jpg',
     href: 'https://magicalmirai.com/2013/',
     highlightKey: 'concert_1_highlight',
+    penlightColor: '#00d4ff',
   },
   {
     year: '2014',
@@ -587,6 +572,7 @@ export const CONCERTS = [
     img: '/concerts/miku-expo-2014.jpg',
     href: 'https://www.youtube.com/watch?v=khfe3hvL4g0',
     highlightKey: 'concert_2_highlight',
+    penlightColor: '#ff66cc',
   },
   {
     year: '2013',
@@ -597,6 +583,7 @@ export const CONCERTS = [
     img: '/concerts/magical-mirai-series.jpg',
     href: 'https://magicalmirai.com/',
     highlightKey: 'concert_3_highlight',
+    penlightColor: '#ffe566',
   },
   {
     year: '2018',
@@ -607,6 +594,7 @@ export const CONCERTS = [
     img: '/concerts/miku-expo-2018.jpg',
     href: 'https://mikuexpo.com/usamx2018/',
     highlightKey: 'concert_4_highlight',
+    penlightColor: '#b388ff',
   },
   {
     year: '2022',
@@ -617,5 +605,6 @@ export const CONCERTS = [
     img: '/concerts/miku-expo-2022.jpg',
     href: 'https://www.youtube.com/watch?v=AufydOsiD6M',
     highlightKey: 'concert_5_highlight',
+    penlightColor: '#ffaa55',
   },
 ];

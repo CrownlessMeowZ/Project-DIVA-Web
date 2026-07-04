@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { AppProvider } from './context/AppContext';
+import { useDivaAccent } from './hooks/useDivaAccent';
 import Topbar from './components/Topbar';
 import Home from './pages/Home';
 import Characters from './pages/Characters';
@@ -34,6 +35,7 @@ function PageWrapper({ children, isHome }) {
 
 function InnerApp() {
   const location = useLocation();
+  useDivaAccent();
 
   // Scroll to top on route change
   useEffect(() => {

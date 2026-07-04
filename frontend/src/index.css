@@ -124,17 +124,17 @@ body#introduce { padding-top: 0; }
 }
 .topbar-nav a::after {
     content: ''; position: absolute; bottom: 0; left: 50%; right: 50%;
-    height: 2px; background: var(--cyan);
+    height: 2px; background: var(--page-accent, var(--cyan));
     transition: left var(--t), right var(--t);
 }
-.topbar-nav a:hover { color: var(--cyan); }
+.topbar-nav a:hover { color: var(--page-accent, var(--cyan)); }
 .topbar-nav a:hover::after, .topbar-nav a.active::after {
     left: 0;
     right: 0;
 }
 /* Ensure uniform active indicator for ALL topbar nav links (including Series History) */
 .topbar-nav a.active {
-    color: var(--cyan);
+    color: var(--page-accent, var(--cyan));
 }
 .topbar-nav a.active::after {
     left: 0 !important;
@@ -226,8 +226,8 @@ body#introduce { padding-top: 0; }
 .hql:hover::after { transform: scaleX(1); }
 
 /* Per-page accent colors */
-.hql-home  { color: var(--cyan); }
-.hql-home::after  { background: var(--cyan); transform: scaleX(1); }
+.hql-home  { color: var(--page-accent, var(--cyan)); }
+.hql-home::after  { background: var(--page-accent, var(--cyan)); transform: scaleX(1); }
 .hql-chars:hover  { color: var(--pink); }
 .hql-chars::after { background: var(--pink); }
 .hql-skin:hover   { color: var(--gold); }
@@ -254,7 +254,7 @@ body#introduce { padding-top: 0; }
 
 .btn-primary {
     display: inline-flex; align-items: center; gap: 8px;
-    padding: 14px 34px; background: var(--cyan); color: #000;
+    padding: 14px 34px; background: var(--page-accent, var(--cyan)); color: #000;
     font-family: var(--ff-b); font-weight: 700; font-size: 13px;
     letter-spacing: 2px; text-transform: uppercase; border-radius: 999px;
     text-decoration: none; border: none; cursor: pointer;
@@ -660,6 +660,102 @@ nav.links img:focus { outline: 3px solid var(--pink); outline-offset: 4px; }
 .timeline-body p { color: var(--muted); font-size: 14px; line-height: 1.7; }
 
 /* ================================================================
+   PV DIRECTOR MODE (Version & Gameplay)
+   ================================================================ */
+.pv-director-controls {
+    display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 12px;
+}
+.pv-director-btn {
+    padding: 6px 14px; font-family: var(--ff-b); font-size: 11px;
+    font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase;
+    background: transparent; border: 1px solid var(--border);
+    border-radius: 999px; color: var(--muted); cursor: pointer;
+    transition: all var(--t);
+}
+.pv-director-btn:hover { border-color: var(--page-accent, var(--cyan)); color: var(--text); }
+.pv-director-btn.active {
+    border-color: var(--page-accent, var(--cyan));
+    color: var(--page-accent, var(--cyan));
+    background: rgba(0, 212, 255, 0.08);
+}
+.pv-director-figure { margin: 0; }
+.pv-frame {
+    overflow: hidden; border-radius: var(--r);
+    transition: transform 0.45s ease;
+    transform-origin: center center;
+}
+.pv-frame video { width: 100%; display: block; vertical-align: top; }
+.pv-frame--wide { transform: scale(1); }
+.pv-frame--close { transform: scale(1.15) translateY(-4%); }
+.pv-frame--dynamic { transform: scale(1); }
+@media (prefers-reduced-motion: no-preference) {
+    .pv-frame--dynamic { animation: pv-pan 8s ease-in-out infinite alternate; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .pv-frame--dynamic { transform: scale(1.08); animation: none; }
+}
+@keyframes pv-pan {
+    from { transform: scale(1.2) translateX(-5%); }
+    to   { transform: scale(1.2) translateX(5%); }
+}
+
+/* Technical Zone HUD */
+.tech-zone-bar {
+    display: flex; align-items: center; gap: 10px;
+    margin: 10px 0 8px; padding: 8px 12px;
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: var(--r);
+}
+.tech-zone-label {
+    font-family: var(--ff-d); font-size: 10px; letter-spacing: 1.5px;
+    text-transform: uppercase; color: var(--muted); white-space: nowrap;
+}
+.tech-zone-track {
+    flex: 1; height: 6px; background: var(--border);
+    border-radius: 999px; overflow: hidden;
+}
+.tech-zone-fill {
+    height: 100%; border-radius: 999px;
+    background: var(--page-accent, var(--cyan));
+    box-shadow: 0 0 12px color-mix(in srgb, var(--page-accent, var(--cyan)) 50%, transparent);
+    transition: width 0.15s linear;
+}
+.tech-zone-pct {
+    font-family: var(--ff-d); font-size: 11px;
+    color: var(--page-accent, var(--cyan)); min-width: 36px; text-align: right;
+}
+
+/* Magical Mirai Penlight Sync */
+.concerts-timeline-wrap { position: relative; }
+.penlight-canvas {
+    position: absolute; inset: 0; width: 100%; height: 100%;
+    pointer-events: none; z-index: 2;
+}
+.concerts-timeline .concert-item { cursor: pointer; position: relative; z-index: 1; }
+.concerts-timeline .concert-item:focus-visible {
+    outline: 2px solid var(--page-accent, var(--cyan));
+    outline-offset: 4px;
+}
+
+/* Scroll-reveal timeline (Version & Gameplay) */
+.version-timeline--reveal .timeline-item {
+    animation: none;
+    opacity: 1;
+    transform: none;
+}
+@media (prefers-reduced-motion: no-preference) {
+    .version-timeline--reveal .timeline-item {
+        opacity: 0;
+        transform: translateY(24px);
+        transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .version-timeline--reveal .timeline-item.is-visible {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+/* ================================================================
    FOOTER
    ================================================================ */
 .site-footer { margin-top: 52px; border-top: 1px solid var(--border); padding: 22px 24px; background: var(--surface); }
@@ -696,7 +792,7 @@ nav.links img:focus { outline: 3px solid var(--pink); outline-offset: 4px; }
     }
     .topbar-nav a::after { display: none; }
     .topbar-nav a.active,
-    .topbar-nav a:hover { border-left: 3px solid var(--cyan); padding-left: 17px; }
+    .topbar-nav a:hover { border-left: 3px solid var(--page-accent, var(--cyan)); padding-left: 17px; }
 
     .hero-title { font-size: 32px; letter-spacing: 4px; }
     .hero-eyebrow { font-size: 9px; letter-spacing: 3px; }
@@ -733,7 +829,7 @@ nav.links img:focus { outline: 3px solid var(--pink); outline-offset: 4px; }
     }
     .topbar-nav a::after { display: none; }
     .topbar-nav a.active,
-    .topbar-nav a:hover { border-left: 3px solid var(--cyan); padding-left: 21px; }
+    .topbar-nav a:hover { border-left: 3px solid var(--page-accent, var(--cyan)); padding-left: 21px; }
 
     .grid { grid-template-columns: 1fr 1fr; padding: 16px 14px; gap: 16px; }
     .flex > .card { width: calc(50% - 10px); min-width: 220px; }
@@ -917,7 +1013,7 @@ nav.links img:focus { outline: 3px solid var(--pink); outline-offset: 4px; }
 }
 .settings-theme-opt:hover, .lang-opt:hover { border-color: var(--border-h); color: var(--text); }
 .settings-theme-opt.active, .lang-opt.active {
-    background: var(--border); border-color: var(--cyan); color: var(--cyan);
+    background: var(--border); border-color: var(--page-accent, var(--cyan)); color: var(--page-accent, var(--cyan));
 }
 [data-theme="light"] .settings-theme-opt.active,
 [data-theme="light"] .lang-opt.active { border-color: #007aaa; color: #007aaa; background: rgba(0,150,200,.12); }

@@ -1,10 +1,11 @@
 import { useState } from 'react';
 import { useApp } from '../hooks/useApp';
+import { useDivaAccent } from '../hooks/useDivaAccent';
 import { CHARACTERS, EXTRA_CHARACTERS } from '../data/content';
 import PageHero from '../components/PageHero';
 import Footer from '../components/Footer';
 
-function CharFlipCard({ char }) {
+function CharFlipCard({ char, onAccentSelect }) {
   const { t } = useApp();
   const [flipped, setFlipped] = useState(false);
   return (
@@ -12,7 +13,10 @@ function CharFlipCard({ char }) {
       className={`char-flip ${char.id}-card${flipped ? ' flipped' : ''}`}
       role="button"
       aria-label={`${char.name} profile card`}
-      onClick={() => setFlipped(f => !f)}
+      onClick={() => {
+        setFlipped(f => !f);
+        onAccentSelect(char.accent);
+      }}
       style={{ '--accent-c': char.accent }}
     >
       <div className="char-flip-inner">
@@ -52,6 +56,7 @@ function CharFlipCard({ char }) {
 
 export default function Characters() {
   const { t } = useApp();
+  const { setAccent } = useDivaAccent();
   return (
     <>
       <PageHero title={t('chars_title')} sub={t('chars_page_sub')} />
@@ -62,7 +67,7 @@ export default function Characters() {
           <span>{t('tab_main')}</span>
         </div>
         <div className="char-grid">
-          {CHARACTERS.map(c => <CharFlipCard key={c.id} char={c} />)}
+          {CHARACTERS.map(c => <CharFlipCard key={c.id} char={c} onAccentSelect={setAccent} />)}
         </div>
 
         {/* ── EXTRA ── */}
@@ -70,7 +75,7 @@ export default function Characters() {
           <span>{t('tab_extra')}</span>
         </div>
         <div className="char-grid char-grid--extra">
-          {EXTRA_CHARACTERS.map(c => <CharFlipCard key={c.id} char={c} />)}
+          {EXTRA_CHARACTERS.map(c => <CharFlipCard key={c.id} char={c} onAccentSelect={setAccent} />)}
         </div>
       </main>
 
