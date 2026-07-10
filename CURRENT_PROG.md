@@ -17,9 +17,15 @@
 
 _None — awaiting user approval for next task._
 
+## Completed (docs)
+
+- Full code audit (Phase 1–3) saved to `audit_report.md` (read-only; no code changes applied)
+
 ## Known Bugs / Pending
 
+- `settings_lang` missing in en/vi locales (Settings shows raw key) — see audit L1
 - `content.js`: skin `producer`/`song`, character `alt`, concert metadata still inline
 - Producers footer attribution string not i18n
+- Orphan locale keys (`gh_*`, etc.) and dead GH filter CSS — see audit report
 - Backend (Spring Boot) not implemented
 - RAG chatbot not started

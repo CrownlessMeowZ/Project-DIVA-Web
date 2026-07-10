@@ -9,3 +9,7 @@ build/
 
 # IDE
 .vscode/
+
+# Local LLM tools
+grok-prompt.txt
+audit_report.md
