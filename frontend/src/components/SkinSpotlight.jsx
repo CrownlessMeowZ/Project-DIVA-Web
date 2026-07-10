@@ -4,13 +4,23 @@ import { useApp } from '../hooks/useApp';
 function SkinFlipCard({ skin, accent }) {
   const { t } = useApp();
   const [flipped, setFlipped] = useState(false);
+  const toggle = () => setFlipped((f) => !f);
+
   return (
     <div
       className={`skin-flip${flipped ? ' flipped' : ''}`}
-      onClick={() => setFlipped(f => !f)}
+      onClick={toggle}
+      onKeyDown={(e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          toggle();
+        }
+      }}
       style={{ '--accent-c': accent }}
       role="button"
+      tabIndex={0}
       aria-label={`${skin.name} skin card`}
+      aria-pressed={flipped}
     >
       <div className="skin-flip-inner">
         {/* FRONT */}

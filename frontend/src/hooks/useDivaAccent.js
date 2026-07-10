@@ -18,7 +18,11 @@ export function useDivaAccent() {
 
   const setAccent = useCallback((color) => {
     if (!color) return;
-    localStorage.setItem(STORAGE_KEY, color);
+    try {
+      localStorage.setItem(STORAGE_KEY, color);
+    } catch {
+      // storage unavailable
+    }
     applyAccent(color);
   }, []);
 

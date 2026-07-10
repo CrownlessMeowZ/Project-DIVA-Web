@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
-import { useTranslation } from "react-i18next";
+import { useApp } from "../hooks/useApp";
 import {
   GAMES,
   FILTER_TABS,
@@ -61,11 +61,15 @@ function GameCard({ game, placeholderLabel }) {
 }
 
 export default function GameHistory() {
-  const { t } = useTranslation();
+  const { t } = useApp();
   const [activeFilter, setActiveFilter] = useState(readStoredFilter);
 
   useEffect(() => {
-    localStorage.setItem(STORAGE_KEY, activeFilter);
+    try {
+      localStorage.setItem(STORAGE_KEY, activeFilter);
+    } catch {
+      // storage unavailable
+    }
   }, [activeFilter]);
 
   const filtered = useMemo(

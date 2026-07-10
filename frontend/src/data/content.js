@@ -69,7 +69,7 @@ export const EXTRA_CHARACTERS = [
     songs: ['Teto Territory', 'Machine Love', 'BIRDBRAIN'],
     img: '/characters/teto-card.png',
     alt: 'Kasane Teto – pink drill twin-tails, red military outfit',
-    wikiUrl: 'https://utau.wiki/kasane_teto', descKey: 'teto_desc', game: 'MegaMix+',
+    wikiUrl: 'https://utau.wiki/kasane_teto', descKey: 'teto_desc',
   },
   {
     id: 'neru', name: 'Akita Neru', code: 'Derivative', voice: 'Soprano',
@@ -78,7 +78,7 @@ export const EXTRA_CHARACTERS = [
     songs: ['FLOP ERA', 'Triple Baka', 'Stop Nagging Me!'],
     img: '/characters/neru-card.png',
     alt: 'Akita Neru – blonde side ponytail, yellow and black outfit',
-    wikiUrl: 'https://vocaloid.fandom.com/wiki/Akita_Neru', descKey: 'neru_desc', game: 'MegaMix+',
+    wikiUrl: 'https://vocaloid.fandom.com/wiki/Akita_Neru', descKey: 'neru_desc',
   },
   {
     id: 'haku', name: 'Yowane Haku', code: 'Derivative', voice: 'Mezzo-soprano',
@@ -87,7 +87,7 @@ export const EXTRA_CHARACTERS = [
     songs: ['Unhappy Refrain', 'The Melancholy of Detective Yowane Haku', 'I Wanna Be Your Vampire'],
     img: '/characters/haku-card.png',
     alt: 'Yowane Haku – long silver hair, white and grey outfit',
-    wikiUrl: 'https://vocaloid.fandom.com/wiki/Yowane_Haku', descKey: 'haku_desc', game: 'MegaMix+',
+    wikiUrl: 'https://vocaloid.fandom.com/wiki/Yowane_Haku', descKey: 'haku_desc',
   },
 ];
 export const SKIN_SPOTLIGHTS = [

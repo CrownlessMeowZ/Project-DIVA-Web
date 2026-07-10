@@ -8,14 +8,25 @@ import Footer from '../components/Footer';
 function CharFlipCard({ char, onAccentSelect }) {
   const { t } = useApp();
   const [flipped, setFlipped] = useState(false);
+
+  const toggle = () => {
+    setFlipped((f) => !f);
+    onAccentSelect(char.accent);
+  };
+
   return (
     <div
       className={`char-flip ${char.id}-card${flipped ? ' flipped' : ''}`}
       role="button"
+      tabIndex={0}
       aria-label={`${char.name} profile card`}
-      onClick={() => {
-        setFlipped(f => !f);
-        onAccentSelect(char.accent);
+      aria-pressed={flipped}
+      onClick={toggle}
+      onKeyDown={(e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          toggle();
+        }
       }}
       style={{ '--accent-c': char.accent }}
     >

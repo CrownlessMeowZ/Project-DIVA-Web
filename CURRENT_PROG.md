@@ -13,10 +13,11 @@
 - Home UI: scroll hint + characters link i18n; video accessibility (aria-label, captions track)
 - App.jsx `isHome` prop correct
 - **Audit Batch 1 (L1/L2/L4/L5/L12):** `settings_lang`, `footer_producers_src`, `nav_toggle` keys; orphan `gh_*`/`btn_*`/`lbl_official_*` keys removed; Home `chars_sub` strip removed; Producers footer i18n; Topbar hamburger aria-label i18n
+- **Audit Batch 2 (L3/L6/L7/L8/L9/L10/L11):** removed dead `game` field on EXTRA_CHARACTERS; flip-card keyboard a11y (Characters + SkinSpotlight); scroll `behavior: 'auto'`; try/catch on all localStorage writes; GameHistory uses `useApp()`; `resolveVideoRef` unexported; local favicon + `fonts.gstatic.com` preconnect
 
 ## Current Task
 
-_Batch 1 (audit L1, L2, L4, L5, L12) applied — awaiting user manual test approval before next batch._
+_Batch 2 (audit L3, L6, L7, L8, L9, L10, L11) applied — awaiting user manual test approval before next batch._
 
 ## Completed (docs)
 
@@ -26,6 +27,6 @@ _Batch 1 (audit L1, L2, L4, L5, L12) applied — awaiting user manual test appro
 
 - `content.js`: skin `producer`/`song`, character `alt`, concert metadata still inline
 - Dead GH filter CSS — see audit report (M3)
-- Topbar hamburger `nav_toggle` i18n — done in Batch 1
+- GameHistory dual i18n access (`useTranslation` direct) — fixed in Batch 2 (now `useApp`)
 - Backend (Spring Boot) not implemented
 - RAG chatbot not started

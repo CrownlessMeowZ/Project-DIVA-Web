@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
 /** @param {React.RefObject<HTMLVideoElement> | { videoRef: React.RefObject<HTMLVideoElement> } | null | undefined} refInput */
-export function resolveVideoRef(refInput) {
+function resolveVideoRef(refInput) {
   if (!refInput) return null;
   if (typeof refInput === 'object' && 'current' in refInput) return refInput;
   if (refInput.videoRef) return refInput.videoRef;

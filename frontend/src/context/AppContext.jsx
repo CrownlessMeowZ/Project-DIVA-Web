@@ -18,12 +18,20 @@ export function AppProvider({ children }) {
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);
-    localStorage.setItem('diva-theme', theme);
+    try {
+      localStorage.setItem('diva-theme', theme);
+    } catch {
+      // storage unavailable
+    }
   }, [theme]);
 
   useEffect(() => {
     document.documentElement.lang = lang;
-    localStorage.setItem('diva-lang', lang);
+    try {
+      localStorage.setItem('diva-lang', lang);
+    } catch {
+      // storage unavailable
+    }
   }, [lang]);
 
   const toggleTheme = () => setTheme((current) => (current === 'dark' ? 'light' : 'dark'));
