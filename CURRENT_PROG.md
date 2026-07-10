@@ -12,10 +12,11 @@
 - Dead code removed: `PLATFORMS` / `REGIONS` from `content.js`
 - Home UI: scroll hint + characters link i18n; video accessibility (aria-label, captions track)
 - App.jsx `isHome` prop correct
+- **Audit Batch 1 (L1/L2/L4/L5/L12):** `settings_lang`, `footer_producers_src`, `nav_toggle` keys; orphan `gh_*`/`btn_*`/`lbl_official_*` keys removed; Home `chars_sub` strip removed; Producers footer i18n; Topbar hamburger aria-label i18n
 
 ## Current Task
 
-_None — awaiting user approval for next task._
+_Batch 1 (audit L1, L2, L4, L5, L12) applied — awaiting user manual test approval before next batch._
 
 ## Completed (docs)
 
@@ -23,9 +24,8 @@ _None — awaiting user approval for next task._
 
 ## Known Bugs / Pending
 
-- `settings_lang` missing in en/vi locales (Settings shows raw key) — see audit L1
 - `content.js`: skin `producer`/`song`, character `alt`, concert metadata still inline
-- Producers footer attribution string not i18n
-- Orphan locale keys (`gh_*`, etc.) and dead GH filter CSS — see audit report
+- Dead GH filter CSS — see audit report (M3)
+- Topbar hamburger `nav_toggle` i18n — done in Batch 1
 - Backend (Spring Boot) not implemented
 - RAG chatbot not started

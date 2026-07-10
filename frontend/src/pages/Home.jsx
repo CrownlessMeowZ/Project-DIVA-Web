@@ -80,7 +80,7 @@ export default function Home() {
       {/* CHARACTERS GRID */}
       <h2 className="section-title center-title">{t('chars_title')}</h2>
       <p className="sub-text">
-        {t('chars_sub').replace(/<[^>]*>/g, '')}{' '}
+        {t('chars_sub')}{' '}
         <Link to="/characters" style={{ color: 'var(--cyan)', textDecoration: 'none' }}>{t('chars_link_text')}</Link>
       </p>
 

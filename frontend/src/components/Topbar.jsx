@@ -52,7 +52,7 @@ export default function Topbar() {
 
         <button
           className={`hamburger${menuOpen ? ' open' : ''}`}
-          aria-label="Toggle navigation"
+          aria-label={t('nav_toggle')}
           aria-expanded={menuOpen}
           onClick={() => setMenuOpen(o => !o)}
         >

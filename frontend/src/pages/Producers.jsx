@@ -58,7 +58,7 @@ export default function Producers() {
 
       <Footer extra={
         <span style={{ color: 'var(--muted)', fontSize: '12px' }}>
-          Producer data compiled from official track credits &amp; community archives
+          {t('footer_producers_src')}
         </span>
       } />
     </>
