@@ -1,17 +1,12 @@
 import { useApp } from '../hooks/useApp';
-
-const PRESETS = [
-  { id: 'wide', labelKey: 'pv_wide' },
-  { id: 'close', labelKey: 'pv_close' },
-  { id: 'dynamic', labelKey: 'pv_dynamic' },
-];
+import { PV_PRESETS } from '../data/pvPresets';
 
 export default function PvDirectorControls({ preset, onPresetChange }) {
   const { t } = useApp();
 
   return (
     <div className="pv-director-controls" role="group" aria-label={t('pv_director_aria')}>
-      {PRESETS.map((p) => (
+      {PV_PRESETS.map((p) => (
         <button
           key={p.id}
           type="button"

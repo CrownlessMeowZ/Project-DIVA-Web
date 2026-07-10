@@ -37,9 +37,9 @@ body {
     line-height: 1.75;
     min-height: 100vh;
     overflow-x: hidden;
-    padding-top: var(--topbar-h);
+    padding-top: 0;
 }
-body#introduce { padding-top: 0; }
+body.home-page { padding-top: 0; }
 
 /* scrollbar */
 ::-webkit-scrollbar { width: 5px; }
@@ -1032,14 +1032,6 @@ nav.links img:focus { outline: 3px solid var(--pink); outline-offset: 4px; }
 .hero-quick-bar::-webkit-scrollbar { display: none; }
 .hql { white-space: nowrap; }
 /* ================================================================
-   FIX 1 — Page padding-top cho tất cả inner pages
-   Home dùng hero full-screen nên không cần
-   ================================================================ */
-body:not(#introduce) {
-    padding-top: var(--topbar-h);
-}
-
-/* ================================================================
    FIX 2 — Topbar controls: bỏ 2 icon rời, thay bằng
    một avatar button góc phải mở mini dropdown
    ================================================================ */
@@ -1155,165 +1147,6 @@ body:not(#introduce) {
     background: rgba(0,212,255,.1);
     border-color: var(--cyan);
     color: var(--cyan);
-}
-
-/* ================================================================
-   GAME HISTORY — Filter tabs (Bước 3)
-   Reuses visual language of .char-tab-bar for consistency
-   ================================================================ */
-.filter-tab-bar {
-    display: flex;
-    gap: 8px;
-    justify-content: center;
-    padding: 0 24px 24px;
-    margin-top: 28px;
-    margin-bottom: 8px;
-}
-.filter-tab-btn {
-    padding: 9px 26px;
-    background: transparent;
-    border: 1px solid var(--border);
-    border-radius: 999px;
-    font-family: var(--ff-b);
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    color: var(--muted);
-    cursor: pointer;
-    transition: all 0.2s ease;
-}
-.filter-tab-btn:hover {
-    border-color: var(--cyan);
-    color: var(--text);
-}
-.filter-tab-btn.active {
-    background: rgba(0,212,255,.12);
-    border-color: var(--cyan);
-    color: var(--cyan);
-}
-.filter-tab-btn.active:hover {
-    background: rgba(0,212,255,.18);
-}
-
-.gh-filter-panel {
-    max-width: 960px;
-    margin: 0 auto 20px;
-    padding: 0 24px;
-}
-.gh-filter-group {
-    margin-bottom: 14px;
-}
-.gh-filter-label {
-    display: block;
-    font-family: var(--ff-b);
-    font-size: 10px;
-    font-weight: 600;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin-bottom: 8px;
-}
-.filter-chip-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-}
-.filter-chip {
-    padding: 7px 16px;
-    background: transparent;
-    border: 1px solid var(--border);
-    border-radius: 999px;
-    font-family: var(--ff-b);
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-    color: var(--muted);
-    cursor: pointer;
-    transition: all 0.2s ease;
-}
-.filter-chip:hover {
-    border-color: var(--cyan);
-    color: var(--text);
-}
-.filter-chip.active {
-    background: rgba(0,212,255,.1);
-    border-color: var(--cyan);
-    color: var(--cyan);
-}
-.gh-filter-meta {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 12px 20px;
-    padding-top: 4px;
-}
-.gh-filter-year {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-.gh-filter-year .gh-filter-label {
-    margin-bottom: 0;
-}
-.gh-year-select {
-    padding: 7px 12px;
-    background: transparent;
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    font-family: var(--ff-b);
-    font-size: 12px;
-    color: var(--text);
-    cursor: pointer;
-}
-.gh-year-select:focus {
-    outline: none;
-    border-color: var(--cyan);
-}
-.gh-milestone-toggle {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-family: var(--ff-b);
-    font-size: 11px;
-    color: var(--muted);
-    cursor: pointer;
-    user-select: none;
-}
-.gh-milestone-toggle input {
-    accent-color: var(--cyan);
-}
-.gh-filter-count {
-    font-family: var(--ff-b);
-    font-size: 11px;
-    color: var(--muted);
-    letter-spacing: 0.5px;
-}
-.gh-filter-clear {
-    padding: 6px 14px;
-    background: transparent;
-    border: 1px solid var(--border);
-    border-radius: 999px;
-    font-family: var(--ff-b);
-    font-size: 10px;
-    font-weight: 600;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    color: var(--muted);
-    cursor: pointer;
-    transition: all 0.2s ease;
-}
-.gh-filter-clear:hover {
-    border-color: var(--cyan);
-    color: var(--cyan);
-}
-.gh-filter-empty {
-    text-align: center;
-    padding: 40px 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 16px;
 }
 
 /* Extra badge trên góc trên card */

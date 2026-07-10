@@ -35,7 +35,13 @@ function PageWrapper({ children, isHome }) {
 
 function InnerApp() {
   const location = useLocation();
+  const isHome = location.pathname === '/';
   useDivaAccent();
+
+  useEffect(() => {
+    document.body.classList.toggle('home-page', isHome);
+    return () => document.body.classList.remove('home-page');
+  }, [isHome]);
 
   // Scroll to top on route change
   useEffect(() => {
@@ -45,7 +51,7 @@ function InnerApp() {
   return (
     <>
       <Topbar />
-      <Routes location={location} key={location.pathname}>
+      <Routes location={location}>
         <Route path="/" element={
           <PageWrapper isHome><Home /></PageWrapper>
         } />

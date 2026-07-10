@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { useApp } from '../hooks/useApp';
+import { NAV_LINKS } from '../data/navLinks';
 import SettingsPanel from './SettingsPanel';
 
 export default function Topbar() {
@@ -8,30 +9,20 @@ export default function Topbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [settingsOpen, setSettingsOpen] = useState(false);
 
-  const links = [
-    { to: '/',                 label: t('nav_home')    },
-    { to: '/characters',       label: t('nav_chars')   },
-    { to: '/skin-and-song',    label: t('nav_skin')    },
-    { to: '/version-gameplay', label: t('nav_ver')     },
-    { to: '/game-history',     label: t('nav_history') },
-    { to: '/producers',        label: t('nav_producers') },
-    { to: '/concerts',         label: t('nav_concerts') },
-  ];
-
   return (
     <>
       <div className="topbar">
         <NavLink to="/" className="topbar-logo">Project DIVA</NavLink>
 
         <nav className={`topbar-nav${menuOpen ? ' open' : ''}`}>
-          {links.map(l => (
+          {NAV_LINKS.map((l) => (
             <NavLink
               key={l.to}
               to={l.to}
               className={({ isActive }) => isActive ? 'active' : ''}
               onClick={() => setMenuOpen(false)}
             >
-              {l.label}
+              {t(l.labelKey)}
             </NavLink>
           ))}
         </nav>
